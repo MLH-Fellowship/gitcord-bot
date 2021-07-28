@@ -7,34 +7,33 @@ const scopes = {
 };
 
 // GitHub API Methods
-// TODO: Remove those we don't use
 const ghme = client.me();
-const ghuser = client.user("pksunkara");
-const ghrepo = client.repo("pksunkara/hub");
-const ghorg = client.org("flatiron");
-const ghissue = client.issue("pksunkara/hub", 37);
-const ghmilestone = client.milestone("pksunkara/hub", 37);
-const ghlabel = client.label("pksunkara/hub", "todo");
-const ghpr = client.pr("pksunkara/hub", 37);
-const ghrelease = client.release("pksunkara/hub", 37);
-const ghgist = client.gist();
-const ghteam = client.team(37);
-const ghproject = client.project(37);
-const ghnotification = client.notification(37);
-
 const ghsearch = client.search();
 
-// Test GitHub API auth
-async function getPullRequests() {
-    const repo = client.repo("MLH-Fellowship/pod-3.1.3-portfolio");
+const ghuser = client.user("louisefindlay23");
+const ghrepo = client.repo("MLH-Fellowship/pod-3.1.3-team-4");
+const ghissue = client.issue("MLH-Fellowship/pod-3.1.3-team-4", 4);
+const ghpr = client.pr("pksunkara/hub", 37);
 
-    const result = await repo.prsAsync({ per_page: 100 });
+// Get PRs
+async function getPullRequests() {
+    const result = await ghrepo.prsAsync({ per_page: 100 });
     console.log(result);
+    return result[0];
+}
+
+// Post Issue Comment
+async function postIssueComment() {
+    const result = await ghissue.createCommentAsync({
+        body: "Command-line comment test.",
+    });
+    console.log(result.body);
     return result[0];
 }
 
 const retrieveResults = async () => {
     await getPullRequests();
+    await postIssueComment();
 };
 
 retrieveResults();
