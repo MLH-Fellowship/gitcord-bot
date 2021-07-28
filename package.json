@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/MLH-Fellowship/pod-3.1.3-team-4#readme",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "octonode": "^0.10.2"
   },
   "devDependencies": {
     "dotenv": "^10.0.0"
