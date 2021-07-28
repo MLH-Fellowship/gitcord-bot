@@ -10,6 +10,7 @@ const scopes = {
 const ghme = client.me();
 const ghsearch = client.search();
 
+// TODO: Refactor var content to variables - array? class? or just use content instead of client
 const ghuser = client.user("louisefindlay23");
 const ghrepo = client.repo("MLH-Fellowship/pod-3.1.3-team-4");
 const ghissue = client.issue("MLH-Fellowship/pod-3.1.3-team-4", 4);
@@ -18,17 +19,18 @@ const ghpr = client.pr("pksunkara/hub", 37);
 // Get PRs
 async function getPullRequests() {
     const result = await ghrepo.prsAsync({ per_page: 100 });
-    console.log(result);
     return result[0];
 }
+
+// TODO: Add post comment on PR method - https://github.com/pksunkara/octonode#add-a-comment-on-a-pull-request-post-repospksunkarahubpulls37comments
 
 // Post Issue Comment
 async function postIssueComment() {
     const result = await ghissue.createCommentAsync({
-        body: "Command-line comment test.",
+        body: "Command-line comment test",
     });
-    console.log(result.body);
-    return result[0];
+    console.log("Your comment: " + result[0].body + " has been posted.");
+    return result[0].body;
 }
 
 const retrieveResults = async () => {
