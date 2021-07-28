@@ -1,6 +1,8 @@
 require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const tester=require('./commands/testing');
+const githubCommands=require("./commands/github");
 const prefix = '-';
 
 // checking if bot is ready
@@ -15,11 +17,10 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if (command === 'ping'){
-	message.channel.send('pong!');
-    } else if (command === 'works') {
-	message.channel.send('kinda');
-    }
+     if(command==="github")
+     githubCommands.botMessage.call(message,command);
+     else
+    tester.botMessage.call(message,command);
 	
 });
 
