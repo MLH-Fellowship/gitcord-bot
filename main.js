@@ -1,7 +1,6 @@
+require('dotenv').config();
 const Discord = require('discord.js');
-
 const client = new Discord.Client();
-
 const prefix = '-';
 
 // checking if bot is ready
@@ -25,4 +24,4 @@ client.on('message', message => {
 });
 
 // bot token (test mode - going to regenerate a new token and use an env variable instead)
-client.login('ODY5NzQ1NzAyOTU4NDA3NzIx.YQCrzg.SBy99VDx3s4oFrFaTT5m5HUzzqU');
+client.login(process.env.DISCORD_TOKEN);

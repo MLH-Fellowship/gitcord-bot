@@ -4,6 +4,7 @@
   "description": "Testing out building a discord bot with discord.js",
   "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/MLH-Fellowship/pod-3.1.3-team-4#readme",
   "dependencies": {
     "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
 }
