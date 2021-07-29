@@ -22,7 +22,9 @@ const func = {
   botMessage: async function (message) {
     // 
     if (message === "github-comment-issue" || message === "github-comment-pr") {
-      const result = await client.issue(repo, 7).createCommentAsync({
+      // TODO: Get the number from user input
+      issue = 7;
+      const result = await client.issue(repo, issue).createCommentAsync({
         body: "A test comment posted through the Gitcord Bot!",
       }).then(result => {
         return this.channel.send("Your comment: " + result[0].body + " has been posted.");
