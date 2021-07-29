@@ -31,13 +31,21 @@ const func = {
       githubToken = args[0];
       client = github.client(githubToken);
       this.channel.send(`Command name: ${message}\nArguments: ${githubToken}`);
-    } else if (message === "github-comment-issue" || message === "github-comment-pr") {
+      console.log("Input works");
+      issue = 4;
+      const result = await client.issue(repo, issue).createCommentAsync({
+        body: "A test comment posted through the Gitcord Bot!",
+      }).catch(error => console.log(error)).then(result => {
+        return this.channel.send("Your comment: " + result[0].body + " has been posted.");
+    });
+   } else if (message === "github-comment-issue") {
       // TODO: Get the number from user input
+      console.log("Input works");
       issue = 4;
       const result = await client.issue(repo, issue).createCommentAsync({
         body: "A test comment posted through the Gitcord Bot!",
       }).then(result => {
-        return this.channel.send("Your comment: " + result[0].body + " has been posted.");
+        return this.channel.send("Your comment: " + result[0].body + " has been posted.").catch(error => console.log(error));
       });
     }
   },
