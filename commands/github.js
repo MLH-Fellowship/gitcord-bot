@@ -1,7 +1,8 @@
 
 // Intialise GitHub API
 const github = require("octonode");
-const client = github.client(process.env.GITHUB_TOKEN);
+let githubToken= null;
+const client = github.client(githubToken);
 const scopes = {
   scopes: ["user", "repo"],
   note: "admin script",
@@ -28,9 +29,8 @@ async function getPullRequests() {
 async function postIssueComment() {
   const result = await ghissue.createCommentAsync({
     body: "A test command posted through the Gitcord Bot!",
-  });
-  // console.log("Your comment: " + result[0].body + " has been posted.");
-  return result[0].body;
+  }).catch(error => console.log(error));
+  
 }
 
 const retrieveResults = async () => {
@@ -41,10 +41,22 @@ const retrieveResults = async () => {
 
 //Function to post the comment and send a message in the server
 const func = {
-  botMessage: function (message) {
+  botMessage: function (message,args) {
     if (message === "github") {
+      //retrieveResults();
+      return this.channel.send("Enter your personal Github token with -github-info");
+    }
+    else if (message === "github-post")
+    {
       retrieveResults();
-      return this.channel.send("Your comment has been posted!");
+      return this.channel.send("Comment posted");
+    }
+    else if (message=== 'github-info') {
+      if (!args.length) {
+        return this.channel.send(`You didn't provide any arguments, ${this.author}!`);
+      }
+          githubToken=args;
+      this.channel.send(`Command name: ${message}\nArguments: ${githubToken}`);
     }
   },
 };
