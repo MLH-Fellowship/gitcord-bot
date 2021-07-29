@@ -25,6 +25,15 @@ async function getPullRequests() {
 // TODO: Add post comment on PR method - https://github.com/pksunkara/octonode#add-a-comment-on-a-pull-request-post-repospksunkarahubpulls37comments
 
 // Post Issue Comment
+async function postPRComment() {
+  const result = await ghpr.createCommentAsync({
+    body: "A test command posted through the Gitcord Bot!",
+  });
+  // console.log("Your comment: " + result[0].body + " has been posted.");
+  return result[0].body;
+}
+
+// Post Issue Comment
 async function postIssueComment() {
   const result = await ghissue.createCommentAsync({
     body: "A test command posted through the Gitcord Bot!",
@@ -36,6 +45,7 @@ async function postIssueComment() {
 const retrieveResults = async () => {
   await getPullRequests();
   await postIssueComment();
+  await postPRComment();
 };
 
 
