@@ -1,7 +1,8 @@
 
 // Intialise GitHub API
 const github = require("octonode");
-const client = github.client(process.env.GITHUB_TOKEN);
+let githubToken= null;
+let client = github.client(githubToken);
 const scopes = {
   scopes: ["user", "repo"],
   note: "admin script",
@@ -15,15 +16,24 @@ const ghsearch = client.search();
 const repo = "MLH-Fellowship/pod-3.1.3-team-4";
 let issue = null;
 const ghuser = client.user("Inoxia25");
-const ghrepo = client.repo(repo);
+const ghrepo = client.repo("MLH-Fellowship/pod-3.1.3-team-4");
+
 
 //Function to post the comment and send a message in the server
 const func = {
-  botMessage: async function (message) {
-    // 
-    if (message === "github-comment-issue" || message === "github-comment-pr") {
+  botMessage: async function (message, args) {
+    if (message === "github") {
+      return this.channel.send("Enter your personal Github token with -github-info");
+    } else if (message=== 'github-info') {
+      if (!args.length) {
+        return this.channel.send(`You didn't provide any arguments, ${this.author}!`);
+      }
+      githubToken = args[0];
+      client = github.client(githubToken);
+      this.channel.send(`Command name: ${message}\nArguments: ${githubToken}`);
+    } else if (message === "github-comment-issue" || message === "github-comment-pr") {
       // TODO: Get the number from user input
-      issue = 7;
+      issue = 4;
       const result = await client.issue(repo, issue).createCommentAsync({
         body: "A test comment posted through the Gitcord Bot!",
       }).then(result => {
