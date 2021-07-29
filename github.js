@@ -11,7 +11,7 @@ const ghme = client.me();
 const ghsearch = client.search();
 
 // TODO: Refactor var content to variables - array? class? or just use content instead of client
-const ghuser = client.user("louisefindlay23");
+const ghuser = client.user("Inoxia25");
 const ghrepo = client.repo("MLH-Fellowship/pod-3.1.3-team-4");
 const ghissue = client.issue("MLH-Fellowship/pod-3.1.3-team-4", 4);
 const ghpr = client.pr("pksunkara/hub", 37);
@@ -27,9 +27,8 @@ async function getPullRequests() {
 // Post Issue Comment
 async function postIssueComment() {
     const result = await ghissue.createCommentAsync({
-        body: "Command-line comment test",
+        body: "A test command posted through the Gitcord Bot!",
     });
-    console.log("Your comment: " + result[0].body + " has been posted.");
     return result[0].body;
 }
 
