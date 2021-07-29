@@ -1,6 +1,7 @@
 
 // Intialise GitHub API
 const github = require("octonode");
+const fs = require("fs");
 let githubToken= null;
 let client = github.client(githubToken);
 const scopes = {
@@ -30,23 +31,24 @@ const func = {
       }
       githubToken = args[0];
       client = github.client(githubToken);
+      fs.writeFile('githubtoken.txt', githubToken, function (err) {
+        if (err) return console.log (err);
+        console.log("Github Token has been stored");
+      });
       this.channel.send(`Command name: ${message}\nArguments: ${githubToken}`);
-      console.log("Input works");
+   } else if (message === "github-comment-issue") {
+      // TODO: Get the number from user input
+      console.log("This message works");
       issue = 4;
+      fs.readFile("/github-token.txt", function (text, err) {
+      if (err) return console.log (err);
+      client = github.client(text);
       const result = await client.issue(repo, issue).createCommentAsync({
         body: "A test comment posted through the Gitcord Bot!",
       }).catch(error => console.log(error)).then(result => {
         return this.channel.send("Your comment: " + result[0].body + " has been posted.");
     });
-   } else if (message === "github-comment-issue") {
-      // TODO: Get the number from user input
-      console.log("Input works");
-      issue = 4;
-      const result = await client.issue(repo, issue).createCommentAsync({
-        body: "A test comment posted through the Gitcord Bot!",
-      }).then(result => {
-        return this.channel.send("Your comment: " + result[0].body + " has been posted.").catch(error => console.log(error));
-      });
+    });
     }
   },
 };
