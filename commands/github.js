@@ -2,7 +2,7 @@
 // Intialise GitHub API
 const github = require("octonode");
 let githubToken= null;
-const client = github.client(githubToken);
+let client = github.client(githubToken);
 const scopes = {
   scopes: ["user", "repo"],
   note: "admin script",
@@ -55,7 +55,8 @@ const func = {
       if (!args.length) {
         return this.channel.send(`You didn't provide any arguments, ${this.author}!`);
       }
-          githubToken=args;
+      githubToken = args[0];
+      client = github.client(githubToken);
       this.channel.send(`Command name: ${message}\nArguments: ${githubToken}`);
     }
   },
