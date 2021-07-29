@@ -22,7 +22,5 @@ client.on("message", (message) => {
     else tester.botMessage.call(message, command);
 });
 
-// bot token (test mode - going to regenerate a new token and use an env variable instead)
+// bot token
 client.login(process.env.DISCORD_TOKEN);
-
-

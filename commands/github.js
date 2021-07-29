@@ -17,25 +17,16 @@ let issue = null;
 const ghuser = client.user("Inoxia25");
 const ghrepo = client.repo(repo);
 
-// Post Issue Comment
-async function postComment(issue) {
-  const result = await client.issue(repo, issue).createCommentAsync({
-    body: "A test comment posted through the Gitcord Bot!",
-  });
-  // console.log("Your comment: " + result[0].body + " has been posted.");
-  return result[0].body;
-}
-
-const retrieveResults = async (issue) => {
-  await postComment(issue);
-};
-
 //Function to post the comment and send a message in the server
 const func = {
-  botMessage: function (message) {
-    if (message === "github") {
-      retrieveResults(7);
-      return this.channel.send("Your comment has been posted!");
+  botMessage: async function (message) {
+    // 
+    if (message === "github-comment-issue" || message === "github-comment-pr") {
+      const result = await client.issue(repo, 7).createCommentAsync({
+        body: "A test comment posted through the Gitcord Bot!",
+      }).then(result => {
+        return this.channel.send("Your comment: " + result[0].body + " has been posted.");
+      });
     }
   },
 };
