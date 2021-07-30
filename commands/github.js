@@ -35,7 +35,7 @@ const func = {
       }
       githubToken = args[0];
       client = github.client(githubToken);
-
+      return this.channel.send("Now enter your issue number by mentioning it after -github-comment-issue");
     // -github-comment-issue: Post comment
    } else if (message === "github-comment-issue") {
       return this.channel.send("Enter the number of the issue you'd like to comment on with -github-issue-number");
