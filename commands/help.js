@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 module.exports = {
-	name: "github",
-	description: 'GitHub bot commands',
+	name: "help",
+	description: "Help bot commands",
 	execute(command, message, args) {
-        
+        const data = [];
         const listCommands =[{
             name: "github",
             description:"To get you started with posting comments on githubs issues/PR."
@@ -11,10 +11,6 @@ module.exports = {
         {
             name: "github-info",
             description:"Lets you enter your github personal token to authenticate the bot."
-        },
-        {
-            name: "github-comment-issue",
-            description:"Tells the bot to post a comment on an issue."
         },
         {
             name: "github-issue-number",
@@ -36,7 +32,7 @@ module.exports = {
                 })
                 .catch(error => {
                     console.error( error);
-                    this.channel.send('Sorry could not fetch the help commands :(');
+                    return message.reply('Sorry could not fetch the help commands :(');
                 });
         }
 
@@ -53,15 +49,15 @@ module.exports = {
             return message.reply('that\'s not a valid command!');
         }
         
-        data.push(`**Name:** ${command.name}`);
+        data.push(`**Name:** ${listCommand.name}`);
         
         //if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
-        if (command.description) data.push(`**Description:** ${command.description}`);
+        if (listCommand.description) data.push(`**Description:** ${listCommand.description}`);
         //if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
         
         //data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
         
-        this.channel.send(data, { split: true });
+        message.reply(data, { split: true });
     }
    
   }
