@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const tester = require("./commands/testing");
 const githubCommands = require("./commands/github");
+const helpCommand =require("./commands/help");
 const prefix = "-";
 
 // checking if bot is ready
@@ -10,7 +11,7 @@ client.once("ready", () => {
     console.log("Encourage Bot is online");
 });
 
-// taking in the commands
+// taking in the commandss
 client.on("message", (message) => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -19,7 +20,10 @@ client.on("message", (message) => {
 
     if (command.includes("github")) { 
         githubCommands.botMessage.call(message, command, args);
-    } else {
+    } else if (command === "help"){
+        helpCommand.botMessage.call(message,command,args);
+    }
+     else {
         tester.botMessage.call(message, command, args);
     }
 });
