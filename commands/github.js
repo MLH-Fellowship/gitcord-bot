@@ -50,16 +50,16 @@ module.exports = {
       }
     // -github-post-comment: Posts desired comment on previously specified issue/PR
     } else if (command === "github-post-comment") {
-      postComment(issue);
+      let comment = args[0];
+      postComment(issue, comment);
     }
   }
 };
 
-async function postComment(issue) { 
+async function postComment(issue, comment) { 
     await client.issue(repo, issue).createCommentAsync({
-    body: "A test comment posted through the Gitcord Bot!",
+    body: comment,
     }).then(result => {
-      console.log("Post comment triggered");
       return message.reply("Your comment: " + result[0].body + " has been posted.").catch(error => console.log(error));
     });
 }
