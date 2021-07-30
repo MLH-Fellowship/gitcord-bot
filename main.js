@@ -17,8 +17,11 @@ client.on("message", (message) => {
     const args = message.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
 
-    if (command === "github" || command === "github-post" || command=== "github-info") githubCommands.botMessage.call(message, command,args);
-    else tester.botMessage.call(message, command,args);
+    if (command.includes("github")) { 
+        githubCommands.botMessage.call(message, command, args);
+    } else {
+        tester.botMessage.call(message, command, args);
+    }
 });
 
 // bot token
