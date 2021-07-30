@@ -28,9 +28,12 @@ client.on("message", (message) => {
     const args = message.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
 
-    console.log("Command is:" + command);
+    console.log("Main Command is:" + command);
 
-    if (!client.commands.has(command)) return;
+    if (!client.commands.has(command)) {
+        //console.log("Command does not exist in github.js");
+        return;
+    }
 
 	try {
 		client.commands.get(command).execute(command, message, args);

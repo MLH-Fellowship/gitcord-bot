@@ -29,17 +29,19 @@ module.exports = {
       return message.reply("use -github-info with your personal Github token to continue.");
 
     // -github-info: Get contents of personal token
-    } else if (command === "github-info") {
-      console.log("Message received");
+    }
+
+    if (command === "github-info") {
       if (!args.length) {
         return message.reply("you didn't provide a GitHub Personal Token.");
       }
       githubToken = args[0];
       client = github.client(githubToken);
       return message.reply("GitHub auth was successful. Use -github-issue-number with the number of the issue you'd like to comment on.");
+    }
 
     // -github-issue-number: Get issue/PR number from user
-    } else if (command === "github-issue-number") {
+    if (command === "github-issue-number") {
       issue = parseInt(args[0]);
 
       if (isNaN(issue)) {
