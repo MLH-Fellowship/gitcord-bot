@@ -28,7 +28,7 @@ module.exports = {
     // -github: Enter personal token
     if (message.content === "-github") {
       console.log("Github was posted");
-      return message.channel.send("Enter your personal Github token with -github-info");
+      return message.reply("Enter your personal Github token with -github-info");
 
     // -github-info: Get contents of personal token
     } else if (message === 'github-info') {
