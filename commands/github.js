@@ -27,7 +27,7 @@ module.exports = {
     } 
     
     // -github-info: Get contents of personal token
-    if (command === "github-info-new") {
+    if (command === "github-info") {
       if (!args.length) {
         return message.reply("you didn't provide a GitHub Personal Token.");
       } else {
