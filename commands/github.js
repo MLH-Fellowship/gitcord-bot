@@ -38,6 +38,7 @@ const func = {
       }).catch(error => console.log(error)).then(result => {
         return this.channel.send("Your comment: " + result[0].body + " has been posted.");
     });
+    // BUG: This else if isn't being triggered.
    } else if (message === "github-comment-issue") {
       // TODO: Get the number from user input
       console.log("Input works");
