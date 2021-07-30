@@ -12,13 +12,16 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
+// TODO: To update help.js so above code works instead of this
+const helpCommand =require("./commands/help");
+
 const prefix = "-";
 
 client.once("ready", () => {
     console.log("GitCord Bot is online");
 });
 
-// taking in the commands
+// taking in the commandss
 client.on("message", (message) => {
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -33,7 +36,11 @@ client.on("message", (message) => {
     if (!client.commands.has(command)) {
         //console.log("Command does not exist in github.js");
         return;
-    }
+      
+   // TODO: To update help.js so above code works instead of this
+      if (command === "help"){
+        helpCommand.botMessage.call(message,command,args);
+      }
 
 	try {
 		client.commands.get(command).execute(command, message, args);
