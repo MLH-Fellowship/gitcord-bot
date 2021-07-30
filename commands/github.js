@@ -52,8 +52,12 @@ const func = {
     // -github-post-comment: Posts desired comment on previously specified issue/PR
     } else if (message === "github-post-comment") {
       // TODO: Add some fallback if token hasn't been set
+      let commentBody="";
+      args.forEach(arg=>{
+        commentBody+=" "+ arg;
+      })
       const result = await client.issue(repo, issue).createCommentAsync({
-        body: args[0],
+        body: commentBody,
       }).then(result => {
         return this.channel.send("Your comment: " + result[0].body + " has been posted.").catch(error => console.log(error));
       });
