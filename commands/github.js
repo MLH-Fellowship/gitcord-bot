@@ -23,13 +23,13 @@ module.exports = {
 
     // Post the comment and send a message in the server
     console.log("Command is " + command);
-    
+
     // -github: Enter personal token
     if (command === "github") {
       return message.reply("use -github-info with your personal Github token to continue.");
 
     // -github-info: Get contents of personal token
-    } else if (command === 'github-info') {
+    } else if (command === "github-info") {
       console.log("Message received");
       if (!args.length) {
         return message.reply("you didn't provide a GitHub Personal Token.");

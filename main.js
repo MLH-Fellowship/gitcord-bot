@@ -28,6 +28,8 @@ client.on("message", (message) => {
     const args = message.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
 
+    console.log("Command is:" + command);
+
     if (!client.commands.has(command)) return;
 
 	try {
