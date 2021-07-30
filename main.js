@@ -21,6 +21,8 @@ client.once("ready", () => {
 
 // taking in the commands
 client.on("message", (message) => {
+    console.log("Message:" + message.content);
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(' ');
@@ -29,7 +31,7 @@ client.on("message", (message) => {
     if (!client.commands.has(command)) return;
 
 	try {
-		client.commands.get(command).execute(message, args);
+		client.commands.get(command).execute(command, message, args);
 	} catch (error) {
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');

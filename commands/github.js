@@ -1,7 +1,7 @@
 module.exports = {
 	name: "github",
 	description: 'GitHub bot commands',
-	execute(message, args) {
+	execute(command, message, args) {
 		// Intialise GitHub API
     const github = require("octonode");
     let githubToken= null;
@@ -21,16 +21,15 @@ module.exports = {
     const ghuser = client.user("Inoxia25");
     const ghrepo = client.repo("MLH-Fellowship/pod-3.1.3-team-4");
 
-
     // Post the comment and send a message in the server
-    console.log("The user sent " + message.content);
 
     // -github: Enter personal token
-    if (message.content === "-github") {
-      return message.reply("use -github-info with your personal Github token to continue.");
+    if (command === "github") {
+      message.reply("use -github-info with your personal Github token to continue.");
 
     // -github-info: Get contents of personal token
-    } else if (message.content === '-github-info') {
+    } else if (command === 'github-info') {
+      console.log("Message received");
       if (!args.length) {
         return message.reply("you didn't provide a GitHub Personal Token.");
       }
@@ -39,7 +38,7 @@ module.exports = {
       return message.reply("GitHub auth was successful. Use -github-issue-number with the number of the issue you'd like to comment on.");
 
     // -github-issue-number: Get issue/PR number from user
-    } else if (message.content === "-github-issue-number") {
+    } else if (command === "github-issue-number") {
       issue = parseInt(args[0]);
 
       if (isNaN(issue)) {
@@ -48,10 +47,10 @@ module.exports = {
         return message.reply("to post a comment on issue " + issue + " , use -github-post-comment followed by your message.").catch(error => console.log(error));
       }
     // -github-post-comment: Posts desired comment on previously specified issue/PR
-    } else if (message.content === "-github-post-comment") {
+    } else if (command === "github-post-comment") {
       postComment();
     }
-  },
+  }
 };
 
 async function postComment() { 
