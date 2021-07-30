@@ -22,10 +22,11 @@ module.exports = {
     const ghrepo = client.repo("MLH-Fellowship/pod-3.1.3-team-4");
 
     // Post the comment and send a message in the server
-
+    console.log("Command is " + command);
+    
     // -github: Enter personal token
     if (command === "github") {
-      message.reply("use -github-info with your personal Github token to continue.");
+      return message.reply("use -github-info with your personal Github token to continue.");
 
     // -github-info: Get contents of personal token
     } else if (command === 'github-info') {
