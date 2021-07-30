@@ -1,11 +1,10 @@
 const Discord = require('discord.js');
-const func= {
-    botMessage: function(message,args) {
-        const data = [];
-		//const { commands } = this.client;
-        console.log(this.client);
+module.exports = {
+	name: "github",
+	description: 'GitHub bot commands',
+	execute(command, message, args) {
         
-        const commands =[{
+        const listCommands =[{
             name: "github",
             description:"To get you started with posting comments on githubs issues/PR."
         },
@@ -27,10 +26,10 @@ const func= {
         }];
         if (!args.length) {
             data.push('Here\'s a list of all my commands:');
-            data.push(commands.map(command => command.name).join(', '));
+            data.push(listCommands.map(listCommand => listCommand.name).join(', '));
             data.push(`\nYou can send \`-help [command name]\` to get info on a specific command!`);
         
-            return this.channel.send(data, { split: true })
+            return message.reply(data, { split: true })
                 .then(() => {
                     // if (this.channel.type === 'dm') return;
                     // this.channel.send('I\'ve sent you a DM with all my commands!');
@@ -42,15 +41,15 @@ const func= {
         }
 
         const name = args[0].toLowerCase();
-        let command = null;
-        commands.map(cmnd => 
+        let listCommand = null;
+        listCommands.map(cmnd => 
             {
                 if (cmnd.name===name)
-                command=cmnd;
+                listCommand=cmnd;
             })
          //|| commands.find(c => c.aliases && c.aliases.includes(name));
         
-        if (!command) {
+        if (!listCommand) {
             return message.reply('that\'s not a valid command!');
         }
         
@@ -66,5 +65,3 @@ const func= {
     }
    
   }
-
-module.exports=func;

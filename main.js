@@ -12,9 +12,6 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
-// TODO: To update help.js so above code works instead of this
-const helpCommand =require("./commands/help");
-
 const prefix = "-";
 
 client.once("ready", () => {
@@ -36,11 +33,7 @@ client.on("message", (message) => {
     if (!client.commands.has(command)) {
         //console.log("Command does not exist in github.js");
         return;
-      
-   // TODO: To update help.js so above code works instead of this
-      if (command === "help"){
-        helpCommand.botMessage.call(message,command,args);
-      }
+    }
 
 	try {
 		client.commands.get(command).execute(command, message, args);
