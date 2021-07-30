@@ -22,24 +22,38 @@ const ghrepo = client.repo("MLH-Fellowship/pod-3.1.3-team-4");
 //Function to post the comment and send a message in the server
 const func = {
   botMessage: async function (message, args) {
-    console.log("The command posted is" + message);
+    console.log("The command posted is " + message);
 
     // -github: Enter personal token
     if (message === "github") {
       return this.channel.send("Enter your personal Github token with -github-info");
-    } else if (message=== 'github-info') {
+
+    // -github-info: Get contents of personal token
+    } else if (message === 'github-info') {
       if (!args.length) {
-        return this.channel.send(`You didn't provide any arguments, ${this.author}!`);
+        return this.channel.send(`You didn't provide a GitHub Personal Token, ${this.author}!`);
       }
       githubToken = args[0];
       client = github.client(githubToken);
 
     // -github-comment-issue: Post comment
    } else if (message === "github-comment-issue") {
-      // TODO: Get the number from user input
-      issue = 4;
+      return this.channel.send("Enter the number of the issue you'd like to comment on with -github-issue-number");
+
+    // -github-issue-number: Get issue/PR number from user
+    } else if (message === "github-issue-number") {
+      issue = parseInt(args[0]);
+
+      if (isNaN(issue)) {
+        return this.channel.send("Sorry, that isn't a valid issue number.").catch(error => console.log(error));
+      } else {
+        return this.channel.send("To post a comment on issue " + issue + " , use -github-post-comment followed by your message.").catch(error => console.log(error));
+      }
+    // -github-post-comment: Posts desired comment on previously specified issue/PR
+    } else if (message === "github-post-comment") {
+      // TODO: Add some fallback if token hasn't been set
       const result = await client.issue(repo, issue).createCommentAsync({
-        body: "A test comment posted through the Gitcord Bot!",
+        body: args[0],
       }).then(result => {
         return this.channel.send("Your comment: " + result[0].body + " has been posted.").catch(error => console.log(error));
       });
