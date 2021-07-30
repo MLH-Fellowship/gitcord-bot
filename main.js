@@ -14,21 +14,21 @@ for (const file of commandFiles) {
 
 const prefix = "-";
 
-// checking if bot is ready
 client.once("ready", () => {
-    console.log("Encourage Bot is online");
+    console.log("GitCord Bot is online");
 });
 
 // taking in the commands
 client.on("message", (message) => {
-    console.log("Message:" + message.content);
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
 
-    console.log("Main Command is:" + command);
+    // Message and Command logging
+    console.log("Message is:" + message.content);
+    console.log("Command is:" + command);
 
     if (!client.commands.has(command)) {
         //console.log("Command does not exist in github.js");

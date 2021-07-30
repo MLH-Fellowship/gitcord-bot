@@ -21,16 +21,13 @@ module.exports = {
     const ghuser = client.user("Inoxia25");
     const ghrepo = client.repo("MLH-Fellowship/pod-3.1.3-team-4");
 
-    // Post the comment and send a message in the server
-    console.log("Command is " + command);
-
     // -github: Enter personal token
     if (command === "github") {
       return message.reply("use -github-info with your personal Github token to continue.");
     } 
     
     // -github-info: Get contents of personal token
-    if (command === "github-info") {
+    if (command === "github-info-new") {
       if (!args.length) {
         return message.reply("you didn't provide a GitHub Personal Token.");
       } else {
@@ -47,7 +44,7 @@ module.exports = {
       if (isNaN(issue)) {
         return message.reply("sorry, that isn't a valid issue number.").catch(error => console.log(error));
       } else {
-        return message.reply("to post a comment on issue " + issue + " , use -github-post-comment followed by your message.").catch(error => console.log(error));
+        return message.reply("to post a comment on issue " + issue + " , use -github-post-comment followed by your message.");
       }
     } 
     
