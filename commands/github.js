@@ -27,9 +27,10 @@ module.exports = {
     // -github: Enter personal token
     if (command === "github") {
       return message.reply("use -github-info with your personal Github token to continue.");
-
+    } 
+    
     // -github-info: Get contents of personal token
-    } else if (command === "github-info") {
+    if (command === "github-info") {
       if (!args.length) {
         return message.reply("you didn't provide a GitHub Personal Token.");
       } else {
@@ -48,18 +49,21 @@ module.exports = {
       } else {
         return message.reply("to post a comment on issue " + issue + " , use -github-post-comment followed by your message.").catch(error => console.log(error));
       }
+    } 
+    
     // -github-post-comment: Posts desired comment on previously specified issue/PR
-    } else if (command === "github-post-comment") {
+    if (command === "github-post-comment") {
       let comment = args[0];
       postComment(issue, comment);
     }
   }
 };
 
+// Post Comment function
 async function postComment(issue, comment) { 
     await client.issue(repo, issue).createCommentAsync({
     body: comment,
     }).then(result => {
-      return message.reply("Your comment: " + result[0].body + " has been posted.").catch(error => console.log(error));
-    });
+      return message.reply("Your comment: " + result[0].body + " has been posted.");
+    }).catch(error => console.log(error));
 }
