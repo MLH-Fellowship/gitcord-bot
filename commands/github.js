@@ -30,19 +30,16 @@ module.exports = {
       return message.reply("use -github-info with your personal Github token to continue.");
 
     // -github-info: Get contents of personal token
-    } else if (message === 'github-info') {
+    } else if (message.content === '-github-info') {
       if (!args.length) {
         return message.reply("you didn't provide a GitHub Personal Token.");
       }
       githubToken = args[0];
       client = github.client(githubToken);
-
-    // -github-comment-issue: Post comment
-   } else if (message === "github-comment-issue") {
-      return message.reply("enter the number of the issue you'd like to comment on with -github-issue-number");
+      return message.reply("GitHub auth was successful. Use -github-issue-number with the number of the issue you'd like to comment on.");
 
     // -github-issue-number: Get issue/PR number from user
-    } else if (message === "github-issue-number") {
+    } else if (message.content === "-github-issue-number") {
       issue = parseInt(args[0]);
 
       if (isNaN(issue)) {
@@ -51,6 +48,17 @@ module.exports = {
         return message.reply("to post a comment on issue " + issue + " , use -github-post-comment followed by your message.").catch(error => console.log(error));
       }
     // -github-post-comment: Posts desired comment on previously specified issue/PR
+    } else if (message.content === "-github-post-comment") {
+      postComment();
     }
   },
 };
+
+async function postComment() { 
+    await client.issue(repo, issue).createCommentAsync({
+    body: "A test comment posted through the Gitcord Bot!",
+    }).then(result => {
+      console.log("Post comment triggered");
+      return message.reply("Your comment: " + result[0].body + " has been posted.").catch(error => console.log(error));
+    });
+}
