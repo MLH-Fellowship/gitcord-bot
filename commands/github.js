@@ -1,6 +1,6 @@
 module.exports = {
 	name: "github",
-	description: 'GitHub bot commands',
+	description: 'Introduce user to GitHub commands',
 	execute(command, message, args) {
     console.log("Command is" + command);
 		// Intialise GitHub API
@@ -26,31 +26,5 @@ module.exports = {
     if (command === "github") {
       return message.reply("use -github-info with your personal Github token to continue.");
     }
-
-    // -github-issue-number: Get issue/PR number from user
-    if (command === "github-issue-number") {
-      issue = parseInt(args[0]);
-
-      if (isNaN(issue)) {
-        return message.reply("sorry, that isn't a valid issue number.").catch(error => console.log(error));
-      } else {
-        return message.reply("to post a comment on issue " + issue + " , use -github-post-comment followed by your message.");
-      }
-    } 
-
-    // -github-post-comment: Posts desired comment on previously specified issue/PR
-    if (command === "github-post-comment") {
-      let comment = args[0];
-      postComment(issue, comment);
-    }
   }
-};
-    // Post Comment function
-async function postComment(issue, comment) { 
-  await client.issue(repo, issue).createCommentAsync({
-  body: comment,
-  }).then(result => {
-    return message.reply("Your comment: " + result[0].body + " has been posted.");
-  }).catch(error => console.log(error));
 } 
-    

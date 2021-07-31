@@ -30,10 +30,6 @@ client.on("message", (message) => {
     console.log("Message is:" + message.content);
     console.log("Command is:" + command);
 
-    client.commands.forEach((thing) => {
-        console.log(thing);
-    });
-
     if (!client.commands.has(command)) {
         console.log("Command does not exist in github.js");
         return;
