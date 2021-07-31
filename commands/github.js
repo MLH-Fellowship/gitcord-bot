@@ -24,7 +24,7 @@ module.exports = {
 
     // -github: Enter personal token
     if (command === "github") {
-      return message.reply("use -github-info with your personal Github token to continue.");
+      return message.author.send("use -github-info with your personal Github token to continue.");
     }
   }
 } 
