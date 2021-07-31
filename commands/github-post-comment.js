@@ -20,12 +20,21 @@ module.exports = {
             }
         }
 
+        function readIssue() {
+            try {
+                const data = fs.readFileSync("./github-issue-number.txt", "utf8");
+                return data;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
         // Post Comment function
         async function postComment(comment) {
             // GitHub Variables
             const owner = "MLH-Fellowship";
             const repo = "pod-3.1.3-team-4";
-            let issue = "4";
+            let issue = readIssue();
             let githubToken = readToken();
 
             // Intialise GitHub API
@@ -42,7 +51,6 @@ module.exports = {
                     body: comment,
                 })
                 .then((result) => {
-                    console.log(result);
                     return message.reply("Your comment: " + comment + " has been posted.");
                 })
                 .catch((error) => console.log(error));
