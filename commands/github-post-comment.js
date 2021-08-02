@@ -21,6 +21,7 @@ module.exports = {
                 return data;
             } catch (err) {
                 console.error(err);
+                return message.reply("Your GitHub Personal Access Token could not been read. Please set it again using -github-info.");
             }
         }
 
@@ -30,6 +31,7 @@ module.exports = {
                 return data;
             } catch (err) {
                 console.error(err);
+                return message.reply("Your issue/PR number could not be read. Please set it again using -github-issue-number.");
             }
         }
 
@@ -57,7 +59,10 @@ module.exports = {
                 .then((result) => {
                     return message.reply("Your comment: " + comment + " has been posted.");
                 })
-                .catch((error) => console.log(error));
+                .catch((error) => {
+                    console.log(error);
+                    return message.reply("Posting your comment was unsuccessful. Please ensure you have set your GitHub token using -github and an issue/PR number using -github-issue-number and then try again.");
+                });
         }
     },
 };
