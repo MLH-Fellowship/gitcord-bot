@@ -17,6 +17,9 @@ module.exports = {
                 const data = fs.writeFileSync("./github-issue-number.txt", issue);
             } catch (err) {
                 console.error(err);
+                return message.reply(
+                    "Your issue/PR number was not saved. Please try again."
+                );
             }
             return message.reply(
                 "to post a comment on issue " + issue + " , use -github-post-comment followed by your message."
