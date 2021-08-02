@@ -1,2 +1,4 @@
 .env
 node_modules/
+github-token.txt
+github-issue-number.txt
