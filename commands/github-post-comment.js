@@ -6,12 +6,8 @@ module.exports = {
     execute(command, message, args) {
         // -github-post-comment: Posts desired comment on previously specified issue/PR
         if (command === "github-post-comment") {
-            comment = args.splice(0, 3);
-            comment.forEach((word) => {
-                //function for taking all the arguments as comment
-                word += " ";
-            });
-
+            comment = args.slice(3);
+            comment = comment.join(" ");
             readToken();
             postComment(comment, args);
         }
