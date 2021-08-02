@@ -41,13 +41,13 @@ module.exports = {
                 })
                 .then((result) => {
                     return message.reply(
-                        "Your comment: " +
+                        "Your comment '" +
                             args[3] +
-                            " has been posted on " +
+                            "' has been posted on " +
                             args[1] +
-                            " 's discussion # " +
+                            "'s discussion #" +
                             args[2] +
-                            " ."
+                            "."
                     );
                 })
                 .catch((error) => {
