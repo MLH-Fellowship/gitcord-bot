@@ -6,13 +6,14 @@ module.exports = {
     execute(command, message, args) {
         // -github-post-comment: Posts desired comment on previously specified issue/PR
         if (command === "github-post-comment") {
-            let comment="";
-            args.forEach(arg=>{  //function for taking all the arguments as comment
-                comment+=" "+arg;
-            })
-            
+            comment = args.splice(0, 3);
+            comment.forEach((word) => {
+                //function for taking all the arguments as comment
+                word += " ";
+            });
+
             readToken();
-            postComment(comment);
+            postComment(comment, args);
         }
 
         function readToken() {
@@ -21,26 +22,15 @@ module.exports = {
                 return data;
             } catch (err) {
                 console.error(err);
-                return message.reply("Your GitHub Personal Access Token could not been read. Please set it again using -github-info.");
-            }
-        }
-
-        function readIssue() {
-            try {
-                const data = fs.readFileSync("./github-issue-number.txt", "utf8");
-                return data;
-            } catch (err) {
-                console.error(err);
-                return message.reply("Your issue/PR number could not be read. Please set it again using -github-issue-number.");
+                return message.reply(
+                    "Your GitHub Personal Access Token could not been read. Please set it again using -github-info."
+                );
             }
         }
 
         // Post Comment function
         async function postComment(comment) {
             // GitHub Variables
-            const owner = "MLH-Fellowship";
-            const repo = "pod-3.1.3-team-4";
-            let issue = readIssue();
             let githubToken = readToken();
 
             // Intialise GitHub API
@@ -51,9 +41,9 @@ module.exports = {
 
             await octokit.rest.issues
                 .createComment({
-                    owner: owner,
-                    repo: repo,
-                    issue_number: issue,
+                    owner: args[0],
+                    repo: args[1],
+                    issue_number: args[2],
                     body: comment,
                 })
                 .then((result) => {
@@ -61,7 +51,9 @@ module.exports = {
                 })
                 .catch((error) => {
                     console.log(error);
-                    return message.reply("Posting your comment was unsuccessful. Please ensure you have set your GitHub token using -github and an issue/PR number using -github-issue-number and then try again.");
+                    return message.reply(
+                        "Posting your comment was unsuccessful. Please ensure you have set your GitHub token using -github and entered the information in the correct order of organisation name, repo name, issue/PR number and comment and then try again."
+                    );
                 });
         }
     },
