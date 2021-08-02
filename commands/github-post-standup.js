@@ -4,7 +4,7 @@ module.exports = {
     name: "github-post-standup",
     description: "Post a comment on a GitHub discussion",
     execute(command, message, args) {
-        // -github-post-comment: Posts desired comment on previously specified issue/PR
+        // -github-post-standup: Posts desired comment on a GitHub Discussion
         if (command === "github-post-standup") {
             postComment(args);
         }
@@ -31,7 +31,8 @@ module.exports = {
             const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
             const MyOctokit = Octokit.plugin(restEndpointMethods);
             let octokit = new MyOctokit({ auth: githubToken });
-            console.log(args);
+
+            // Post Discussion Comment
             await octokit.rest.teams
                 .createDiscussionCommentInOrg({
                     org: args[0],
