@@ -16,7 +16,7 @@ client.once("ready", () => {
     console.log("GitCord Bot is online");
 });
 
-// taking in the commandss
+// taking in the commands
 client.on("message", (message) => {
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
