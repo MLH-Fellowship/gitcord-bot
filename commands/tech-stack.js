@@ -1,3 +1,4 @@
+const { json } = require("express");
 var express = require("express");
 var router = express.Router();
 var request = require("request");
@@ -44,25 +45,12 @@ module.exports = {
             let url = args[0];
             const headers = {};
             let stacks = await getStacks(url, headers);
+            // stacks = JSON.stringify(stacks);
+            stacks = stacks.join(", ");
             // Return stacks to message
-            return message.reply("Got the tech-stacks!");
-            /*var options = {
-                url:
-                  "https://api.wappalyzer.com/live/v2/?urls=" +
-                  siteurl +
-                  "&recursive=false",
-                headers: { "x-api-key ":  wapAPI},
-                json: true,
-              };*/
-            /*request.get(options, function (error, response, body) {
-                  console.log(response);
-                  return message.reply(
-                    "Got the tech-stacks!"
-                );
-              });*/
-
-            // githubToken = args[0];
-            // writeToken(githubToken);
+            return message.reply(
+                "The website, " + url + " has been analysed and the technologies it uses are: " + stacks + " ."
+            );
         }
     },
 };
