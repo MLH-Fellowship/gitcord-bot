@@ -1,6 +1,4 @@
 const { json } = require("express");
-var express = require("express");
-var router = express.Router();
 var request = require("request");
 const Wappalyzer = require("wappalyzer");
 const options = {
