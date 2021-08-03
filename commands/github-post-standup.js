@@ -1,15 +1,12 @@
 const fs = require("fs");
 
 module.exports = {
-    name: "github-post-comment",
-    description: "Post a comment on GitHub Issue or PR",
+    name: "github-post-standup",
+    description: "Post a comment on a GitHub discussion",
     execute(command, message, args) {
-        // -github-post-comment: Posts desired comment on previously specified issue/PR
-        if (command === "github-post-comment") {
-            comment = args.slice(3);
-            comment = comment.join(" ");
-            readToken();
-            postComment(comment, args);
+        // -github-post-standup: Posts desired comment on a GitHub Discussion
+        if (command === "github-post-standup") {
+            postComment(args);
         }
 
         function readToken() {
@@ -25,7 +22,7 @@ module.exports = {
         }
 
         // Post Comment function
-        async function postComment(comment) {
+        async function postComment(args) {
             // GitHub Variables
             let githubToken = readToken();
 
@@ -35,23 +32,21 @@ module.exports = {
             const MyOctokit = Octokit.plugin(restEndpointMethods);
             let octokit = new MyOctokit({ auth: githubToken });
 
-            await octokit.rest.issues
-                .createComment({
-                    owner: args[0],
-                    repo: args[1],
-                    issue_number: args[2],
-                    body: comment,
+            // Post Discussion Comment
+            await octokit.rest.teams
+                .createDiscussionCommentInOrg({
+                    org: args[0],
+                    team_slug: args[1],
+                    discussion_number: args[2],
+                    body: args[3],
                 })
                 .then((result) => {
                     return message.reply(
                         "Your comment '" +
-                            comment +
+                            args[3] +
                             "' has been posted on " +
-                            args[0] +
-                            "'s repo, " +
                             args[1] +
-                            " in issue/PR " +
-                            "#" +
+                            "'s discussion #" +
                             args[2] +
                             "."
                     );
@@ -59,7 +54,7 @@ module.exports = {
                 .catch((error) => {
                     console.log(error);
                     return message.reply(
-                        "Posting your comment was unsuccessful. Please ensure you have set your GitHub token using -github and entered the information in the correct order of organisation name, repo name, issue/PR number and comment and then try again."
+                        "Posting your comment was unsuccessful. Please ensure you have set your GitHub token using -github and entered the information in the correct order of organisation name, team name, discussion number and comment and then try again."
                     );
                 });
         }

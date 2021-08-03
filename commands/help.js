@@ -23,7 +23,7 @@ module.exports = {
         if (!args.length) {
             data.push('Here\'s a list of all my commands:');
             data.push(listCommands.map(listCommand => listCommand.name).join(', '));
-            data.push(`\nYou can send \`-help [command name]\` to get info on a specific command!`);
+            data.push("\nYou can send \-help [command name]\ to get info on a specific command!");
 
             return message.reply(data, { split: true })
                 .then(() => {
@@ -49,10 +49,10 @@ module.exports = {
             return message.reply('that\'s not a valid command!');
         }
 
-        data.push(`**Name:** ${listCommand.name}`);
+        data.push("**Name:** ${listCommand.name}");
 
         //if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
-        if (listCommand.description) data.push(`**Description:** ${listCommand.description}`);
+        if (listCommand.description) data.push("**Description:** ${listCommand.description}");
         //if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
 
         //data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
