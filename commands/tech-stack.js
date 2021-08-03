@@ -12,13 +12,12 @@ async function getStacks(url, headers) {
 
         // Optionally set additional request headers
         const headers = {};
-
         const site = await wappalyzer.open(url, headers);
 
         // Optionally capture and output errors
         site.on("error", console.error);
 
-        await site.analyze().then((result) => {
+        const analysis = await site.analyze().then((result) => {
             let stackList = [];
             //let results = JSON.stringify(result, null, 2);
             // console.log(result.technologies);
@@ -28,6 +27,7 @@ async function getStacks(url, headers) {
             return stackList;
         });
         await wappalyzer.destroy();
+        return analysis;
     } catch (err) {
         console.error(err);
     }
@@ -44,7 +44,7 @@ module.exports = {
             let url = args[0];
             const headers = {};
             let stacks = await getStacks(url, headers);
-            console.log(stacks);
+            // Return stacks to message
             return message.reply("Got the tech-stacks!");
             /*var options = {
                 url:
