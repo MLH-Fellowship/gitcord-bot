@@ -21,11 +21,10 @@ async function getStacks(url, headers) {
         await site.analyze().then((result) => {
             let stackList = [];
             //let results = JSON.stringify(result, null, 2);
-            console.log(result.technologies);
+            // console.log(result.technologies);
             result.technologies.forEach((tech) => {
                 stackList.push(tech.name);
             });
-
             return stackList;
         });
         await wappalyzer.destroy();
@@ -45,7 +44,7 @@ module.exports = {
             let url = args[0];
             const headers = {};
             let stacks = await getStacks(url, headers);
-            //console.log(stacks);
+            console.log(stacks);
             return message.reply("Got the tech-stacks!");
             /*var options = {
                 url:
