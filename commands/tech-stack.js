@@ -46,10 +46,15 @@ module.exports = {
             const headers = {};
             let stacks = await getStacks(url, headers);
             // stacks = JSON.stringify(stacks);
-            stacks = stacks.join(", ");
+            stacks = stacks.join("\r\n • ");
             // Return stacks to message
             return message.reply(
-                "The website, " + url + " has been analysed and the technologies it uses are: " + stacks + " ."
+                "The website, " +
+                    url +
+                    " has been analysed and the technologies it uses are: " +
+                    "\r\n" +
+                    " • " +
+                    stacks
             );
         }
     },
