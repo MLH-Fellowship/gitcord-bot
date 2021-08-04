@@ -20,6 +20,7 @@
   "dependencies": {
     "@octokit/plugin-rest-endpoint-methods": "^5.5.2",
     "chrome-launcher": "^0.14.0",
+    "csp_evaluator": "^1.0.2",
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
