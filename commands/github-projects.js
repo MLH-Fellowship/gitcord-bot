@@ -104,12 +104,13 @@ module.exports = {
                 name: columnName,
               })
                 .then((result) => {
-                    console.info(result.data);
+                    return message.reply("Your new column, " + columnName + " has been successfully created in project " + "#" + args[1] + "."
+                    );
                 })
                 .catch((error) => {
                     console.error(error);
                     return message.reply(
-                        "creating a column was unsuccessful. Please ensure you have set your GitHub token using -github and provided the correct project ID and a valid project name and then try again."
+                        "creating a column was unsuccessful. Please ensure you have set your GitHub token using -github and provided the correct project ID and a unique column name and then try again."
                     );
                 });
         }
