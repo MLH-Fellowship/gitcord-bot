@@ -93,15 +93,44 @@ module.exports = {
                 project_id: projectID,
               })
                 .then((result) => {
-                    return message.reply(
-                            "your project #" + projectID + ", '" + result.data.name +
-                                "' has been retrieved."
-                    );
+                    getColumns(projectID);
                 })
                 .catch((error) => {
                     console.error(error);
                     return message.reply(
                         "retrieving your project was unsuccessful. Please ensure you have set your GitHub token using -github and provided the correct project ID and then try again."
+                    );
+                });
+        }
+
+        // Get Columns Function
+        async function getColumns (projectID, args) {
+            // GitHub Variables
+            let githubToken = readToken();
+
+            // Intialise GitHub API
+            const { Octokit } = require("@octokit/core");
+            const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+            const MyOctokit = Octokit.plugin(restEndpointMethods);
+            let octokit = new MyOctokit({ auth: githubToken });
+
+            octokit.rest.projects.listColumns({
+                project_id: projectID,
+              })
+                .then((result) => {
+                    console.info(result.data);
+                    let columns = [];
+                    result.data.forEach((column) => {
+                        columns.push(column.name);
+                    })
+                    return message.reply(
+                        "your project #" + projectID + " has the following columns: " + columns
+                    );
+                })
+                .catch((error) => {
+                    console.error(error);
+                    return message.reply(
+                        "Retrieving the columns for your project was unsuccessful. Please ensure you have set your GitHub token using -github and provided the correct project ID and then try again."
                     );
                 });
         }
