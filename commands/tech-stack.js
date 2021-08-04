@@ -41,7 +41,6 @@ module.exports = {
             let url = args[0];
             const headers = {};
             let stacks = await getStacks(url, headers);
-            // stacks = JSON.stringify(stacks);
             stacks = stacks.join("\r\n • ");
             // Return stacks to message
             return message.reply(

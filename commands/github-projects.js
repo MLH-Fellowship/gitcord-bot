@@ -122,9 +122,11 @@ module.exports = {
                     let columns = [];
                     result.data.forEach((column) => {
                         columns.push(column.name);
-                    })
+                    });
+                    columns = columns.join("\r\n • ");
                     return message.reply(
-                        "your project #" + projectID + " has the following columns: " + columns
+                        "your project #" + projectID + " has the following columns: " + "\r\n" +
+                        " • " + columns
                     );
                 })
                 .catch((error) => {
