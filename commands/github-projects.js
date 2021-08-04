@@ -39,8 +39,15 @@ module.exports = {
                 )
             } else if (args[0] === "select-project" && args[1]) {
                 getProject(args[1]);
-            }
-        }
+
+            // Select Column
+        } else if (args[0] === "select-column" && !args[1]) {
+            return message.reply(
+                "please provide your GitHub Column ID in order to select a column."
+            )
+        } else if (args[0] === "select-column" && args[1]) {
+            getCards(args[1]);
+        };
 
         function readToken() {
             try {
@@ -174,8 +181,8 @@ module.exports = {
                 });
         }
 
-        // Get Card Function
-        async function getCard (cardID, args) {
+        // Get Cards Function
+        async function getCards (columnID, args) {
             // GitHub Variables
             let githubToken = readToken();
 
@@ -185,23 +192,23 @@ module.exports = {
             const MyOctokit = Octokit.plugin(restEndpointMethods);
             let octokit = new MyOctokit({ auth: githubToken });
 
-            octokit.rest.projects.getCard({
-                card_id: cardID,
+            octokit.rest.projects.listCards({
+                column_id: columnID,
               })
                 .then((result) => {
                     console.info(result.data);
                     return message.reply(
-                        "Card #" + cardID + " has been successfully retrieved" 
+                        "Cards in column #" + columnID + " have been successfully retrieved." 
                     );
                 })
                 .catch((error) => {
                     console.error(error);
                     return message.reply(
-                        "Retrieving your project was unsuccessful. Please ensure you have set your GitHub token using -github and provided the correct project ID and then try again."
+                        "Retrieving the cards in this column was unsuccessful. Please ensure you have set your GitHub token using -github and provided the correct column ID and then try again."
                     );
                 });
         }
-
+    }
 
     },
 };
