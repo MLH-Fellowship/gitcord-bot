@@ -57,7 +57,7 @@ module.exports = {
                     );
                 })
                 .catch((error) => {
-                    console.log(error);
+                    console.info(error);
                     return message.reply(
                         "Posting your comment was unsuccessful. Please ensure you have set your GitHub token using -github and entered the information in the correct order of organisation name, repo name, issue/PR number and comment and then try again."
                     );

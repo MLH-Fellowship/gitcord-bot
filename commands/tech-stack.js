@@ -18,8 +18,6 @@ async function getStacks(url, headers) {
 
         const analysis = await site.analyze().then((result) => {
             let stackList = [];
-            //let results = JSON.stringify(result, null, 2);
-            // console.log(result.technologies);
             result.technologies.forEach((tech) => {
                 stackList.push(tech.name);
             });
