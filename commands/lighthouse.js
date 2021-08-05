@@ -44,7 +44,7 @@ module.exports = {
       let url = args[0];
       getStats(url)
         .then((results) => {
-          const perfscore = results.lhr.categories.performance.score || "NA";
+          const perfscore = results.lhr.categories.performance.score * 100 || "NA";
           const accessibiltyScore =
             results.lhr.categories.accessibility.score * 100 || "NA";
           const bestPracticeScore =
