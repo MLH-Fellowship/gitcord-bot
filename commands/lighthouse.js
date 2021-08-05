@@ -19,6 +19,11 @@ async function getStats(url) {
       logLevel: 'info', output: 'html',
       onlyCategories: ["performance", 
       "accessibility", "best-practices", "seo"],
+      audits: [
+        "first-meaningful-paint",
+        "first-cpu-idle",
+        "byte-efficiency/uses-optimized-images",
+      ],
       port: chrome.port,
     };
     return lighthouse(url, opts).then((results) => {
