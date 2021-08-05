@@ -14,14 +14,17 @@ async function getStats(url) {
   console.log('Performance score was', runnerResult.lhr.categories.performance.score * 100);
 
   await chrome.kill();*/
-  return chromeLauncher.launch().then((chrome) => {
+  return chromeLauncher.launch({chromeFlags: ['--headless']}).then((chrome) => {
     const opts = {
+      logLevel: 'info', output: 'html',
+      onlyCategories: ["performance", 
+      "accessibility", "best-practices", "seo"],
       port: chrome.port,
     };
     return lighthouse(url, opts).then((results) => {
       return chrome
         .kill()
-        .then(() => results.report)
+        .then(() => results)
         .catch((error) => {
           console.log(error);
         });
@@ -40,9 +43,27 @@ module.exports = {
       let url = args[0];
       getStats(url)
         .then((results) => {
-          console.dir(results);
+          const perfscore=results.lhr.categories.performance.score || "NA";
+          const accessibiltyScore=results.lhr.categories.accessibility.score?results.lhr.categories.accessibility.score * 100:"NA";
+          const bestPracticeScore=results.lhr.categories["best-practices"].score * 100 || "NA";
+          const seoScore=results.lhr
+          .categories.seo.score * 100 || "NA";
           //results.lhr.categories.performance.score * 100
-          return message.reply("Got the lighthouse stats.");
+          return message.reply(
+            "The website, " +
+                url +
+                " has been analysed and the lighthouse stats are: " +
+                "\r\n" +
+                " • Performance Score: " +perfscore +
+                "\r\n" +
+                " • Accessibility Score: " +accessibiltyScore +
+                "\r\n" +
+                " • Best Practices Score: " +bestPracticeScore +
+                "\r\n" +
+                " • SEO Score: " +seoScore 
+        
+        );
+       
         })
         .catch((error) => {
           console.log(error);
