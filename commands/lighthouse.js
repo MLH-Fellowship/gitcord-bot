@@ -21,6 +21,7 @@ async function getStats(url) {
         ],
         port: chrome.port,
       };
+      opts.strategy = "desktop";
       return lighthouse(url, opts).then((results) => {
         return chrome
           .kill()
@@ -52,7 +53,7 @@ module.exports = {
           return message.reply(
             "The website, " +
               url +
-              " has been analysed and the lighthouse stats are: " +
+              " has been analysed and the lighthouse stats for the desktop view are: " +
               "\r\n" +
               " • Performance Score: " +
               perfscore +
