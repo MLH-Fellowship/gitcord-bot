@@ -1,5 +1,5 @@
 const fs = require("fs");
-const db = require("../database")
+const db = require("../database.js")
 
 module.exports = {
     name: "github-info",
@@ -22,6 +22,7 @@ module.exports = {
         // -github-info: Get contents of personal token
         if (command === "github-info") {
             if (!args.length) {
+                db.execute(1);
                 return message.reply("you didn't provide a GitHub Personal Token.");
             } else {
                 githubToken = args[0];
