@@ -18,8 +18,6 @@ async function getStacks(url, headers) {
 
         const analysis = await site.analyze().then((result) => {
             let stackList = [];
-            //let results = JSON.stringify(result, null, 2);
-            // console.log(result.technologies);
             result.technologies.forEach((tech) => {
                 stackList.push(tech.name);
             });
@@ -41,7 +39,6 @@ module.exports = {
             let url = args[0];
             const headers = {};
             let stacks = await getStacks(url, headers);
-            // stacks = JSON.stringify(stacks);
             stacks = stacks.join("\r\n • ");
             // Return stacks to message
             return message.reply(
