@@ -8,27 +8,28 @@ require("dotenv").config();
 module.exports = {
   // Configure the database connection.
   execute (discord_id){
+    console.log(discord_id);
     const config = {
-    user: "damir",
-    password: process.env.COCKROACH_DB_PASSWORD,
-    host: process.env.COCKROACH_DB_HOST,
-    database: process.env.COCKROACH_DB_DATABASE,
-    port: 26257,
-    ssl: {
-      rejectUnauthorized: false,
-    },
-    // For secure connection:
-    ssl: {
-      ca: fs.readFileSync('./certs/cc-ca.crt')
-          .toString()
-    }
-  };
+      user: "damir",
+      password: process.env.COCKROACH_DB_PASSWORD,
+      host: process.env.COCKROACH_DB_HOST,
+      database: process.env.COCKROACH_DB_DATABASE,
+      port: 26257,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+      // For secure connection:
+      ssl: {
+        ca: fs.readFileSync('./certs/cc-ca.crt')
+            .toString()
+      }
+    };
 
   // Create a connection pool
 
   const pool = new Pool(config);
 
-  // Wrapper for a transaction.  This automatically re-calls the operation with
+  // This automatically re-calls the operation with
   // the client as an argument as long as the database server asks for
   // the transaction to be retried.
 
@@ -57,7 +58,6 @@ module.exports = {
       }
     }
   }
-  console.log("HERE 2");
   // Creates a table and inserts some initial values.
 
   async function initTable(client, callback, discord_id) {
@@ -75,31 +75,20 @@ module.exports = {
   async function checkForToken(client, callback, discord_id) {
     const selectGitHubToken = "SELECT github_token FROM github_tokens WHERE id = " + discord_id + ";"; // SQL INJECTION POSSIBLE (FIX ASAP)
     console.log(selectGitHubToken);
-    await client.query(selectGitHubToken, (err, res) => {
+    const query = await client.query(selectGitHubToken, (err, res) => {
       if (err) {
-        return callback(err);
+        return false;
       } else if (res.rows.length === 0) {
-        console.log("GitHub token not found in table");
-        return callback(err);
+        console.log('GitHub token not found in table');
+        return false;
       }
       var token = res.rows[0].github_token;
-      console.log(token)
+      return token;
     });
 
-    // const updateFromBalanceStatement = "UPDATE accounts SET balance = balance - $1 WHERE id = $2 ;";
-    // const updateFromValues = [amount, from];
-    // await client.query(updateFromBalanceStatement, updateFromValues, callback);
-    //
-    // const updateToBalanceStatement = "UPDATE accounts SET balance = balance + $1 WHERE id = $2 ;";
-    // const updateToValues = [amount, to];
-    // await client.query(updateToBalanceStatement, updateToValues, callback);
-    //
-    // const selectBalanceStatement = "SELECT id, balance FROM accounts;";
-    // await client.query(selectBalanceStatement, callback);
+    console.log("QUERY " + query);
   }
-
     // Run the transactions in the connection pool
-
     (async () => {
       // Connect to database
       const client = await pool.connect();
@@ -109,7 +98,7 @@ module.exports = {
         if (err) throw err;
 
         if (res.rows.length > 0) {
-          console.log("New GitHub tokens:");
+          console.log("Current GitHub tokens:");
           res.rows.forEach((row) => {
             console.log(row);
           });
@@ -122,7 +111,7 @@ module.exports = {
 
       // Transfer funds in transaction retry wrapper
       console.log("Checking for tokens...");
-      await retryTxn(0, 15, client, checkForToken, cb, 1);
+      await retryTxn(0, 15, client, checkForToken, cb, discord_id);
 
       // Exit program
       process.exit();

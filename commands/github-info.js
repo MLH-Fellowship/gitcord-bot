@@ -22,7 +22,8 @@ module.exports = {
         // -github-info: Get contents of personal token
         if (command === "github-info") {
             if (!args.length) {
-                db.execute(1);
+                const github_token = db.execute(1);
+                console.log("Github token is " + github_token);
                 return message.reply("you didn't provide a GitHub Personal Token.");
             } else {
                 githubToken = args[0];
