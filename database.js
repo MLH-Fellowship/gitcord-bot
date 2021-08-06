@@ -46,10 +46,10 @@ async function retryTxn(n, max, client, operation, callback) {
       if (err.code !== "40001") {
         return callback(err);
       } else {
-        console.log("Transaction failed. Retrying transaction.");
+        console.log("Database check failed. Retrying.");
         console.log(err.message);
         await client.query("ROLLBACK;", () => {
-          console.log("Rolling back transaction.");
+          console.log("Rolling back database check.");
         });
         await new Promise((r) => setTimeout(r, 2 ** n * 1000));
       }
@@ -57,50 +57,45 @@ async function retryTxn(n, max, client, operation, callback) {
   }
 }
 
-// This function is called within the first transaction. It creates a table and inserts some initial values.
+// Creates a table and inserts some initial values.
 
 async function initTable(client, callback) {
   await client.query(
-    "CREATE TABLE IF NOT EXISTS accounts (id INT PRIMARY KEY, balance INT);",
+    "CREATE TABLE IF NOT EXISTS github_tokens (id INT PRIMARY KEY, github_token VARCHAR(40));",
     callback
   );
-  await client.query(
-    "INSERT INTO accounts (id, balance) VALUES (1, 1000), (2, 250);",
-    callback
-  );
-  await client.query("SELECT id, balance FROM accounts;", callback);
+  // await client.query(
+  //   "INSERT INTO github_tokens (id, github_token) VALUES (1, 'test_token'), (2, 'test_token_2');",
+  //   callback
+  // );
+  await client.query("SELECT id, github_token FROM github_tokens;", callback);
 }
 
-async function transferFunds(client, callback) {
-  const from = 1;
-  const to = 2;
-  const amount = 100;
-  const selectFromBalanceStatement = "SELECT balance FROM accounts WHERE id = 1 ;";
-  console.log(selectFromBalanceStatement);
+async function checkForToken(client, callback) {
+  const selectGitHubToken = "SELECT github_token FROM github_tokens WHERE id = 1 ;";
+  console.log(selectGitHubToken);
   const selectFromValues = [from];
-  await client.query(selectFromBalanceStatement, selectFromValues, (err, res) => {
+  await client.query(selectGitHubToken, selectFromValues, (err, res) => {
     if (err) {
       return callback(err);
     } else if (res.rows.length === 0) {
-      console.log("account not found in table");
+      console.log("GitHub token not found in table");
       return callback(err);
     }
-    var acctBal = res.rows[0].balance;
-    if (acctBal < amount) {
-      return callback(new Error("insufficient funds"));
-    }
+    var token = res.rows[0].github_token;
+    console.log(token)
   });
 
-  const updateFromBalanceStatement = "UPDATE accounts SET balance = balance - $1 WHERE id = $2 ;";
-  const updateFromValues = [amount, from];
-  await client.query(updateFromBalanceStatement, updateFromValues, callback);
-
-  const updateToBalanceStatement = "UPDATE accounts SET balance = balance + $1 WHERE id = $2 ;";
-  const updateToValues = [amount, to];
-  await client.query(updateToBalanceStatement, updateToValues, callback);
-
-  const selectBalanceStatement = "SELECT id, balance FROM accounts;";
-  await client.query(selectBalanceStatement, callback);
+  // const updateFromBalanceStatement = "UPDATE accounts SET balance = balance - $1 WHERE id = $2 ;";
+  // const updateFromValues = [amount, from];
+  // await client.query(updateFromBalanceStatement, updateFromValues, callback);
+  //
+  // const updateToBalanceStatement = "UPDATE accounts SET balance = balance + $1 WHERE id = $2 ;";
+  // const updateToValues = [amount, to];
+  // await client.query(updateToBalanceStatement, updateToValues, callback);
+  //
+  // const selectBalanceStatement = "SELECT id, balance FROM accounts;";
+  // await client.query(selectBalanceStatement, callback);
 }
 
 // Run the transactions in the connection pool
@@ -114,7 +109,7 @@ async function transferFunds(client, callback) {
     if (err) throw err;
 
     if (res.rows.length > 0) {
-      console.log("New account balances:");
+      console.log("New GitHub tokens:");
       res.rows.forEach((row) => {
         console.log(row);
       });
@@ -127,7 +122,7 @@ async function transferFunds(client, callback) {
 
   // Transfer funds in transaction retry wrapper
   console.log("Transferring funds...");
-  await retryTxn(0, 15, client, transferFunds, cb);
+  await retryTxn(0, 15, client, checkForToken, cb);
 
   // Exit program
   process.exit();

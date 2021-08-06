@@ -1,4 +1,5 @@
 const fs = require("fs");
+const db = require("../database")
 
 module.exports = {
     name: "github-info",
