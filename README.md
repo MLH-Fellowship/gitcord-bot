@@ -1,45 +1,104 @@
-# Pre Fellowship Template
+![GitCord Readme Header](https://socialify.git.ci/MLH-Fellowship/pod-3.1.3-team-4/image?description=1&descriptionEditable=GitCord%20Bot%20-%20The%20ultimate%20Discord%20Bot%20that%20helps%20you%20manage%20your%20GitHub%20repos%20from%20Discord&issues=1&logo=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F869311504774758420%2F873020508877225985%2FWhite.png&owner=1&pulls=1&stargazers=1&theme=Dark)
 
-## General Info
+<div align="center">
+<img src="https://forthebadge.com/images/badges/built-by-developers.svg">
+<img src="https://forthebadge.com/images/badges/made-with-javascript.svg">
+</div>
 
-This is a template to help you get started with your projects. Find out more information inside of the Fellow Handbook.
+# 📚 Table of Contents
+- [👁 Overview](#-overview)
+- [⚡ Installation](#-installation)
+  - Discord Server
+  - Development
+- [⚙ Usage](#-usage)
+  - Help Docs
+- [👀 Demo](#-demo)
+  - Interactive GIF
+  - Screenshots
+- [💡 Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
+- [🎯 GitCord Bot Features](#-gitcord-bot-features)
+- [👥 The Team](#-the-team)
+- [💻 Technologies](#-technologies)
+  - Bot Technologies
+  - Sponsor Technologies
+- [⚖ License](#-license)
+- [🙋 Contributing](#-contributing)
+- [🔗 Further Links](#-further-links)
 
-This template has a `main` and `staging` branch already setup.
+# 👁 Overview
 
--   Code will only be merged into `main` once your Pod Leader has reviewed your code. At the end of each week, there will be a code freeze. Your Pod Leader will review it before it's merged.
+Add an overview of what GitCord bot is, what it does and who it's for
 
--   During the week, you'll merge code into `staging`.
+# ⚡ Installation
 
-## Useful commands
+## Discord Server
 
-Switch branches:
+Love our bot and want it to use it for your Discord server. Read our installation guide and then read the [usage instructions](#usage-instrucutions) to discover what commands can use.
 
-```bash
-git checkout <branch-name>
-```
+## Development
 
-Make new branch and switch to it:
+Looking to locally host GitCord Bot yourself or installing it to contribute to our codebase? Here's a step by step guide on how to install and run our bot in a localhost environment.
 
-```bash
-git checkout -b <branch-name>
-```
+# ⚙ Usage
 
-## Spike 1: Discord Bot
+Here's how to use our awesome Discord Bot. Insert commands, command format and functionality
 
-For the first spike, we are developing a **Discord bot** that is responsive and operates in our test discord server.
+## Help Docs
 
-### Install Instructions
+For a more detailed in-depth guide, visit our website where our full help documentation resides.
 
-1. Install node.js and npm.
+# 👀 Demo
 
-2. Run `npm install` to from the `pod-3.1.3-team-4` directory to install required node modules from `package.json`.
+## Interactive GIF
 
-3. Run `npm start`to activate the bot. Go to the Discord Server to run the bot commands.
+Record some animated GIFs to showcase Bot functionality + possibly website
 
-Texting commands like `-pong` and `-works` returns values `pong!` and `kinda`. The current command handling is simple, but it's not a good practice for Discord bots to keep all commands within one file like `main.js`.
+## Screenshots
 
-### Further development
+Add some screenshots with alt text and headings
 
--   Create command-specific files and import them with `.get().execute()`. _Nandini is currently working on this in another branch_
+# 💡 Why We Built GitCord Bot
 
--   Integrate the GitHub API with the Discord bot. _In github-api branch_
+Add our inspiration - see Discord channel - behind our original Bot idea, why we wanted to make a Discord Bot and use the GitHub API as well as the reasoning behind functionality that we've been inspired to create
+
+# 🎯 GitCord Bot Features
+
+Add a list of the primary GitCord Bot features (could combine with screenshot section and just have animated demo GIFs?)
+
+# 👥 The Team
+
+The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials
+
+## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
+
+Insert Bio Image
+
+Why I was inspired to create Discord Bot, what I contributed/enjoyed about the project
+
+## Nandini Jain - @Inoxia25
+
+Insert as above
+
+## Damir Temir - @dtemir
+
+Insert as above
+
+# 💻 Technologies
+
+## Sponsor Technologies
+
+Cockroach DB
+.Tech Domain
+Linode
+
+# ⚖ License
+
+Pick a license - see Trainual for details
+
+# 🙋 Contributing
+
+Similar to Installation - Developer but details on how to submit PRs, branching methodologies and any coding conventions - style/variable names etc.
+
+# 🔗 Further Links
+
+Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.
