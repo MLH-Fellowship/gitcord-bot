@@ -35,8 +35,6 @@ module.exports = {
     name: "tech-stack",
     description: "Command to return tech stack used by a website.",
     async execute(command, message, args) {
-        wapAPI = "MDv8PvksT0aJkwARi1iah5ZvLroTzjEJ5q2I1zpU";
-
         if (!args.length) {
             return message.reply("Please provide the site url to identify its tech-stack.");
         } else {
