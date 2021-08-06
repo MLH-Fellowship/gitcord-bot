@@ -6,23 +6,99 @@
 </div>
 
 # 📚 Table of Contents
-- Overview
-- ⚡ Installation
+- [👁 Overview](#-overview)
+- [⚡ Installation](#-installation)
   - Discord Server
   - Development
-- Usage
+- [⚙ Usage](#-usage)
   - Help Docs
-- Demo
+- [👀 Demo](#-demo)
   - Interactive GIF
   - Screenshots
-- Why We Built GitCord Bot
-- GitCord Bot Features
-- The Team
-- Technologies
+- [💡 Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
+- [🎯 GitCord Bot Features](#-gitcord-bot-features)
+- [👥 The Team](#-the-team)
+- [💻 Technologies](#-technologies)
   - Bot Technologies
   - Sponsor Technologies
-- License
-- Contributing
-- Further Links
+- [⚖ License](#-license)
+- [🙋 Contributing](#-contributing)
+- [🔗 Further Links](#-further-links)
 
-> Add icons to section headings?
+# 👁 Overview
+
+Add an overview of what GitCord bot is, what it does and who it's for
+
+# ⚡ Installation
+
+## Discord Server
+
+Love our bot and want it to use it for your Discord server. Read our installation guide and then read the [usage instructions](#usage-instrucutions) to discover what commands can use.
+
+## Development
+
+Looking to locally host GitCord Bot yourself or installing it to contribute to our codebase? Here's a step by step guide on how to install and run our bot in a localhost environment.
+
+# ⚙ Usage
+
+Here's how to use our awesome Discord Bot. Insert commands, command format and functionality
+
+## Help Docs
+
+For a more detailed in-depth guide, visit our website where our full help documentation resides.
+
+# 👀 Demo
+
+## Interactive GIF
+
+Record some animated GIFs to showcase Bot functionality + possibly website
+
+## Screenshots
+
+Add some screenshots with alt text and headings
+
+# 💡 Why We Built GitCord Bot
+
+Add our inspiration - see Discord channel - behind our original Bot idea, why we wanted to make a Discord Bot and use the GitHub API as well as the reasoning behind functionality that we've been inspired to create
+
+# 🎯 GitCord Bot Features
+
+Add a list of the primary GitCord Bot features (could combine with screenshot section and just have animated demo GIFs?)
+
+# 👥 The Team
+
+The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials
+
+## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
+
+Insert Bio Image
+
+Why I was inspired to create Discord Bot, what I contributed/enjoyed about the project
+
+## Nandini Jain - @Inoxia25
+
+Insert as above
+
+## Damir Temir - @dtemir
+
+Insert as above
+
+# 💻 Technologies
+
+## Sponsor Technologies
+
+Cockroach DB
+.Tech Domain
+Linode
+
+# ⚖ License
+
+Pick a license - see Trainual for details
+
+# 🙋 Contributing
+
+Similar to Installation - Developer but details on how to submit PRs, branching methodologies and any coding conventions - style/variable names etc.
+
+# 🔗 Further Links
+
+Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.
