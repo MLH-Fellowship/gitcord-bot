@@ -1,45 +1,28 @@
-# Pre Fellowship Template
+![GitCord Readme Header](https://socialify.git.ci/MLH-Fellowship/pod-3.1.3-team-4/image?description=1&descriptionEditable=GitCord%20Bot%20-%20The%20ultimate%20Discord%20Bot%20that%20helps%20you%20manage%20your%20GitHub%20repos%20from%20Discord&issues=1&logo=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F869311504774758420%2F873020508877225985%2FWhite.png&owner=1&pulls=1&stargazers=1&theme=Dark)
 
-## General Info
+<div align="center">
+<img src="https://forthebadge.com/images/badges/built-by-developers.svg">
+<img src="https://forthebadge.com/images/badges/made-with-javascript.svg">
+</div>
 
-This is a template to help you get started with your projects. Find out more information inside of the Fellow Handbook.
+# 📚 Table of Contents
+- Overview
+- ⚡ Installation
+  - Discord Server
+  - Development
+- Usage
+  - Help Docs
+- Demo
+  - Interactive GIF
+  - Screenshots
+- Why We Built GitCord Bot
+- GitCord Bot Features
+- The Team
+- Technologies
+  - Bot Technologies
+  - Sponsor Technologies
+- License
+- Contributing
+- Further Links
 
-This template has a `main` and `staging` branch already setup.
-
--   Code will only be merged into `main` once your Pod Leader has reviewed your code. At the end of each week, there will be a code freeze. Your Pod Leader will review it before it's merged.
-
--   During the week, you'll merge code into `staging`.
-
-## Useful commands
-
-Switch branches:
-
-```bash
-git checkout <branch-name>
-```
-
-Make new branch and switch to it:
-
-```bash
-git checkout -b <branch-name>
-```
-
-## Spike 1: Discord Bot
-
-For the first spike, we are developing a **Discord bot** that is responsive and operates in our test discord server.
-
-### Install Instructions
-
-1. Install node.js and npm.
-
-2. Run `npm install` to from the `pod-3.1.3-team-4` directory to install required node modules from `package.json`.
-
-3. Run `npm start`to activate the bot. Go to the Discord Server to run the bot commands.
-
-Texting commands like `-pong` and `-works` returns values `pong!` and `kinda`. The current command handling is simple, but it's not a good practice for Discord bots to keep all commands within one file like `main.js`.
-
-### Further development
-
--   Create command-specific files and import them with `.get().execute()`. _Nandini is currently working on this in another branch_
-
--   Integrate the GitHub API with the Discord bot. _In github-api branch_
+> Add icons to section headings?
