@@ -67,7 +67,7 @@ Add a list of the primary GitCord Bot features (could combine with screenshot se
 
 # 👥 The Team
 
-The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials
+The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials. Also, how we worked as a team, how we used GitHub, branches, Projects etc.
 
 ## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
 
