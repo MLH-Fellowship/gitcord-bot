@@ -1,31 +1,43 @@
 require("dotenv").config();
+
+const fs = require("fs");
 const Discord = require("discord.js");
+let prefix='-';
 const client = new Discord.Client();
-const tester = require("./commands/testing");
-const githubCommands = require("./commands/github");
-const helpCommand =require("./commands/help");
-const prefix = "-";
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-// checking if bot is ready
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
+
 client.once("ready", () => {
-    console.log("Encourage Bot is online");
+    console.log("GitCord Bot is online");
 });
-
-// taking in the commandss
+// taking in the commands
 client.on("message", (message) => {
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
 
-    if (command.includes("github")) { 
-        githubCommands.botMessage.call(message, command, args);
-    } else if (command === "help"){
-        helpCommand.botMessage.call(message,command,args);
+    // Message and Command logging
+    console.log("Message is:" + message.content);
+    console.log("Command is:" + command);
+
+    if (!client.commands.has(command)) {
+        console.log("Command does not exist in github.js");
+        return;
     }
-     else {
-        tester.botMessage.call(message, command, args);
-    }
+
+	try {
+		client.commands.get(command).execute(command, message, args);
+	} catch (error) {
+		console.error(error);
+		message.reply('there was an error trying to execute that command!');
+	}
 });
 
 // bot token

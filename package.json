@@ -18,8 +18,15 @@
   },
   "homepage": "https://github.com/MLH-Fellowship/pod-3.1.3-team-4#readme",
   "dependencies": {
+    "@octokit/plugin-rest-endpoint-methods": "^5.5.2",
+    "chrome-launcher": "^0.14.0",
     "discord.js": "^12.5.3",
-    "octonode": "^0.10.2"
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "lighthouse": "^8.2.0",
+    "octokit": "^1.1.0",
+    "request": "^2.88.2",
+    "wappalyzer": "^6.7.11"
   },
   "devDependencies": {
     "dotenv": "^10.0.0"
