@@ -44,16 +44,7 @@ module.exports = {
                 })
                 .then((result) => {
                     return message.reply(
-                        "Your comment '" +
-                            comment +
-                            "' has been posted on " +
-                            args[0] +
-                            "'s repo, " +
-                            args[1] +
-                            " in issue/PR " +
-                            "#" +
-                            args[2] +
-                            "."
+                        `Your comment, "${comment}" has been posted on ${args[0]}'s repo, ${args[1]} in issue/PR #${args[2]}.`
                     );
                 })
                 .catch((error) => {
