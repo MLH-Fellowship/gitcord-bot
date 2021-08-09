@@ -7,47 +7,41 @@ module.exports = {
     name: "github-projects",
     description: "GitHub Project Functionality",
     execute(command, message, args) {
-        // -github-projects: Selects GitHub Project Fnctionality
+        // -github-projects: Selects GitHub Project Functionality
         let octokit = new MyOctokit({ auth: readToken() });
-        if (command === "github-projects") {
-            // TODO: Refactor into Switch Statement - see Code Freeze PR Notes
-            if (!args[0]) {
+        switch (true) {
+            case (command = "github-projects" && !args[0]):
                 return message.reply(
                     "add create (-github-projects create-project) to create a new project or select (-github-projects select-project) to select an existing project."
                 );
-
-                // Create Project
-            } else if (args[0] === "create-project" && !args[1]) {
+            case (args[0] = "create-project" && !args[1]):
                 return message.reply(
                     "to create a new GitHub Project, add create followed by the owner, repo and project title (-github-project create-project repo-owner repo-name project-title)."
                 );
-            } else if (args[0] === "create-project" && args[1]) {
+            case (args[0] = "create-project" && args[1]):
                 let projectTitle = args.slice(2);
                 projectTitle = projectTitle.join(" ");
                 createProject(projectTitle, octokit);
-
-                // Create Column
-            } else if (args[0] === "create-column" && !args[1]) {
+                break;
+            case (args[0] = "create-column" && !args[1]):
                 return message.reply(
                     "to create a new column, add create-column followed by project id and name (-github-project create-column project-id column-name)."
                 );
-            } else if (args[0] === "create-column" && args[1]) {
+            case (args[0] = "create-project" && args[1]):
                 let columnName = args.slice(2);
                 columnName = columnName.join(" ");
                 createColumn(columnName, octokit);
-
-                // Select Project
-            } else if (args[0] === "select-project" && !args[1]) {
+                break;
+            case (args[0] = "select-project" && !args[1]):
                 return message.reply("please provide your GitHub Project ID in order to select a project.");
-            } else if (args[0] === "select-project" && args[1]) {
+            case (args[0] = "select-project" && args[1]):
                 getProject(args[1], octokit);
-
-                // Select Column
-            } else if (args[0] === "select-column" && !args[1]) {
+                break;
+            case (args[0] = "select-column" && !args[1]):
                 return message.reply("please provide your GitHub Column ID in order to select a column.");
-            } else if (args[0] === "select-column" && args[1]) {
+            case (args[0] = "select-column" && args[1]):
                 getCards(args[1]), octokit;
-            }
+                break;
         }
 
         function readToken() {
