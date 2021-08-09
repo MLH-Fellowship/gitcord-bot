@@ -4,8 +4,6 @@ module.exports = {
     name: "github-info",
     description: "Get GitHub Personal Access Token",
     execute(command, message, args) {
-        let githubToken = null;
-
         function writeToken(githubToken) {
             try {
                 console.info("GitHub token is " + githubToken);
@@ -21,7 +19,7 @@ module.exports = {
             if (!args.length) {
                 return message.reply("you didn't provide a GitHub Personal Token.");
             } else {
-                githubToken = args[0];
+                let githubToken = args[0];
                 writeToken(githubToken);
                 return message.reply(
                     "GitHub auth was successful. Use -github-issue-number with the number of the issue you'd like to comment on."
