@@ -9,7 +9,7 @@ module.exports = {
         function writeToken(githubToken) {
             try {
                 console.info("GitHub token is " + githubToken);
-                const data = fs.writeFileSync("./github-token.txt", githubToken);
+                const data = fs.writeFileSync("./.github-token.txt", githubToken);
             } catch (err) {
                 console.error(err);
                 return message.reply(
