@@ -1,4 +1,7 @@
 const fs = require("fs");
+const { Octokit } = require("@octokit/core");
+const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+const MyOctokit = Octokit.plugin(restEndpointMethods);
 
 module.exports = {
     name: "github-post-comment",
@@ -8,8 +11,8 @@ module.exports = {
         if (command === "github-post-comment") {
             let comment = args.slice(3);
             comment = comment.join(" ");
-            readToken();
-            postComment(comment, args);
+            let octokit = new MyOctokit({ auth: readToken() });
+            postComment(comment, octokit);
         }
 
         function readToken() {
@@ -25,16 +28,7 @@ module.exports = {
         }
 
         // Post Comment function
-        async function postComment(comment) {
-            // GitHub Variables
-            let githubToken = readToken();
-
-            // Intialise GitHub API
-            const { Octokit } = require("@octokit/core");
-            const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
-            const MyOctokit = Octokit.plugin(restEndpointMethods);
-            let octokit = new MyOctokit({ auth: githubToken });
-
+        async function postComment(comment, octokit) {
             await octokit.rest.issues
                 .createComment({
                     owner: args[0],

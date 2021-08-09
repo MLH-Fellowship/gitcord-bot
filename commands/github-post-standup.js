@@ -1,4 +1,7 @@
 const fs = require("fs");
+const { Octokit } = require("@octokit/core");
+const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+const MyOctokit = Octokit.plugin(restEndpointMethods);
 
 module.exports = {
     name: "github-post-standup",
@@ -8,7 +11,8 @@ module.exports = {
         if (command === "github-post-standup") {
             let comment = args.slice(3);
             comment = comment.join(" ");
-            postComment(comment, args);
+            let octokit = new MyOctokit({ auth: readToken() });
+            postComment(comment, octokit);
         }
 
         function readToken() {
@@ -24,17 +28,7 @@ module.exports = {
         }
 
         // Post Comment function
-        async function postComment(comment, args) {
-            // GitHub Variables
-            let githubToken = readToken();
-
-            // Intialise GitHub API
-            const { Octokit } = require("@octokit/core");
-            const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
-            const MyOctokit = Octokit.plugin(restEndpointMethods);
-            let octokit = new MyOctokit({ auth: githubToken });
-
-            // Post Discussion Comment
+        async function postComment(comment, octokit) {
             await octokit.rest.teams
                 .createDiscussionCommentInOrg({
                     org: args[0],
@@ -44,7 +38,7 @@ module.exports = {
                 })
                 .then((result) => {
                     return message.reply(
-                        `Your comment ${comment} has been posted on ${args[1]}'s discussion #${args[2]}.` 
+                        `Your comment ${comment} has been posted on ${args[1]}'s discussion #${args[2]}.`
                     );
                 })
                 .catch((error) => {

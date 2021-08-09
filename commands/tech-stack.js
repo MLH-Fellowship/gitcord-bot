@@ -42,12 +42,8 @@ module.exports = {
             stacks = stacks.join("\r\n • ");
             // Return stacks to message
             return message.reply(
-                "The website, " +
-                    url +
-                    " has been analysed and the technologies it uses are: " +
-                    "\r\n" +
-                    " • " +
-                    stacks
+                `The website, ${url} has been analysed and the technologies it uses are:
+                • ${stacks}`
             );
         }
     },
