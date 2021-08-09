@@ -1,4 +1,4 @@
-const fs = require("fs");
+const getToken = require("../github");
 const { Octokit } = require("@octokit/core");
 const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
 const MyOctokit = Octokit.plugin(restEndpointMethods);
@@ -11,20 +11,8 @@ module.exports = {
         if (command === "github-post-standup") {
             let comment = args.slice(3);
             comment = comment.join(" ");
-            let octokit = new MyOctokit({ auth: readToken() });
+            let octokit = new MyOctokit({ auth: getToken.readToken() });
             postComment(comment, octokit);
-        }
-
-        function readToken() {
-            try {
-                const data = fs.readFileSync("./.github-token.txt", "utf8");
-                return data;
-            } catch (err) {
-                console.error(err);
-                return message.reply(
-                    "Your GitHub Personal Access Token could not been read. Please set it again using -github-info."
-                );
-            }
         }
 
         // Post Comment function

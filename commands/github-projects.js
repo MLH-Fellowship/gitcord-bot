@@ -1,4 +1,4 @@
-const fs = require("fs");
+const getToken = require("../github");
 const { Octokit } = require("@octokit/core");
 const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
 const MyOctokit = Octokit.plugin(restEndpointMethods);
@@ -8,7 +8,7 @@ module.exports = {
     description: "GitHub Project Functionality",
     execute(command, message, args) {
         // -github-projects: Selects GitHub Project Functionality
-        let octokit = new MyOctokit({ auth: readToken() });
+        let octokit = new MyOctokit({ auth: getToken.readToken() });
         if (command === "github-projects") {
             switch (args[0]) {
                 case "create-project":
@@ -51,18 +51,6 @@ module.exports = {
                     return message.reply(
                         "add create (-github-projects create-project) to create a new project or select (-github-projects select-project) to select an existing project."
                     );
-            }
-        }
-
-        function readToken() {
-            try {
-                const data = fs.readFileSync("./.github-token.txt", "utf8");
-                return data;
-            } catch (err) {
-                console.error(err);
-                return message.reply(
-                    "your GitHub Personal Access Token could not been read. Please set it again using -github-info."
-                );
             }
         }
 
