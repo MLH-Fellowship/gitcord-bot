@@ -11,35 +11,41 @@ module.exports = {
         let octokit = new MyOctokit({ auth: readToken() });
         if (command === "github-projects") {
             switch (args[0]) {
-                case "create-project" && !args[1]:
-                    return message.reply(
-                        "to create a new GitHub Project, add create followed by the owner, repo and project title (-github-project create-project repo-owner repo-name project-title)."
-                    );
-                case "create-project" && args[1]: {
-                    let projectTitle = args.slice(2);
-                    projectTitle = projectTitle.join(" ");
-                    createProject(projectTitle, octokit);
+                case "create-project":
+                    if (!args[1]) {
+                        return message.reply(
+                            "to create a new GitHub Project, add create followed by the owner, repo and project title (-github-project create-project repo-owner repo-name project-title)."
+                        );
+                    } else {
+                        let projectTitle = args.slice(3);
+                        projectTitle = projectTitle.join(" ");
+                        createProject(projectTitle, octokit);
+                    }
                     break;
-                }
-                case "create-column" && !args[1]:
-                    return message.reply(
-                        "to create a new column, add create-column followed by project id and name (-github-project create-column project-id column-name)."
-                    );
-                case "create-column" && args[1]: {
-                    let columnName = args.slice(2);
-                    columnName = columnName.join(" ");
-                    createColumn(columnName, octokit);
+                case "create-column":
+                    if (!args[1]) {
+                        return message.reply(
+                            "to create a new column, add create-column followed by project id and name (-github-project create-column project-id column-name)."
+                        );
+                    } else {
+                        let columnName = args.slice(2);
+                        columnName = columnName.join(" ");
+                        createColumn(columnName, octokit);
+                    }
                     break;
-                }
-                case "select-project" && !args[1]:
-                    return message.reply("please provide your GitHub Project ID in order to select a project.");
-                case "select-project" && args[1]:
-                    getProject(args[1], octokit);
+                case "select-project":
+                    if (!args[1]) {
+                        return message.reply("please provide your GitHub Project ID in order to select a project.");
+                    } else {
+                        getProject(args[1], octokit);
+                    }
                     break;
-                case "select-column" && !args[1]:
-                    return message.reply("please provide your GitHub Column ID in order to select a column.");
-                case "select-column" && args[1]:
-                    getCards(args[1]), octokit;
+                case "select-column":
+                    if (!args[1]) {
+                        return message.reply("please provide your GitHub Column ID in order to select a column.");
+                    } else {
+                        getCards(args[1]), octokit;
+                    }
                     break;
                 default:
                     return message.reply(
