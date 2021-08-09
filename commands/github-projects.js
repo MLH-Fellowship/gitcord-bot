@@ -70,7 +70,7 @@ module.exports = {
                     repo: args[2],
                     name: projectTitle,
                 })
-                .then((result) => {
+                .then(() => {
                     return message.reply(
                         `your new project, ${projectTitle} has been created in ${args[1]}'s repo, ${args[2]}.`
                     );
@@ -90,7 +90,7 @@ module.exports = {
                     project_id: args[1],
                     name: columnName,
                 })
-                .then((result) => {
+                .then(() => {
                     return message.reply(
                         `Your new column, ${columnName} has been successfully created in project #${args[1]}.`
                     );
@@ -109,7 +109,7 @@ module.exports = {
                 .get({
                     project_id: projectID,
                 })
-                .then((result) => {
+                .then(() => {
                     getColumns(projectID);
                 })
                 .catch((error) => {

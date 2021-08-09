@@ -36,7 +36,7 @@ module.exports = {
                     issue_number: args[2],
                     body: comment,
                 })
-                .then((result) => {
+                .then(() => {
                     return message.reply(
                         `Your comment, "${comment}" has been posted on ${args[0]}'s repo, ${args[1]} in issue/PR #${args[2]}.`
                     );

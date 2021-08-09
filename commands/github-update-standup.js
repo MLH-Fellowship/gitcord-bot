@@ -37,7 +37,7 @@ module.exports = {
                     comment_number: args[3],
                     body: comment,
                 })
-                .then((result) => {
+                .then(() => {
                     return message.reply(
                         `Your comment "${comment}" has been updated on ${args[1]}'s discussion #${args[2]}.`
                     );
