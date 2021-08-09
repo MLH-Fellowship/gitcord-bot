@@ -6,12 +6,14 @@ module.exports = {
     execute(command, message, args) {
         // -github-post-standup: Posts desired comment on a GitHub Discussion
         if (command === "github-post-standup") {
-            postComment(args);
+            let comment = args.slice(3);
+            comment = comment.join(" ");
+            postComment(comment, args);
         }
 
         function readToken() {
             try {
-                const data = fs.readFileSync("./github-token.txt", "utf8");
+                const data = fs.readFileSync("./.github-token.txt", "utf8");
                 return data;
             } catch (err) {
                 console.error(err);
@@ -22,7 +24,7 @@ module.exports = {
         }
 
         // Post Comment function
-        async function postComment(args) {
+        async function postComment(comment, args) {
             // GitHub Variables
             let githubToken = readToken();
 
@@ -38,17 +40,11 @@ module.exports = {
                     org: args[0],
                     team_slug: args[1],
                     discussion_number: args[2],
-                    body: args[3],
+                    body: comment,
                 })
                 .then((result) => {
                     return message.reply(
-                        "Your comment '" +
-                            args[3] +
-                            "' has been posted on " +
-                            args[1] +
-                            "'s discussion #" +
-                            args[2] +
-                            "."
+                        `Your comment ${comment} has been posted on ${args[1]}'s discussion #${args[2]}.` 
                     );
                 })
                 .catch((error) => {
