@@ -32,6 +32,8 @@
     "wappalyzer": "^6.7.11"
   },
   "devDependencies": {
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "prettier": "npm:@yuhr/prettier@^2.2.1"
   }
 }
