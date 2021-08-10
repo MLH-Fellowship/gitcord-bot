@@ -1,4 +1,4 @@
-const getToken = require("../github");
+const db = require("../database");
 const { Octokit } = require("@octokit/core");
 const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
 const MyOctokit = Octokit.plugin(restEndpointMethods);
@@ -12,8 +12,13 @@ module.exports = {
         if (command === "github-post-comment") {
             let comment = args.slice(3);
             comment = comment.join(" ");
-            let octokit = new MyOctokit({ auth: getToken.readToken() });
-            postComment(comment, octokit);
+            db.fetchGit(message.author.id).then((result) => {
+                let octokit = new MyOctokit({ auth: result });
+                postComment(comment, octokit);
+            }).catch((err) => {
+                console.error(err);
+                return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
+            });
         }
 
         // Post Comment function
