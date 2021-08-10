@@ -6,6 +6,7 @@ const MyOctokit = Octokit.plugin(restEndpointMethods);
 module.exports = {
     name: "github-post-comment",
     description: "Post a comment on GitHub Issue or PR",
+    usage: "-github-post-comment <your-comment-to-be-posted>",
     execute(command, message, args) {
         // -github-post-comment: Posts desired comment on previously specified issue/PR
         if (command === "github-post-comment") {

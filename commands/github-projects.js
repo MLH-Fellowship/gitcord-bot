@@ -6,6 +6,7 @@ const MyOctokit = Octokit.plugin(restEndpointMethods);
 module.exports = {
     name: "github-projects",
     description: "GitHub Project Functionality",
+    usage: "To create a new Github project, add create followed by the owner, repo and project title (-github-project create-project repo-owner repo-name project-title).\nTo create a new column, add create-column followed by project id and name (-github-project create-column project-id column-name).",
     execute(command, message, args) {
         // -github-projects: Selects GitHub Project Functionality
         let octokit = new MyOctokit({ auth: getToken.readToken() });

@@ -6,8 +6,9 @@ const MyOctokit = Octokit.plugin(restEndpointMethods);
 module.exports = {
     name: "github-update-standup",
     description: "Update a comment on a GitHub discussion",
+    usage: "-github-update-standup <your-updated-comment>",
     execute(command, message, args) {
-        // -github-post-standup: Posts desired comment on a GitHub Discussion
+        // -github-update-standup: Updates desired comment on a GitHub Discussion
         if (command === "github-update-standup") {
             let comment = args.slice(4);
             comment = comment.join(" ");

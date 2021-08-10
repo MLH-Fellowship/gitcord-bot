@@ -30,6 +30,7 @@ async function getStacks(url, headers) {
 module.exports = {
     name: "tech-stack",
     description: "Command to return tech stack used by a website.",
+    usage: "-tech-stack <url of the site to get the technologies used by it>",
     async execute(command, message, args) {
         if (!args.length) {
             return message.reply("Please provide the site url to identify its tech-stack.");
