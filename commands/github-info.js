@@ -21,10 +21,6 @@ module.exports = {
                 console.log(newToken);
             };
             fetchGit();
-            // const fetchGit = fetchGitHubToken(message.author.id).then(//(result) => {
-            //      return result;
-            //  });
-            // console.log(fetchGit);
         }
     },
 };
