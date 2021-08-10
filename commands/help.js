@@ -21,7 +21,6 @@ module.exports = {
 
         const name = args[0].toLowerCase();
         let listCommand = null;
-        const prefix = "-";
         commands.map((cmnd) => {
             if (cmnd.name === name) listCommand = cmnd;
         });
