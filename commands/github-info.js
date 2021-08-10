@@ -4,25 +4,29 @@ module.exports = {
     name: "github-info",
     description: "Get GitHub Personal Access Token",
     execute(command, message, args) {
-        function writeToken(githubToken) {
-            try {
-                console.info("GitHub token is " + githubToken);
-                fs.writeFileSync("./.github-token.txt", githubToken);
-            } catch (err) {
-                console.error(err);
-                return message.reply("GitHub auth was unsuccessful. Please try again.");
+        if (!args.length) {
+
+            const fetchGit = async () => {
+                let newToken = await fetchGitHubToken(message.author.id);
+                if (newToken) {
+                return message.reply(`Your GitHub token is on file: ${newToken}`);
+            } else {
+                return message.reply("Your GitHub token isn't on file. Try again, specifying your GitHub token (once you do it, we'll store it securely)")
             }
         }
 
-        // -github-info: Get contents of personal token
-        if (command === "github-info") {
-            const fetchGit = async () => {
-                let newToken = await fetchGitHubToken(message.author.id);
-                console.log(newToken);
-            };
-            fetchGit();
+        fetchGit();
+
+        } else {
+            let githubToken = args[0];
+            insertGitHubToken(message.author.id, githubToken).then(result => {
+                console.log(result);
+            });
+            return message.reply(
+                "GitHub auth was successful. Use -help to see what actions you can now take."
+            );
         }
-    },
+    }
 };
 
 // CockroachDB Implementation
@@ -69,7 +73,7 @@ async function fetchGitHubToken(discord_id) {
             id: discord_id,
         },
     }).then((result) => {
-        return result;
+       return result[0].token;
     });
 }
 
