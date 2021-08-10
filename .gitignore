@@ -2,3 +2,7 @@
 node_modules/
 certs/
 .github-token.txt
+
+# Damir's IDE stuff plus CockroachDB stuff
+.idea/
+cockroach-v21.1.6.linux-amd64

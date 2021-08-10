@@ -25,7 +25,10 @@
     "fs": "^0.0.1-security",
     "lighthouse": "^8.2.0",
     "octokit": "^1.1.0",
+    "pg": "^8.7.1",
     "request": "^2.88.2",
+    "sequelize": "^6.6.5",
+    "sequelize-cockroachdb": "^6.0.1",
     "wappalyzer": "^6.7.11"
   },
   "devDependencies": {

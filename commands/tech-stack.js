@@ -30,22 +30,21 @@ async function getStacks(url, headers) {
   }
 }
 module.exports = {
-  name: "tech-stack",
-  description: "Command to return tech stack used by a website.",
-  async execute(command, message, args) {
-    if (!args.length) {
-      return message.reply(
-        "Please provide the site url to identify its tech-stack."
-      );
-    } else {
-      let url = args[0];
-      const headers = {};
-      let stacks = await getStacks(url, headers);
-      stacks = stacks.join("\r\n • ");
-      // Return stacks to message
-      return message.reply(
-        `The website, ${url} has been analysed and the technologies it uses are: \n • ${stacks}`
-      );
-    }
-  },
+    name: "tech-stack",
+    description: "Command to return tech stack used by a website.",
+    async execute(command, message, args) {
+        if (!args.length) {
+            return message.reply("Please provide the site url to identify its tech-stack.");
+        } else {
+            let url = args[0];
+            const headers = {};
+            let stacks = await getStacks(url, headers);
+            stacks = stacks.join("\r\n • ");
+            // Return stacks to message
+            return message.reply(
+                `The website, ${url} has been analysed and the technologies it uses are:
+                • ${stacks}`
+            );
+        }
+    },
 };
