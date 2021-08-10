@@ -1,4 +1,4 @@
-const getToken = require("../github");
+const db = require("../database");
 const { Octokit } = require("@octokit/core");
 const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
 const MyOctokit = Octokit.plugin(restEndpointMethods);
@@ -8,7 +8,6 @@ module.exports = {
     description: "GitHub Project Functionality",
     execute(command, message, args) {
         // -github-projects: Selects GitHub Project Functionality
-        let octokit = new MyOctokit({ auth: getToken.readToken() });
         if (command === "github-projects") {
             switch (args[0]) {
                 case "create-project":
@@ -19,7 +18,13 @@ module.exports = {
                     } else {
                         let projectTitle = args.slice(3);
                         projectTitle = projectTitle.join(" ");
-                        createProject(projectTitle, octokit);
+                        db.fetchGit(message.author.id).then((result) => {
+                            let octokit = new MyOctokit({ auth: result });
+                            createProject(projectTitle, octokit);
+                        }).catch((err) => {
+                            console.error(err);
+                            return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
+                        });
                     }
                     break;
                 case "create-column":
@@ -30,21 +35,39 @@ module.exports = {
                     } else {
                         let columnName = args.slice(2);
                         columnName = columnName.join(" ");
-                        createColumn(columnName, octokit);
+                        db.fetchGit(message.author.id).then((result) => {
+                            let octokit = new MyOctokit({ auth: result });
+                            createColumn(columnName, octokit);
+                        }).catch((err) => {
+                            console.error(err);
+                            return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
+                        });
                     }
                     break;
                 case "select-project":
                     if (!args[1]) {
                         return message.reply("please provide your GitHub Project ID in order to select a project.");
                     } else {
-                        getProject(args[1], octokit);
+                        db.fetchGit(message.author.id).then((result) => {
+                            let octokit = new MyOctokit({ auth: result });
+                            getProject(args[1], octokit);
+                        }).catch((err) => {
+                            console.error(err);
+                            return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
+                        });
                     }
                     break;
                 case "select-column":
                     if (!args[1]) {
                         return message.reply("please provide your GitHub Column ID in order to select a column.");
                     } else {
-                        getCards(args[1]), octokit;
+                        db.fetchGit(message.author.id).then((result) => {
+                            let octokit = new MyOctokit({ auth: result });
+                            getCards(args[1]), octokit;
+                        }).catch((err) => {
+                            console.error(err);
+                            return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
+                        });
                     }
                     break;
                 default:
