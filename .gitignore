@@ -1,8 +1,8 @@
 .env
-.env~
 node_modules/
-github-token.txt
-github-issue-number.txt
-.idea
 certs/
-cockroach-v21.1.6.linux-amd64/
+.github-token.txt
+
+# Damir's IDE stuff plus CockroachDB stuff
+.idea/
+cockroach-v21.1.6.linux-amd64

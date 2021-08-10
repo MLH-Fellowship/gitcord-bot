@@ -1,4 +1,7 @@
-const fs = require("fs");
+const getToken = require("../github");
+const { Octokit } = require("@octokit/core");
+const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+const MyOctokit = Octokit.plugin(restEndpointMethods);
 
 module.exports = {
     name: "github-update-standup",
@@ -6,36 +9,14 @@ module.exports = {
     execute(command, message, args) {
         // -github-post-standup: Posts desired comment on a GitHub Discussion
         if (command === "github-update-standup") {
-            comment = args.slice(4);
+            let comment = args.slice(4);
             comment = comment.join(" ");
-            readToken();
-            postComment(comment, args);
-        }
-
-        function readToken() {
-            try {
-                const data = fs.readFileSync("./github-token.txt", "utf8");
-                return data;
-            } catch (err) {
-                console.error(err);
-                return message.reply(
-                    "Your GitHub Personal Access Token could not been read. Please set it again using -github-info."
-                );
-            }
+            let octokit = new MyOctokit({ auth: getToken.readToken() });
+            postComment(comment, octokit);
         }
 
         // Post Comment function
-        async function postComment(comment) {
-            // GitHub Variables
-            let githubToken = readToken();
-
-            // Intialise GitHub API
-            const { Octokit } = require("@octokit/core");
-            const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
-            const MyOctokit = Octokit.plugin(restEndpointMethods);
-            let octokit = new MyOctokit({ auth: githubToken });
-
-            // Post Discussion Comment
+        async function postComment(comment, octokit) {
             await octokit.rest.teams
                 .updateDiscussionCommentInOrg({
                     org: args[0],
@@ -44,15 +25,9 @@ module.exports = {
                     comment_number: args[3],
                     body: comment,
                 })
-                .then((result) => {
+                .then(() => {
                     return message.reply(
-                        "Your comment '" +
-                            comment +
-                            "' has been updated on " +
-                            args[1] +
-                            "'s discussion #" +
-                            args[2] +
-                            "."
+                        `Your comment "${comment}" has been updated on ${args[1]}'s discussion #${args[2]}.`
                     );
                 })
                 .catch((error) => {

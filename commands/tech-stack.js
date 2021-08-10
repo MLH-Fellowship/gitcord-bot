@@ -1,16 +1,14 @@
-const { json } = require("express");
-var request = require("request");
 const Wappalyzer = require("wappalyzer");
 const options = {
     recursive: false,
 };
+
 const wappalyzer = new Wappalyzer(options);
 async function getStacks(url, headers) {
     try {
         await wappalyzer.init();
 
         // Optionally set additional request headers
-        const headers = {};
         const site = await wappalyzer.open(url, headers);
 
         // Optionally capture and output errors
@@ -42,12 +40,8 @@ module.exports = {
             stacks = stacks.join("\r\n • ");
             // Return stacks to message
             return message.reply(
-                "The website, " +
-                    url +
-                    " has been analysed and the technologies it uses are: " +
-                    "\r\n" +
-                    " • " +
-                    stacks
+                `The website, ${url} has been analysed and the technologies it uses are:
+                • ${stacks}`
             );
         }
     },
