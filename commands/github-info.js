@@ -3,6 +3,7 @@ const fs = require("fs");
 module.exports = {
     name: "github-info",
     description: "Get GitHub Personal Access Token",
+    usage: "-github-info <your-github-personal-access-token>",
     execute(command, message, args) {
         function writeToken(githubToken) {
             try {

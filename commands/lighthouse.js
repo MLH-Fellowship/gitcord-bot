@@ -24,6 +24,7 @@ async function getStats(url) {
 module.exports = {
     name: "lighthouse",
     description: "Command used to get lighthouse stats for a site",
+    usage: "-lighthouse <url of the site to get its lighthouse stats>",
     execute(command, message, args) {
         if (!args.length) {
             return message.reply("Please provide the site url to get its lighthouse stats.");
