@@ -17,13 +17,16 @@ module.exports = {
         // -github-info: Get contents of personal token
         if (command === "github-info") {
             if (!args.length) {
-                fetchGitHubToken(message.author.id).then(token => {
+                // const token = await fetchGitHubToken(message.author.id);
+
+                const getToken = fetchGitHubToken(message.author.id).then(token => {
                     if (token.length !== 0){
                         return message.reply("Your GitHub token is on file: " + token[0].dataValues.token);
                     } else {
                         return message.reply("Your GitHub token isn't on file. Try again, specifying your GitHub token (once you do it, we'll store it securely)")
                     }
                 });
+                console.log("YOUR TOKEN IS", getToken);
             } else {
                 githubToken = args[0];
                 insertGitHubToken(message.author.id, githubToken).then(result => {
@@ -82,6 +85,9 @@ async function fetchGitHubToken(discord_id) {
     where: {
       id: discord_id,
     }
+  }).then((result) => {
+  console.log(result);
+  return result;
   });
 }
 
