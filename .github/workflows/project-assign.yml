@@ -17,4 +17,4 @@ jobs:
               uses: srggrs/assign-one-project-github-action@1.2.1
               if: github.event.action == 'opened'
               with:
-                  project: "https://github.com/MLH-Fellowship/pod-3.1.3-team-4/projects/1"
+                  project: "https://github.com/MLH-Fellowship/gitcord-bot/projects/1"
