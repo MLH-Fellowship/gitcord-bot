@@ -4,17 +4,18 @@ body {
     margin: 0;
 }
 
-.css-selector {
+.background-gradient {
     height: 100%;
     background: linear-gradient(325deg, #08627d, #ce1395);
     background-size: 400% 400%;
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    -o-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+    -webkit-animation: BackgroundGradient 30s ease infinite;
+    -moz-animation: BackgroundGradient 30s ease infinite;
+    -o-animation: BackgroundGradient 30s ease infinite;
+    animation: BackgroundGradient 30s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes BackgroundGradient
+ {
     0% {
         background-position: 0% 50%;
     }
@@ -26,7 +27,7 @@ body {
     }
 }
 
-@-moz-keyframes AnimationName {
+@-moz-keyframes BackgroundGradient {
     0% {
         background-position: 0% 50%;
     }
@@ -38,7 +39,7 @@ body {
     }
 }
 
-@-o-keyframes AnimationName {
+@-o-keyframes BackgroundGradient {
     0% {
         background-position: 0% 50%;
     }
@@ -50,7 +51,7 @@ body {
     }
 }
 
-@keyframes AnimationName {
+@keyframes BackgroundGradient {
     0% {
         background-position: 0% 50%;
     }
