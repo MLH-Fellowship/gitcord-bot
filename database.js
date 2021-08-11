@@ -58,4 +58,13 @@ async function insertGitHubToken(discord_id, github_token) {
     });
 }
 
-module.exports = { fetchGit, insertGitHubToken };
+// Update an entry with a new token if the insertGitHubToken throws an error
+async function updateGitHubToken(discord_id, github_token){
+    return await Tokens.update({token: github_token}, {
+        where: {
+            id: discord_id,
+        }
+    });
+}
+
+module.exports = { fetchGit, insertGitHubToken, updateGitHubToken };
