@@ -20,7 +20,11 @@ module.exports = {
                     "GitHub auth was successful. Use -help to see what actions you can now take."
                 );
             }).catch((err) => {
-                console.error(err);
+                db.updateGitHubToken(message.author.id, githubToken).then(result => {
+                    return message.reply(
+                        "Your GitHub token has been updated"
+                    );
+                })
             });
         }
     }
