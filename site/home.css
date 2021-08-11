@@ -14,7 +14,8 @@ body {
     animation: AnimationName 30s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes AnimationName 
+{
     0% {
         background-position: 0% 50%;
     }
@@ -26,7 +27,7 @@ body {
     }
 }
 
-@-moz-keyframes AnimationName {
+ @-moz-keyframes AnimationName {
     0% {
         background-position: 0% 50%;
     }
@@ -60,4 +61,4 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
+} 
