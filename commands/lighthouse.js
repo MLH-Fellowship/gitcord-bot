@@ -2,7 +2,8 @@ const lighthouse = require("lighthouse");
 const chromeLauncher = require("chrome-launcher");
 
 async function getStats(url) {
-    return chromeLauncher.launch({ chromeFlags: ["--headless"] }).then((chrome) => {
+    return chromeLauncher.launch({args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      chromeFlags: ["--headless"] }).then((chrome) => {
         const opts = {
             logLevel: "info",
             output: "html",
