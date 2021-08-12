@@ -6,19 +6,25 @@ const MyOctokit = Octokit.plugin(restEndpointMethods);
 module.exports = {
     name: "github-update-standup",
     description: "Update a comment on a GitHub discussion",
-    usage: "-github-update-standup <your-updated-comment>",
-    execute(command, message, args) {
+    usage: "-github-update-standup <organization-name> <team-name> <discussion-number> <comment-number> <your-updated-comment>",
+    example: "\n -github-update-standup MLH-Fellowship pod-3-1-3 8 15 \n" +
+        "**What did you achieve in the last 24 hours?**:\n" +
+        " - updated note \n" +
+        "\n" +
+        "**What are your priorities for the next 24 hours?**:\n" +
+        " - updated note\n" +
+        "\n" +
+        "**Blockers**:\n" +
+        " -\n" +
+        "\n" +
+        "**Shoutouts**:\n" +
+        " - @username for x",
+    execute(command, message, args, octokit) {
         // -github-update-standup: Updates desired comment on a GitHub Discussion
         if (command === "github-update-standup") {
             let comment = args.slice(4);
             comment = comment.join(" ");
-            db.fetchGit(message.author.id).then((result) => {
-                let octokit = new MyOctokit({ auth: result });
-                postComment(comment, octokit);
-            }).catch((err) => {
-                console.error(err);
-                return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
-            });
+            postComment(comment, octokit);
         }
 
         // Post Comment function
@@ -33,7 +39,7 @@ module.exports = {
                 })
                 .then(() => {
                     return message.reply(
-                        `Your comment "${comment}" has been updated on ${args[1]}'s discussion #${args[2]}.`
+                        `Your comment \n"${comment}"\n has been updated on ${args[1]}'s discussion #${args[2]}.`
                     );
                 })
                 .catch((error) => {
