@@ -6,19 +6,14 @@ const MyOctokit = Octokit.plugin(restEndpointMethods);
 module.exports = {
     name: "github-post-comment",
     description: "Post a comment on GitHub Issue or PR",
-    usage: "-github-post-comment <your-comment-to-be-posted>",
-    execute(command, message, args) {
+    usage: "-github-post-comment <organization-name> <repo-name> <issue-number> <your-comment>",
+    example: "-github-post-comment MLH-Fellowship gitcord-bot 32 your comment",
+    execute(command, message, args, octokit) {
         // -github-post-comment: Posts desired comment on previously specified issue/PR
         if (command === "github-post-comment") {
             let comment = args.slice(3);
             comment = comment.join(" ");
-            db.fetchGit(message.author.id).then((result) => {
-                let octokit = new MyOctokit({ auth: result });
-                postComment(comment, octokit);
-            }).catch((err) => {
-                console.error(err);
-                return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
-            });
+            postComment(comment, octokit);
         }
 
         // Post Comment function

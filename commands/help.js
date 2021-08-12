@@ -32,6 +32,7 @@ module.exports = {
 
         if (listCommand.description) data.push(`**Description: **${listCommand.description}`);
         if (listCommand.usage) data.push(`**Usage: **${listCommand.usage}`);
+        if (listCommand.example) data.push(`**Example: **${listCommand.example}`);
         message.reply(data, { split: true });
     },
 };
