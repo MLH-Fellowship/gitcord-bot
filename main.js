@@ -38,7 +38,8 @@ client.on("message", (message) => {
     return;
   }
 
-  if (command !== "lighthouse" || command !== "tech-stack" || command !== "help") {
+  if (command !== "lighthouse" && command !== "tech-stack" && command !== "help") {
+    console.log("Works");
     try {
       db.fetchGit(message.author.id)
         .then((result) => {
@@ -56,6 +57,8 @@ client.on("message", (message) => {
       console.error(error);
       message.reply("There was an error trying to execute that command. Please try again.");
     }
+  } else {
+    client.commands.get(command).execute(command, message, args);
   }
 });
 
