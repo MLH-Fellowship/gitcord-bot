@@ -6,7 +6,19 @@ const MyOctokit = Octokit.plugin(restEndpointMethods);
 module.exports = {
     name: "github-post-standup",
     description: "Post a comment on a GitHub discussion",
-    usage: "github-post-standup <your-comment-for-github-discussion>",
+    usage: "github-post-standup <organization-name> <team-name> <discussion-number> <your-comment>",
+    example: "\n -github-post-standup MLH-Fellowship pod-3-1-3 8 \n" +
+        "**What did you achieve in the last 24 hours?**:\n" +
+        " - \n" +
+        "\n" +
+        "**What are your priorities for the next 24 hours?**:\n" +
+        " - \n" +
+        "\n" +
+        "**Blockers**:\n" +
+        " -\n" +
+        "\n" +
+        "**Shoutouts**:\n" +
+        " - @username for x",
     execute(command, message, args) {
         // -github-post-standup: Posts desired comment on a GitHub Discussion
         if (command === "github-post-standup") {
