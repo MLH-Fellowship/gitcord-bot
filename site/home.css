@@ -1,37 +1,41 @@
 html,
 body {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 .css-selector {
-    height: 100%;
-    background: linear-gradient(325deg, #08627d, #ce1395);
-    background-size: 400% 400%;
-    -webkit-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+  height: 100%;
+  background: linear-gradient(325deg, #08627d, #ce1395);
+  background-size: 400% 400%;
+  -webkit-animation: animation-name 30s ease infinite;
+  animation: animation-name 30s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 51%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 51%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes AnimationName {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 51%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 51%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
