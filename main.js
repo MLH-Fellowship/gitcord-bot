@@ -44,17 +44,7 @@ client.on("message", (message) => {
         .then((result) => {
           // fetch GitHub token and initialize Octokit
           let octokit = new MyOctokit({ auth: result });
-          octokit.rest.users
-            .getAuthenticated({})
-            .then(() => {
-              return message.reply(`Your GitHub token is on file ${result}`);
-            })
-            .catch((err) => {
-              console.error("Error is", err);
-              return message.reply(
-                "Your GitHub token is incorrect. Make sure you've entered a valid GitHub token and try again."
-              );
-            });
+          client.commands.get(command).execute(command, message, args, octokit);
         })
         .catch((err) => {
           console.error(err);
