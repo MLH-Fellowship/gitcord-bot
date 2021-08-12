@@ -39,7 +39,6 @@ client.on("message", (message) => {
   }
 
   if (command !== "lighthouse" && command !== "tech-stack" && command !== "help") {
-    console.log("Works");
     try {
       db.fetchGit(message.author.id)
         .then((result) => {
