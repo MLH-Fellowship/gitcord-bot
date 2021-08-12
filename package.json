@@ -4,8 +4,8 @@
   "description": "Testing out building a discord bot with discord.js",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build & node main.js",
+    "build": "postcss site/*.css -d site/ --no-map"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/MLH-Fellowship/pod-3.1.3-team-4#readme",
   "dependencies": {
     "@octokit/plugin-rest-endpoint-methods": "^5.5.2",
+    "autoprefixer": "^10.3.1",
     "chrome-launcher": "^0.14.0",
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
@@ -26,6 +27,8 @@
     "lighthouse": "^8.2.0",
     "octokit": "^1.1.0",
     "pg": "^8.7.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
     "request": "^2.88.2",
     "sequelize": "^6.6.5",
     "sequelize-cockroachdb": "^6.0.1",
@@ -34,6 +37,8 @@
   "devDependencies": {
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
-    "prettier": "npm:@yuhr/prettier@^2.2.1"
+    "prettier": "npm:@yuhr/prettier@^2.2.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
   }
 }
