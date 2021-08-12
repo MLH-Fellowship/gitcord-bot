@@ -39,13 +39,22 @@ client.on("message", (message) => {
   }
 
   if (command !== "lighthouse" && command !== "tech-stack" && command !== "help") {
-    console.log("Works");
     try {
       db.fetchGit(message.author.id)
         .then((result) => {
           // fetch GitHub token and initialize Octokit
           let octokit = new MyOctokit({ auth: result });
-          client.commands.get(command).execute(command, message, args, octokit);
+          octokit.rest.users
+            .getAuthenticated({})
+            .then(() => {
+              return message.reply("Your GitHub token has been stored.");
+            })
+            .catch((err) => {
+              console.error("Error is", err);
+              return message.reply(
+                "Your GitHub token is incorrect. Make sure you've entered a valid GitHub token and try again."
+              );
+            });
         })
         .catch((err) => {
           console.error(err);
