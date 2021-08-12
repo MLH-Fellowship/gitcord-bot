@@ -19,18 +19,12 @@ module.exports = {
         "\n" +
         "**Shoutouts**:\n" +
         " - @username for x",
-    execute(command, message, args) {
+    execute(command, message, args, octokit) {
         // -github-update-standup: Updates desired comment on a GitHub Discussion
         if (command === "github-update-standup") {
             let comment = args.slice(4);
             comment = comment.join(" ");
-            db.fetchGit(message.author.id).then((result) => {
-                let octokit = new MyOctokit({ auth: result });
-                postComment(comment, octokit);
-            }).catch((err) => {
-                console.error(err);
-                return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
-            });
+            postComment(comment, octokit);
         }
 
         // Post Comment function

@@ -8,6 +8,11 @@ const commandFiles = fs.readdirSync("./commands").filter((file) => file.endsWith
 
 client.commands = new Discord.Collection();
 
+const db = require("./database");
+const { Octokit } = require("@octokit/core");
+const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+const MyOctokit = Octokit.plugin(restEndpointMethods);
+
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
@@ -34,7 +39,13 @@ client.on("message", (message) => {
     }
 
     try {
-        client.commands.get(command).execute(command, message, args);
+        db.fetchGit(message.author.id).then((result) => { // fetch GitHub token and initialize Octokit
+            let octokit = new MyOctokit({ auth: result });
+            client.commands.get(command).execute(command, message, args, octokit);
+        }).catch((err) => {
+            console.error(err);
+            return message.reply("Your GitHub token isn't on file. Run -github-info, specifying your GitHub token (and then try this again)");
+        });
     } catch (error) {
         console.error(error);
         message.reply("There was an error trying to execute that command. Please try again.");
