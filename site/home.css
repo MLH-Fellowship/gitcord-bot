@@ -7,7 +7,9 @@ body {
   height: 100%;
   margin: 0;
 }
-
+img{
+    margin-right: 1rem;
+}
 .background-gradient {
   height: 100%;
   background: linear-gradient(325deg, #08627d, #ce1395);
