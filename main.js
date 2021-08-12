@@ -47,7 +47,7 @@ client.on("message", (message) => {
           octokit.rest.users
             .getAuthenticated({})
             .then(() => {
-              return message.reply("Your GitHub token has been stored.");
+              return message.reply(`Your GitHub token is on file ${result}`);
             })
             .catch((err) => {
               console.error("Error is", err);
