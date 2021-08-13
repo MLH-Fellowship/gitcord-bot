@@ -123,6 +123,8 @@ Pick a license - see Trainual for details
 
 We welcome contributors to our GitCord Bot project. Feel free to take on any open issues marked v2 by forking our repo, creating a new branch off of main and then submitting a PR. Please adhere to our codebase conventions, git workflow and PR template as outlined below to ensure the greatest chance of your PR being approved and merged.
 
+## Contribution Guide
+
 1. Open a new issue for working on any new features
 
 - Our GitHub action will automatically add it to our GitHub Project but please add the v2 milestone and appropriate label: documentation, enhancement, question, bug or help wanted.
@@ -137,11 +139,25 @@ We welcome contributors to our GitCord Bot project. Feel free to take on any ope
 
 - For easiest compliance, install the appropriate extensions (ESLint, StyleLint and Prettier) in your code editor or alternatively, use the command line.
 
-4. Create a PR from your fork to the base branch: staging
+4. Save any new node modules to the `package.json` using `npm install` or `npm install --save-dev` for developer-only node modules
 
-- Follow the template to ensure
+5. Create a PR from your fork to the base branch: staging
 
-Similar to Installation - Developer but details on how to submit PRs, branching methodologies and any coding conventions - style/variable names etc.
+- Follow the template to ensure your PR is descriptive enough to allow us to easily review it. As with issues, add an appropriate label and the v2 milestone. Finally, add one of the team as a reviewer so we can review your PR and hopefully approve it.
+
+## Codebase Overview
+
+Below is an overview of the files you may want to edit to contribute new code. Please do not edit any of the other configuration files unless your PR is directly related to them and we have approved your issue.
+
+- `main.js` - The main.js file handles initialisation of Discord.js and Octokit.js to run our bot and access the GitHub API. The relevant Discord objects `command, message, args` and GitHub object `octokit` are then passed to our command files in the `commands` folder when a specified command is run.
+
+- `database.js` - The database.js file handles the connection to CockroachDB and fetching, inserting, updating and deleting the user's GitHub Personal Access Token for use with the GitHub API
+
+- `commands/` - The commands folder contains all the `.js` files for every bot command. 
+
+To create a new bot command, just copy an existing file and rename it to the command name you wish to use. Next, edit the name,  description, usage and example parameters in `module.exports` and finally, update the command name in the `if` statement and then remove and rewrite the bot command code below as needed.
+
+- `site/` - The site folder contains the HTML, CSS and assets for the [GitCord Website](https://gitcord.tech), hosted on Netlify. The website is a static site that uses the Bootstrap CSS framework. Autoprefixer is used to automatically add necessary vendor prefixes to the CSS when `npm start` is run.
 
 # 🔗 Further Links
 
