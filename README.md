@@ -7,6 +7,8 @@
 
 # 📚 Table of Contents
 
+*Update TOC and Readme with links to and from new sections*
+
 - [👁 Overview](#-overview)
 - [⚡ Installation](#-installation)
   - Discord Server
@@ -77,21 +79,33 @@ Add our inspiration - see Discord channel - behind our original Bot idea, why we
 
 # 🎯 GitCord Bot Features
 
-Add a list of the primary GitCord Bot features (could combine with screenshot section and just have animated demo GIFs?)
+*Could combine with screenshot section and just have animated demo GIFs?*
+
+- **Simple Installation** - Take advantage our easy installation process to install GitCord Bot to your Discord Server using our [website](https://gitcordbot.tech)
+
+- **Lighthouse Integration** - Scan a website and receive scores from a Lighthouse audit via our bot. No need to open Chrome Dev Tools or go to a website anymore. Run Lighthouse through Discord to easily share results with your entire dev team.
+
+- **Tech Stack Scanner** - Curious about what tech stack your favourite sites are using? Wonder no more. Discover the technologies a website is using using our tech stack scanner thanks to our Wappalyzer integration.
+
+- **Post Comments on GitHub Issues/PRs** - Using Discord to collaborate with your dev team? Why post in two places to keep your team up to date yet document your progress? Use GitCord bot to post on issues and PRs for you, notifying your team of the latest changes and keeping your repo up to date.
+
+- **Post & Update Comments on GitHub Discussions** - Using GitHub Discussions for daily standups? Our bot will make the process much smoother so you can concentrate on developing your awesome project. Make all your comments in one platform and leave GitHub for your code. Comment early on and in a last minute rush to update pre-standup? Use our update command to refresh your standup notes
+
+- **GitHub Projects Integration** - Using GitHub Projects for project management but find it a pain to setup, micro-manage and keep your team up to date if they don't check it? Our bot empowers you to create your GitHub Project through Discord and show its contents to your team with project & column creation and listing columns and cards.
 
 # 👥 The Team
 
-The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials. Also, how we worked as a team, how we used GitHub, branches, Projects etc.
+*The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials. Also, how we worked as a team, how we used GitHub, branches, Projects etc.*
 
 ## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
 
-Insert Bio Image
+*Insert Bio Image*
 
-Why I was inspired to create Discord Bot, what I contributed/enjoyed about the project
+*Why I was inspired to create Discord Bot, what I contributed/enjoyed about the project*
 
 ## Nandini Jain - @Inoxia25
 
-Insert as above
+*Insert as above*
 
 ## Damir Temir - @dtemir
 
@@ -117,7 +131,7 @@ My contributions include setting up a **CockroachDB** instance with Sequelize OR
 
 # ⚖ License
 
-Pick a license - see Trainual for details
+*See License.md*
 
 # 🙋 Contributing
 
@@ -153,7 +167,7 @@ Below is an overview of the files you may want to edit to contribute new code. P
 
 - `database.js` - The database.js file handles the connection to CockroachDB and fetching, inserting, updating and deleting the user's GitHub Personal Access Token for use with the GitHub API
 
-- `commands/` - The commands folder contains all the `.js` files for every bot command. 
+- `commands/` - The commands folder contains all the `.js` files for every bot command.
 
 To create a new bot command, just copy an existing file and rename it to the command name you wish to use. Next, edit the name,  description, usage and example parameters in `module.exports` and finally, update the command name in the `if` statement and then remove and rewrite the bot command code below as needed.
 
@@ -164,4 +178,4 @@ To create a new bot command, just copy an existing file and rename it to the com
 1. [Building a Node.js App with CockroachDB and Sequelize](https://www.cockroachlabs.com/docs/stable/build-a-nodejs-app-with-cockroachdb-sequelize.html)
 2. [Sequelize Documentation](https://sequelize.org/master/)
 
-Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.
+*Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.*
