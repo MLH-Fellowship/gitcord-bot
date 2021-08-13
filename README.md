@@ -30,13 +30,15 @@
 
 # 👁 Overview
 
-Add an overview of what GitCord bot is, what it does and who it's for
+Looking for a bot which will make your development process from Discord easier? GitCord is the ultimate Discord Bot that provides you with a number of developer tools and helps you manage your Github repos from Discord. GitCord lets you posts comments on your issues or pull requests and create a Github Project from Discord itself, making it easier to collaborate. It even lets you check out the lighthouse stats or tech stacks used by any of your favorite website 🚀
 
 # ⚡ Installation
 
 ## Discord Server
 
-Love our bot and want it to use it for your Discord server. Read our installation guide and then read the [usage instructions](#usage-instrucutions) to discover what commands can use.
+Love our bot and want to install it in your Discord server? 😍
+Head over to our [site] (https://gitcordbot.tech/) , click on `Download Now`, select the server you want to download GitCord in, and you are good to go 💯
+To discover what commands you can can use, read the [usage instructions](#usage-instrucutions)
 
 ## Development
 
