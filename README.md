@@ -15,7 +15,7 @@
 - [⚙ Usage](#-usage)
   - [Bot Commands](#bot-commands)
   - [GitHub Commands](#github-commands)
-  - [Lighthouse Commands](#lighthouse-commands)
+  - [Website Commands](#website-commands)
 - [👀 Demo](#-demo)
 - [💡 Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
 - [👥 The Team](#-the-team)
@@ -107,9 +107,7 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
     Instructs users how to continue with the GitHub API authorisation process.
     **Example:** `-github`
 
-    **To add screenshot**
-
-    ![github command example](https://user-images.githubusercontent.com/62047062/129387326-7423ee70-b57c-4506-a681-53aa1078383a.png)
+    ![GitHub Screenshot](https://user-images.githubusercontent.com/26024131/129393972-ab58ebab-f037-433e-b829-5b6b44c2fb45.png)
 
 - `-help`
     Gives description and usage for each of the commands.
