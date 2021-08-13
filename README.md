@@ -7,26 +7,27 @@
 
 # 📚 Table of Contents
 
-*Update TOC and Readme with links to and from new sections*
-
 - [👁 Overview](#-overview)
 - [⚡ Installation](#-installation)
   - Discord Server
   - Development
 - [⚙ Usage](#-usage)
-  - Help Docs
 - [👀 Demo](#-demo)
   - Interactive GIF
   - Screenshots
-- [💡 We Built GitCord Bot](#-why-we-built-gitcord-bot)
+- [💡Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
 - [🎯 GitCord Bot Features](#-gitcord-bot-features)
 - [👥 The Team](#-the-team)
 - [💻 Technologies](#-technologies)
-  - Bot Technologies
   - Sponsor Technologies
+  - Functional Technologies
+  - Server Technologies
+  - Developer Technologies
 - [⚖ License](#-license)
 - [🙋 Contributing](#-contributing)
+- [ Codebase Overview](#-codebase-overview)
 - [🔗 Further Links](#-further-links)
+
 
 # 👁 Overview
 
