@@ -18,7 +18,7 @@
 - [👀 Demo](#-demo)
   - Interactive GIF
   - Screenshots
-- [💡 Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
+- [💡 We Built GitCord Bot](#-why-we-built-gitcord-bot)
 - [🎯 GitCord Bot Features](#-gitcord-bot-features)
 - [👥 The Team](#-the-team)
 - [💻 Technologies](#-technologies)
@@ -102,7 +102,15 @@ Add some screenshots with alt text and headings
 
 # 💡 Why We Built GitCord Bot
 
-Add our inspiration - see Discord channel - behind our original Bot idea, why we wanted to make a Discord Bot and use the GitHub API as well as the reasoning behind functionality that we've been inspired to create
+We were inspired to create Discord Bot based on our experiences in the first week of the MLH Pre-Fellowship collaborating with a team of 13 fellow pod members. Having a GitHub feed in one of our Discord channels was great for keeping up to date with GitHub activity but for some members it was overwhelming.
+
+Communicating in Discord was great for immediate quick communication with team members with direct mentions but then we'd have to crosspost information to the relevant GitHub issues and PRs to keep them up to date to store our project history.
+
+This was time-consuming so we wondered if there was a reverse integration where we could post messages on Discord mentioning a specific issue or PR and store the repo we wanted to use and then it would comment on GitHub for us while being able to use Discord mentions to notify teammates.
+
+From our research, there wasn't so we decided that it would be a great idea to create one. Thus GitCord Bot was born
+
+*Add more inspiration here from Nandini about Lighthouse Bot and Tech Stack Scanning Features - see GitCord Bot Features for inspiration*
 
 # 🎯 GitCord Bot Features
 
@@ -136,18 +144,12 @@ Add our inspiration - see Discord channel - behind our original Bot idea, why we
 </div>
 
 ## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
-
-<div align="center" style="margin: 2.5% 0">
-<img width="200px" style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/26024131?v=4" alt="Louise Findlay">
+<br>
+<div align="center">
+<img width="200px" src="https://avatars.githubusercontent.com/u/26024131?v=4" alt="Louise Findlay">
 </div>
-
-I was inspired to create Discord Bot by my experiences in the first week of the MLH Pre-Fellowship collaborating with a team of 13 fellow pod members. Having a GitHub feed in one of our Discord channels was great for keeping up to date with GitHub activity but some members it was overwhelming.
-
-Communicating in Discord was great for immediate quick communication with team members with direct mentions but then I'd have to crosspost information to the relevant GitHub issues and PRs to keep them up to date to store our project history.
-
-This was time-consuming so I wondered if there was a reverse integration where we could post messages on Discord mentioning a specific issue or PR and store the repo we wanted to use and then it would comment on GitHub for us while being able to use Discord mentions to notify teammates.
-
-From my research, there wasn't so I decided that it would be a great idea to create one. I'd never created a Discord Bot or used the GitHub API before so it seems like an exciting new project to tackle. Thus GitCord Bot was born.
+<br>
+I'd never created a Discord Bot or used the GitHub API before so it seems like an exciting new project to tackle.
 
 I really enjoyed working on the project because since the dev team was small, we worked closely as a tight-knit team, helping each other out with pair programming sessions when we faced any issues or blockers despite the distributed nature of our team. We all learned about new technologies and aspects of coding languages that we can use in the future.
 
