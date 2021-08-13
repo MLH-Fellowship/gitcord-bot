@@ -122,7 +122,7 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
 
 - `-github-post-standup`
     Makes a Standup Notes submission for you.
-    **Example:** `-github-post-standup <organization name> <team name> <discussion id> <your notes>`   
+    **Example:** `-github-post-standup <organization name> <team name> <discussion id> <your notes>`
 
     ![github-post-standup command example](https://user-images.githubusercontent.com/62047062/129388102-f8f84707-5867-471b-bd17-e55e91ac7933.png)
 
@@ -138,7 +138,7 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
   
   ![Create Project Screenshot](https://user-images.githubusercontent.com/26024131/129387336-de063a2d-913d-4e50-a83a-c248018fad84.png)
   
- - `-github-projects select-project`
+- `-github-projects select-project`
     Selects a GitHub project in a repo.
     **Example:** `-github-projects select-project <project-id>`
   
@@ -156,7 +156,6 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
   
   ![Select Column Screenshot](https://user-images.githubusercontent.com/26024131/129389735-fa70603b-01aa-45db-a8ed-8027a9086b04.png)
 
- 
 # 👀 Demo
 
 *Record some animated GIFs to showcase Bot functionality + possibly website*
@@ -252,33 +251,33 @@ We used a range of technologies in order to create GitCord Bot. Some were from o
 
 ## Sponsor Technologies
 
-- CockroachDB (Distributed Database with Standard SQL)
-- Linode (Cloud Computing & Linux Servers)
-- .tech domain (Build the Future on .tech)
+- **CockroachDB** - [Distributed Database with Standard SQL](https://www.cockroachlabs.com/product)
+- **Linode** - [Cloud Computing & Linux Servers](https://www.linode.com)
+- **.tech Domain** - [via Domain.com](https://www.domain.com)
 
 ## Functional Technologies
 
-- Discord API - [Discord.js](https://discord.js.org)
-- GitHub API - [Octokit.js](https://github.com/octokit/octokit.js)
-- Database - [CockroachDB](https://www.cockroachlabs.com/product/)
-- ORM - [Sequelize](https://sequelize.org)
-- Lighthouse - [Chrome Launcher](https://github.com/GoogleChrome/chrome-launcher)
-- Tech Stack API - Wappalyzer
+- **Discord API** - [Discord.js](https://discord.js.org)
+- **GitHub API** - [Octokit.js](https://github.com/octokit/octokit.js)
+- **Database** - [CockroachDB](https://www.cockroachlabs.com/product/)
+- **ORM** - [Sequelize](https://sequelize.org)
+- **Lighthouse** - [Chrome Launcher](https://github.com/GoogleChrome/chrome-launcher)
+- **Tech Stack API** - [Wappalyzer](https://www.wappalyzer.com)
 
 ## Server Technologies
 
-- Server Hosting - Linode
-- Website Hosting - Netlify
-- Server Management - PM2
+- **Server Hosting** - [Linode](https://www.linode.com)
+- **Website Hosting** - [Netlify](https://www.netlify.com)
+- **Server Management** - [PM2](https://pm2.keymetrics.io)
 
 ## Developer Technologies
 
-- JavaScript Linter - ESLint
-- CSS Linter - StyleLint
-- Code Formatter - Prettier
-- CSS Plugin - PostCSS
-- Vendor Prefixer - Autoprefixer
-- Secrets - Dotenv
+- **JavaScript Linter** - [ESLint](https://eslint.org)
+- **CSS Linter** - [StyleLint](https://stylelint.io)
+- **Code Formatter** - [Prettier](https://prettier.io)
+- **CSS Tranformer** - [PostCSS](https://github.com/postcss/postcss)
+- **Vendor Prefixer** - [Autoprefixer](https://github.com/postcss/autoprefixer)
+- **Secrets** - [Dotenv](https://github.com/motdotla/dotenv)
 
 # ⚖ License
 
@@ -330,5 +329,3 @@ To create a new bot command, just copy an existing file and rename it to the com
 2. [Sequelize Documentation](https://sequelize.org/master/)
 3. [Creating Github Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 4. [Server Dashboard](https://app.pm2.io/bucket/61156f4ba8456f045317b129/backend/overview/servers) - **Authorised Access Only**
-
-*Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.*
