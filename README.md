@@ -109,7 +109,10 @@ This was time-consuming so we wondered if there was a reverse integration where 
 
 From our research, there wasn't so we decided that it would be a great idea to create one. Thus GitCord Bot was born.
 
-*Add more inspiration here from Nandini about Lighthouse Bot and Tech Stack Scanning Features - see GitCord Bot Features for inspiration*
+Often times, the performance and accessibility of a page is not paid much attention to, so we have integrated the Lighthouse feature, which lets you scan a website and receive scores using Lighthouse, through Discord itself! There is no need to open Chrome Dev Tools or install the Lighthouse extension, and you can easily access the scores using Gitcord.
+
+We wanted to create an easy way to be able to analyse our favourite sites and access the technologies used by it, without using another site or extension. That's how we thought of implementing the tech scanner feature from Discord itself.
+
 
 # 🎯 GitCord Bot Features
 
