@@ -38,7 +38,7 @@ client.on("message", (message) => {
     return;
   }
 
-  if (command !== "lighthouse" && command !== "tech-stack" && command !== "help" && command !== "github-info" && command !== 'github-delete-command') {
+  if (command !== "lighthouse" && command !== "tech-stack" && command !== "help" && command !== "github-info" && command !== 'github-delete-token') {
     try {
       db.fetchGit(message.author.id)
         .then((result) => {
