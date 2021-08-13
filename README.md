@@ -13,19 +13,19 @@
   - [Development](#-development)
 - [⚙ Usage](#-usage)
 - [👀 Demo](#-demo)
-- [💡Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
+- [💡 Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
 - [🎯 GitCord Bot Features](#-gitcord-bot-features)
 - [👥 The Team](#-the-team)
 - [💻 Technologies](#-technologies)
-  - Sponsor Technologies
-  - Functional Technologies
-  - Server Technologies
-  - Developer Technologies
+  - [Sponsor Technologies](#sponsor-technologies)
+  - [Functional Technologies](#functional-technologies)
+  - [Server Technologies](#server-technologies)
+  - [Developer Technologies](#developer-technologies)
 - [⚖ License](#-license)
 - [🙋 Contributing](#-contributing)
-- [ Codebase Overview](#-codebase-overview)
+  - [Contribution Guide](#contribution-guide)
+  - [Codebase Overview](#codebase-overview)
 - [🔗 Further Links](#-further-links)
-
 
 # 👁 Overview
 
