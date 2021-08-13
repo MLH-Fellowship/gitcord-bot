@@ -105,12 +105,14 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
 
 - `-github`
     Instructs users how to continue with the GitHub API authorisation process.
+    <br/>
     **Example:** `-github`
 
     ![GitHub Screenshot](https://user-images.githubusercontent.com/26024131/129393972-ab58ebab-f037-433e-b829-5b6b44c2fb45.png)
 
 - `-help`
     Gives description and usage for each of the commands.
+    <br/>
     **Example:** `-help` will give you a list of all commands, and `-help <command-name>` will give you details about a specific command.
   
   ![Help Screenshot](https://user-images.githubusercontent.com/66139520/129380643-e35562b6-5bda-4584-b088-e65a171e3365.png)
@@ -119,54 +121,63 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
 
 - `-github-info`
     Checks if your GitHub token is on file, approves your GitHub token, stores it in our database.
+    <br/>
     **Example:** `-github-info <your  github token>`
 
     ![github-info command example](https://user-images.githubusercontent.com/62047062/129387326-7423ee70-b57c-4506-a681-53aa1078383a.png)
 
 - `-github-delete-token`
     Permanently deletes your GitHub token from our database.
+    <br/>
     **Example:** `-github-delete-token`
 
     ![github-delete-token command example](https://user-images.githubusercontent.com/62047062/129388495-6e726717-68e3-40ac-b4f8-bc7f2a010f19.png)
 
 - `-github-post-comment`
     Puts your comment in a GitHub Issue or Pull Request.
+    <br/>
     **Example:** `-github-post-comment <organization name> <repo name> <issue or PR id> <your comment>`
 
     ![github-post-comment command example](https://user-images.githubusercontent.com/62047062/129387691-fb8a292b-b7fe-432b-afd0-736f870e9916.png)
 
 - `-github-post-standup`
     Makes a Standup Notes submission for you.
+    <br/>
     **Example:** `-github-post-standup <organization name> <team name> <discussion id> <your notes>`
 
     ![github-post-standup command example](https://user-images.githubusercontent.com/62047062/129388102-f8f84707-5867-471b-bd17-e55e91ac7933.png)
 
 - `-github-update-standup`
     Updates your Standup Notes for you.
+    <br/>
     **Example:** `-github-update-standup <organization name> <team name> <discussion id> <comment id> <your updated comment>`
 
     ![github-update-standup command example](https://user-images.githubusercontent.com/62047062/129388271-c0863bc6-499a-4abe-acab-0f9f3fecefe3.png)
 
 - `-github-projects create-project`
     Creates a new GitHub project in a repo.
+    <br/>
     **Example:** `-github-projects create-project <repo-owner> <repo-name> <project-title>`
   
   ![Create Project Screenshot](https://user-images.githubusercontent.com/26024131/129387336-de063a2d-913d-4e50-a83a-c248018fad84.png)
   
 - `-github-projects select-project`
     Selects a GitHub project in a repo.
+    <br/>
     **Example:** `-github-projects select-project <project-id>`
   
   ![Select Project Screenshot](https://user-images.githubusercontent.com/26024131/129388914-1e296205-1958-49c9-8c79-804207c31863.png)
   
 - `-github-projects create-column`
     Creates a new column in a GitHub Project.
+    <br/>
     **Example:** `-github-projects create-column <project-id> <column-title>`
   
   ![Create Column Screenshot](https://user-images.githubusercontent.com/26024131/129389416-bdd56cac-4510-4459-bbf7-d9a49910c4ab.png)
   
 - `-github-projects select-column`
     Retrieves cards from a column in a GitHub Project. **Note:** Only retrieves cards and not PR/Issues
+    <br/>
     **Example:** `-github-projects select-column <column-id>`
   
   ![Select Column Screenshot](https://user-images.githubusercontent.com/26024131/129389735-fa70603b-01aa-45db-a8ed-8027a9086b04.png)
@@ -175,12 +186,14 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
 
 - `-lighthouse`
    Provides Lighthouse stats for a site.
+   <br/>
    **Example:** `-lighthouse <url of the site to get its lighthouse stats>`
   
   ![Lighthouse Screenshot](https://user-images.githubusercontent.com/66139520/129378103-1e40f495-3ddb-434e-981f-e18c91804a5b.png)
 
 - `-tech-stack`
    Returns technologies used by a website.
+   <br/>
    **Example:** `-tech-stack <url of the site to get the technologies used by it>`
   
    ![Tech Stack Screenshot](https://user-images.githubusercontent.com/66139520/129379334-f359cc47-e9c8-43ad-bf06-c25eaf6c32c5.png)
