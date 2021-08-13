@@ -1,4 +1,4 @@
-![GitCord Readme Header](https://socialify.git.ci/MLH-Fellowship/gitcord-bot/image?description=1&descriptionEditable=The%20ultimate%20Discord%20Bot%20that%20helps%20you%20manage%20your%20GitHub%20repos%20from%20Discord&issues=1&logo=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F869311504774758420%2F873020508877225985%2FWhite.png&owner=1&pulls=1&stargazers=1&theme=Dark)
+![GitCord Readme Header](https://socialify.git.ci/MLH-Fellowship/pod-3.1.3-team-4/image?description=1&descriptionEditable=GitCord%20Bot%20-%20The%20ultimate%20Discord%20Bot%20that%20helps%20you%20manage%20your%20GitHub%20repos%20from%20Discord&issues=1&logo=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F869311504774758420%2F873020508877225985%2FWhite.png&owner=1&pulls=1&stargazers=1&theme=Dark)
 
 <div align="center">
 <img src="https://forthebadge.com/images/badges/built-by-developers.svg">
@@ -67,7 +67,7 @@ Add a list of the primary GitCord Bot features (could combine with screenshot se
 
 # 👥 The Team
 
-The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials. Also, how we worked as a team, how we used GitHub, branches, Projects etc.
+The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials
 
 ## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
 
@@ -81,15 +81,28 @@ Insert as above
 
 ## Damir Temir - @dtemir
 
-Insert as above
+I wanted to build something for two major DevOps platforms like Discord and GitHub. 
+I also wanted to work in a new programming language for me, using the technologies I wouldn't have otherwise used. 
+
+I certainly enjoyed building this project because we collaborated closely as a team to learn and develop together. 
+We properly managed our time and resources, distributing work based on everyone's availability and time zones.
+
+My contributions include setting up a **CockroachDB** instance with Sequelize ORM. 
+I have also helped setting up the Discord Bot and refactoring code for efficiency and cohesiveness. 
 
 # 💻 Technologies
 
 ## Sponsor Technologies
 
-Cockroach DB
-.Tech Domain
-Linode
+- CockroachDB (Distributed Database with Standard SQL)
+- .tech domain (Build the Future on .tech)
+- Linode (Cloud Computing & Linux Servers)
+
+## Other Technologies
+
+- GitHub API
+- Discord API
+- Netlify
 
 # ⚖ License
 
@@ -98,7 +111,19 @@ Pick a license - see Trainual for details
 # 🙋 Contributing
 
 Similar to Installation - Developer but details on how to submit PRs, branching methodologies and any coding conventions - style/variable names etc.
+1. Clone the repository 
+2. Install needed NPM packages with ``npm install``
+3. Write an `.env` file with information for
+   1. GITHUB_TOKEN 
+   2. DISCORD_TOKEN
+   3. COCKROACH_DB_PASSWORD
+   4. COCKROACH_DB_HOST
+   5. COCKROACH_DB_DATABASE
+4. Run the bot with ``npm start``
 
 # 🔗 Further Links
+
+1. [Building a Node.js App with CockroachDB and Sequelize](https://www.cockroachlabs.com/docs/stable/build-a-nodejs-app-with-cockroachdb-sequelize.html)
+2. [Sequelize Documentation](https://sequelize.org/master/)
 
 Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.
