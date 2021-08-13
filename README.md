@@ -37,7 +37,7 @@ Looking for a bot which will make your development process from Discord easier? 
 ## Discord Server
 
 Love our bot and want to install it in your Discord server? 😍
-Head over to our [site] (https://gitcordbot.tech/) , click on `Download Now`, select the server you want to download GitCord in, and you are good to go 💯
+Head over to our [site](https://gitcordbot.tech/) , click on `Download Now`, select the server you want to download GitCord in, and you are good to go 💯
 To discover what commands you can can use, read the [usage instructions](#usage-instrucutions)
 
 ## Development
