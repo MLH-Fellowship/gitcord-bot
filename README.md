@@ -85,13 +85,13 @@ Encounter any issues? Feel free to open an [issue](https://github.com/MLH-Fellow
 See the instructions below on how to use our awesome Discord Bot. Think of a great command that could be added? Create an [issue](https://github.com/MLH-Fellowship/gitcord-bot/issues/new) and we can review your idea.
 
 - `-lighthouse`
-   Command used to get Lighthouse stats for a site.
+   Provides Lighthouse stats for a site.
    **Example:** `-lighthouse <url of the site to get its lighthouse stats>`
   
   ![Lighthouse Screenshot](https://user-images.githubusercontent.com/66139520/129378103-1e40f495-3ddb-434e-981f-e18c91804a5b.png)
 
 - `-tech-stack`
-   Command to return technologies used by a website.
+   Returns technologies used by a website.
    **Example:** `-tech-stack <url of the site to get the technologies used by it>`
   
    ![Tech Stack Screenshot](https://user-images.githubusercontent.com/66139520/129379334-f359cc47-e9c8-43ad-bf06-c25eaf6c32c5.png)
@@ -101,6 +101,36 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
     **Example:** `-help` will give you a list of all commands, and `-help <command-name>` will give you details about a specific command.
   
   ![Help Screenshot](https://user-images.githubusercontent.com/66139520/129380643-e35562b6-5bda-4584-b088-e65a171e3365.png)
+  
+- `-github-info`
+    Checks if your GitHub token is on file, approves your GitHub token, stores it in our database.
+    **Example:** `-github-info <your  github token>`
+
+    ![github-info command example](https://user-images.githubusercontent.com/62047062/129387326-7423ee70-b57c-4506-a681-53aa1078383a.png)
+
+- `-github-delete-token`
+    Permanently deletes your GitHub token from our database.
+    **Example:** `-github-delete-token`
+
+    ![github-delete-token command example](https://user-images.githubusercontent.com/62047062/129388495-6e726717-68e3-40ac-b4f8-bc7f2a010f19.png)
+
+- `-github-post-comment`
+    Puts your comment in a GitHub Issue or Pull Request.
+    **Example:** `-github-post-comment <organization name> <repo name> <issue or PR id> <your comment>`
+
+    ![github-post-comment command example](https://user-images.githubusercontent.com/62047062/129387691-fb8a292b-b7fe-432b-afd0-736f870e9916.png)
+
+- `-github-post-standup`
+    Makes a Standup Notes submission for you.
+    **Example:** `-github-post-standup <organization name> <team name> <discussion id> <your notes>`   
+
+    ![github-post-standup command example](https://user-images.githubusercontent.com/62047062/129388102-f8f84707-5867-471b-bd17-e55e91ac7933.png)
+
+- `-github-update-standup`
+    Updates your Standup Notes for you.
+    **Example:** `-github-update-standup <organization name> <team name> <discussion id> <comment id> <your updated comment>`
+
+    ![github-update-standup command example](https://user-images.githubusercontent.com/62047062/129388271-c0863bc6-499a-4abe-acab-0f9f3fecefe3.png)
 
 - `-github-projects create-project`
     Creates a new GitHub project in a repo.
@@ -112,8 +142,7 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
     Selects a GitHub project in a repo.
     **Example:** `-github-projects select-project <project-id>`
   
-  ![Select Project Screenshot]((https://user-images.githubusercontent.com/26024131/129388914-1e296205-1958-49c9-8c79-804207c31863.png)
-)
+  ![Select Project Screenshot](https://user-images.githubusercontent.com/26024131/129388914-1e296205-1958-49c9-8c79-804207c31863.png)
   
 - `-github-projects create-column`
     Creates a new column in a GitHub Project.
