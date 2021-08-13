@@ -8,6 +8,7 @@
 # 📚 Table of Contents
 
 - [👁 Overview](#-overview)
+- [🎯 GitCord Bot Features](#-gitcord-bot-features)
 - [⚡ Installation](#-installation)
   - [Discord Server](#-discord-server)
   - [Development](#-development)
@@ -17,7 +18,6 @@
   - [Lighthouse Commands](#lighthouse-commands)
 - [👀 Demo](#-demo)
 - [💡 Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
-- [🎯 GitCord Bot Features](#-gitcord-bot-features)
 - [👥 The Team](#-the-team)
 - [💻 Technologies](#-technologies)
   - [Sponsor Technologies](#sponsor-technologies)
@@ -35,6 +35,20 @@
 Looking for a bot which will make your development process from Discord easier? GitCord is the ultimate Discord Bot that provides you with a number of developer tools and helps you manage your Github repos from Discord.
 
 GitCord lets you posts comments on your issues or pull requests and create a Github Project from Discord itself, making it easier to collaborate. It even lets you check out the Lighthouse stats or tech stacks used by any of your favorite websites. 🚀
+
+# 🎯 GitCord Bot Features
+
+- **Simple Installation** - Take advantage our easy installation process to install GitCord Bot to your Discord Server using our [website](https://gitcordbot.tech)
+
+- **Lighthouse Integration** - Scan a website and receive scores from a Lighthouse audit via our bot. No need to open Chrome Dev Tools or go to a website anymore. Run Lighthouse through Discord to easily share results with your entire dev team.
+
+- **Tech Stack Scanner** - Curious about what tech stack your favourite sites are using? Wonder no more. Discover the technologies a website is using using our tech stack scanner thanks to our Wappalyzer integration.
+
+- **Post Comments on GitHub Issues/PRs** - Using Discord to collaborate with your dev team? Why post in two places to keep your team up to date yet document your progress? Use GitCord bot to post on issues and PRs for you, notifying your team of the latest changes and keeping your repo up to date.
+
+- **Post & Update Comments on GitHub Discussions** - Using GitHub Discussions for daily standups? Our bot will make the process much smoother so you can concentrate on developing your awesome project. Make all your comments in one platform and leave GitHub for your code. Comment early on and in a last minute rush to update pre-standup? Use our update command to refresh your standup notes
+
+- **GitHub Projects Integration** - Using GitHub Projects for project management but find it a pain to setup, micro-manage and keep your team up to date if they don't check it? Our bot empowers you to create your GitHub Project through Discord and show its contents to your team with project & column creation and listing columns and cards.
 
 # ⚡ Installation
 
@@ -190,20 +204,6 @@ From our research, there wasn't so we decided that it would be a great idea to c
 Often times, the performance and accessibility of a page is not paid much attention to, so we have integrated the Lighthouse feature, which lets you scan a website and receive scores using Lighthouse, through Discord itself! There is no need to open Chrome Dev Tools or install the Lighthouse extension, and you can easily access the scores using Gitcord.
 
 We wanted to create an easy way to be able to analyse our favourite sites and access the technologies used by it, without using another site or extension. That's how we thought of implementing the tech scanner feature from Discord itself.
-
-# 🎯 GitCord Bot Features
-
-- **Simple Installation** - Take advantage our easy installation process to install GitCord Bot to your Discord Server using our [website](https://gitcordbot.tech)
-
-- **Lighthouse Integration** - Scan a website and receive scores from a Lighthouse audit via our bot. No need to open Chrome Dev Tools or go to a website anymore. Run Lighthouse through Discord to easily share results with your entire dev team.
-
-- **Tech Stack Scanner** - Curious about what tech stack your favourite sites are using? Wonder no more. Discover the technologies a website is using using our tech stack scanner thanks to our Wappalyzer integration.
-
-- **Post Comments on GitHub Issues/PRs** - Using Discord to collaborate with your dev team? Why post in two places to keep your team up to date yet document your progress? Use GitCord bot to post on issues and PRs for you, notifying your team of the latest changes and keeping your repo up to date.
-
-- **Post & Update Comments on GitHub Discussions** - Using GitHub Discussions for daily standups? Our bot will make the process much smoother so you can concentrate on developing your awesome project. Make all your comments in one platform and leave GitHub for your code. Comment early on and in a last minute rush to update pre-standup? Use our update command to refresh your standup notes
-
-- **GitHub Projects Integration** - Using GitHub Projects for project management but find it a pain to setup, micro-manage and keep your team up to date if they don't check it? Our bot empowers you to create your GitHub Project through Discord and show its contents to your team with project & column creation and listing columns and cards.
 
 # 👥 The Team
 
