@@ -6,6 +6,7 @@
 </div>
 
 # 📚 Table of Contents
+
 - [👁 Overview](#-overview)
 - [⚡ Installation](#-installation)
   - Discord Server
@@ -37,7 +38,20 @@ Love our bot and want it to use it for your Discord server. Read our installatio
 
 ## Development
 
-Looking to locally host GitCord Bot yourself or installing it to contribute to our codebase? Here's a step by step guide on how to install and run our bot in a localhost environment.
+Looking to locally host GitCord Bot yourself or installing it to contribute to our codebase? Here's a step by step guide on how to install and run our bot in a localhost environment. See our Contributing section for details of how to contribute to our project.
+
+1. Clone the repository using `git clone https://github.com/MLH-Fellowship/gitcord-bot` or use your forked repo URL if you've forked our project
+2. Install needed NPM packages with `npm install`
+3. Install development NPM packages with `npm install --dev`
+4. Create an `.env` file with information for the following variables:
+   1. GITHUB_TOKEN
+   2. DISCORD_TOKEN
+   3. COCKROACH_DB_PASSWORD
+   4. COCKROACH_DB_HOST
+   5. COCKROACH_DB_DATABASE
+5. Run the bot with ``npm start``
+
+Encounter any issues? Feel free to open an issue with a detailed description of any error messages that occur and describe the specific problem and we'd be happy to help.
 
 # ⚙ Usage
 
@@ -67,7 +81,7 @@ Add a list of the primary GitCord Bot features (could combine with screenshot se
 
 # 👥 The Team
 
-The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials
+The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials. Also, how we worked as a team, how we used GitHub, branches, Projects etc.
 
 ## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
 
@@ -81,14 +95,11 @@ Insert as above
 
 ## Damir Temir - @dtemir
 
-I wanted to build something for two major DevOps platforms like Discord and GitHub. 
-I also wanted to work in a new programming language for me, using the technologies I wouldn't have otherwise used. 
+I wanted to build something for two major DevOps platforms like Discord and GitHub. I also wanted to work in a new programming language for me, using the technologies I wouldn't have otherwise used.
 
-I certainly enjoyed building this project because we collaborated closely as a team to learn and develop together. 
-We properly managed our time and resources, distributing work based on everyone's availability and time zones.
+I certainly enjoyed building this project because we collaborated closely as a team to learn and develop together. We properly managed our time and resources, distributing work based on everyone's availability and time zones.
 
-My contributions include setting up a **CockroachDB** instance with Sequelize ORM. 
-I have also helped setting up the Discord Bot and refactoring code for efficiency and cohesiveness. 
+My contributions include setting up a **CockroachDB** instance with Sequelize ORM. I have also helped setting up the Discord Bot and refactoring code for efficiency and cohesiveness.
 
 # 💻 Technologies
 
@@ -110,16 +121,27 @@ Pick a license - see Trainual for details
 
 # 🙋 Contributing
 
+We welcome contributors to our GitCord Bot project. Feel free to take on any open issues marked v2 by forking our repo, creating a new branch off of main and then submitting a PR. Please adhere to our codebase conventions, git workflow and PR template as outlined below to ensure the greatest chance of your PR being approved and merged.
+
+1. Open a new issue for working on any new features
+
+- Our GitHub action will automatically add it to our GitHub Project but please add the v2 milestone and appropriate label: documentation, enhancement, question, bug or help wanted.
+
+2. Create a new branch from main with the name of the feature you will be working on - i.e. token validation
+
+- Please create a branch per issue as it makes it easier to review PRs. One exception is documentation updates where you can use the docs branch.
+
+3. Ensure your code meets the standards of our linters and desired formatting
+
+- We use ESLint and StyleLint for JS and CSS linting as well as prettier for autoformatting to our desired configuration through config files stored in our repo
+
+- For easiest compliance, install the appropriate extensions (ESLint, StyleLint and Prettier) in your code editor or alternatively, use the command line.
+
+4. Create a PR from your fork to the base branch: staging
+
+- Follow the template to ensure 
+
 Similar to Installation - Developer but details on how to submit PRs, branching methodologies and any coding conventions - style/variable names etc.
-1. Clone the repository 
-2. Install needed NPM packages with ``npm install``
-3. Write an `.env` file with information for
-   1. GITHUB_TOKEN 
-   2. DISCORD_TOKEN
-   3. COCKROACH_DB_PASSWORD
-   4. COCKROACH_DB_HOST
-   5. COCKROACH_DB_DATABASE
-4. Run the bot with ``npm start``
 
 # 🔗 Further Links
 
