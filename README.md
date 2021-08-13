@@ -158,9 +158,18 @@ We used GitHub to great effect with main, staging and feature branches and I set
 
 The main features I implemented were surrounding the GitHub API. I integrated the GitHub API with our bot and created all the GitHub bot commands. I also helped refactor the code based on feedback from our code reviews, setup linting, formatting and autoprefixer and host our bot on Linode (with PM2 to manage and daemonize our Node app) and website on Netlify.
 
-## Nandini Jain - [@Inoxia25](https://github.com/inoxia25)
+## Nandini Jain - [@Inoxia25](https://github.com/Inoxia25)
 
-*Insert as above*
+<div align="center" style="margin: 2.5% 0">
+<img width="200px" style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/66139520?v=4" alt="Nandini Jain">
+</div>
+
+While participating in hackathons and also for various events like the MLH pre-fellowship, I have used discord effectively and always felt it would have been better to have a discord bot as a developer tool, helping developers while they collaborate on discord. This inspired me to work on creating a discord bot, which I know would be useful for many developers, including myself.
+
+Throughout ths project, I got to play around with various new technologies like Discord.js, Lighthouse and Wappalyzer. As we were a small team, we worked closely to brainstorm features, thinking what might be useful for developers. Our extensive use of Github to collaborate and work effectively strengthened my Git skills to a great extent.The constant reviewing of our code by our team mates and mentor helped us learn the best practices when it came to clean, efficient and reusable code. Despite our timezones and other commitments, our team managed to dedicatedly work on this project, helping each other out with any issues and learning new technologies on the way.
+
+The main features that I worked on consist of implementing the lighthouse feature for the bot, and showing the tech stacks used by a site from discord itself (using the Wappalyzer API). I worked on adding the dynamic help command and refactored the code to make it more modular. I also worked on developing and styling the website for our bot, which is integrated with discord to be able to download the bot into a server.
+
 
 ## Damir Temir - [@dtemir](https://github.com/dtemir)
 
