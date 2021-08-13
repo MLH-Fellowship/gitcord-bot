@@ -200,7 +200,7 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
 
 # 👀 Demo
 
-*Record some animated GIFs to showcase Bot functionality + possibly website*
+[YouTube Demo Video](https://youtu.be/gbcnEMU2g6E)
 
 # 💡 Why We Built GitCord Bot
 
