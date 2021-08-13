@@ -12,6 +12,9 @@
   - [Discord Server](#-discord-server)
   - [Development](#-development)
 - [⚙ Usage](#-usage)
+  - [Bot Commands](#bot-commands)
+  - [GitHub Commands](#github-commands)
+  - [Lighthouse Commands](#lighthouse-commands)
 - [👀 Demo](#-demo)
 - [💡 Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
 - [🎯 GitCord Bot Features](#-gitcord-bot-features)
@@ -84,24 +87,24 @@ Encounter any issues? Feel free to open an [issue](https://github.com/MLH-Fellow
 
 See the instructions below on how to use our awesome Discord Bot. Think of a great command that could be added? Create an [issue](https://github.com/MLH-Fellowship/gitcord-bot/issues/new) and we can review your idea.
 
-- `-lighthouse`
-   Provides Lighthouse stats for a site.
-   **Example:** `-lighthouse <url of the site to get its lighthouse stats>`
-  
-  ![Lighthouse Screenshot](https://user-images.githubusercontent.com/66139520/129378103-1e40f495-3ddb-434e-981f-e18c91804a5b.png)
+## Bot Commands
 
-- `-tech-stack`
-   Returns technologies used by a website.
-   **Example:** `-tech-stack <url of the site to get the technologies used by it>`
-  
-   ![Tech Stack Screenshot](https://user-images.githubusercontent.com/66139520/129379334-f359cc47-e9c8-43ad-bf06-c25eaf6c32c5.png)
+- `-github`
+    Instructs users how to continue with the GitHub API authorisation process.
+    **Example:** `-github`
+
+    **To add screenshot**
+
+    ![github command example](https://user-images.githubusercontent.com/62047062/129387326-7423ee70-b57c-4506-a681-53aa1078383a.png)
 
 - `-help`
     Gives description and usage for each of the commands.
     **Example:** `-help` will give you a list of all commands, and `-help <command-name>` will give you details about a specific command.
   
   ![Help Screenshot](https://user-images.githubusercontent.com/66139520/129380643-e35562b6-5bda-4584-b088-e65a171e3365.png)
-  
+
+## GitHub Commands
+
 - `-github-info`
     Checks if your GitHub token is on file, approves your GitHub token, stores it in our database.
     **Example:** `-github-info <your  github token>`
@@ -155,6 +158,20 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
     **Example:** `-github-projects select-column <column-id>`
   
   ![Select Column Screenshot](https://user-images.githubusercontent.com/26024131/129389735-fa70603b-01aa-45db-a8ed-8027a9086b04.png)
+
+## Website Commands
+
+- `-lighthouse`
+   Provides Lighthouse stats for a site.
+   **Example:** `-lighthouse <url of the site to get its lighthouse stats>`
+  
+  ![Lighthouse Screenshot](https://user-images.githubusercontent.com/66139520/129378103-1e40f495-3ddb-434e-981f-e18c91804a5b.png)
+
+- `-tech-stack`
+   Returns technologies used by a website.
+   **Example:** `-tech-stack <url of the site to get the technologies used by it>`
+  
+   ![Tech Stack Screenshot](https://user-images.githubusercontent.com/66139520/129379334-f359cc47-e9c8-43ad-bf06-c25eaf6c32c5.png)
 
 # 👀 Demo
 
