@@ -67,4 +67,13 @@ async function updateGitHubToken(discord_id, github_token){
     });
 }
 
-module.exports = { fetchGit, insertGitHubToken, updateGitHubToken };
+// Delete an entry with user Discord ID (returns 1 if deleted, 0 if not)
+async function deleteGitHubToken(discord_id){
+    return await Tokens.destroy({
+        where: {
+            id: discord_id,
+        }
+    })
+}
+
+module.exports = { fetchGit, insertGitHubToken, updateGitHubToken, deleteGitHubToken };
