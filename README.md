@@ -169,6 +169,8 @@ My contributions include setting up a **CockroachDB** instance with Sequelize OR
 - GitHub API
 - Discord API
 - Netlify
+- Wappalyzer API
+- Lighthouse 
 
 # ⚖ License
 
