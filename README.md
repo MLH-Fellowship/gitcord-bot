@@ -48,7 +48,7 @@ Love our bot and want to install it in your Discord server? 😍
 
 ![Server Installation Page](https://user-images.githubusercontent.com/26024131/129351156-3ae42304-5a60-49f4-858e-13a40e118e1e.png)
 
-To discover what commands you can can use, read the [usage instructions](#usage-instrucutions)
+To discover what commands you can can use, read the [usage instructions](#-usage)
 
 ## Development
 
@@ -57,11 +57,11 @@ Looking to locally host GitCord Bot yourself or installing it to contribute to o
 1. Clone the repository using `git clone https://github.com/MLH-Fellowship/gitcord-bot` or use your forked repo URL if you've forked our project
 2. Install needed NPM packages with `npm install`
 3. Install development NPM packages with `npm install --dev`
-4. Create an `.env` file with information for the following variables:
-   1. DISCORD_TOKEN
-   2. COCKROACH_DB_PASSWORD
-   3. COCKROACH_DB_HOST
-   4. COCKROACH_DB_DATABASE
+4. Create an `.env` file with information for the following four variables:
+   1. ``DISCORD_TOKEN``
+   2. ``COCKROACH_DB_PASSWORD``
+   3. ``COCKROACH_DB_HOST``
+   4. ``COCKROACH_DB_DATABASE``
 5. Run the bot with ``npm start``
 
 ```bash
@@ -79,45 +79,35 @@ COCKROACH_DB_HOST=<CockroachDB Host>
 COCKROACH_DB_DATABASE=<CockroachDB Database>
 ```
 
-Encounter any issues? Feel free to open an issue with a detailed description of any error messages that occur and describe the specific problem and we'd be happy to help.
+Encounter any issues? Feel free to open an [issue](https://github.com/MLH-Fellowship/gitcord-bot/issues/new) with a detailed description of any error messages that occur and describe the specific problem and we'd be happy to help.
 
 # ⚙ Usage
 
-Here's how to use our awesome Discord Bot. Insert commands, command format and functionality
-# Commands
+See the instructions below on how to use our awesome Discord Bot. Think of a great command that could be added? Create an [issue](https://github.com/MLH-Fellowship/gitcord-bot/issues/new) and we can review your idea.
+
+## Commands
+
 - `-lighthouse`
-   Command used to get lighthouse stats for a site.
-   Example:  `-lighthouse <url of the site to get its lighthouse stats>`
+   Command used to get Lighthouse stats for a site.
+   **Example:** `-lighthouse <url of the site to get its lighthouse stats>`
   
-  
-  ![image](https://user-images.githubusercontent.com/66139520/129378103-1e40f495-3ddb-434e-981f-e18c91804a5b.png)
+  ![Lighthouse Screenshot](https://user-images.githubusercontent.com/66139520/129378103-1e40f495-3ddb-434e-981f-e18c91804a5b.png)
 
-  
 - `-tech-stack`
-   Command to return tech stack used by a website.
-   Example: `-tech-stack <url of the site to get the technologies used by it>`
+   Command to return technologies used by a website.
+   **Example:** `-tech-stack <url of the site to get the technologies used by it>`
   
-   ![image](https://user-images.githubusercontent.com/66139520/129379334-f359cc47-e9c8-43ad-bf06-c25eaf6c32c5.png)
+   ![Tech Stack Screenshot](https://user-images.githubusercontent.com/66139520/129379334-f359cc47-e9c8-43ad-bf06-c25eaf6c32c5.png)
 
-  
 - `-help`
     Gives description and usage for each of the commands.
-    Example : `-help` will give you a list of all commands, and `-help <command-name>` will give you details about a command.
+    **Example:** `-help` will give you a list of all commands, and `-help <command-name>` will give you details about a specific command.
   
-  ![image](https://user-images.githubusercontent.com/66139520/129380643-e35562b6-5bda-4584-b088-e65a171e3365.png)
-
-    
-
+  ![Help Screenshot](https://user-images.githubusercontent.com/66139520/129380643-e35562b6-5bda-4584-b088-e65a171e3365.png)
 
 # 👀 Demo
 
-## Interactive GIF
-
-Record some animated GIFs to showcase Bot functionality + possibly website
-
-## Screenshots
-
-Add some screenshots with alt text and headings
+*Record some animated GIFs to showcase Bot functionality + possibly website*
 
 # 💡 Why We Built GitCord Bot
 
@@ -133,10 +123,7 @@ Often times, the performance and accessibility of a page is not paid much attent
 
 We wanted to create an easy way to be able to analyse our favourite sites and access the technologies used by it, without using another site or extension. That's how we thought of implementing the tech scanner feature from Discord itself.
 
-
 # 🎯 GitCord Bot Features
-
-*Could combine with screenshot section and just have animated demo GIFs?*
 
 - **Simple Installation** - Take advantage our easy installation process to install GitCord Bot to your Discord Server using our [website](https://gitcordbot.tech)
 
@@ -151,8 +138,6 @@ We wanted to create an easy way to be able to analyse our favourite sites and ac
 - **GitHub Projects Integration** - Using GitHub Projects for project management but find it a pain to setup, micro-manage and keep your team up to date if they don't check it? Our bot empowers you to create your GitHub Project through Discord and show its contents to your team with project & column creation and listing columns and cards.
 
 # 👥 The Team
-
-*The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials. Also, how we worked as a team, how we used GitHub, branches, Projects etc.*
 
 <div align="center">
 <table>
@@ -187,12 +172,13 @@ The main features I implemented were surrounding the GitHub API. I integrated th
 <img width="200px" style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/66139520?v=4" alt="Nandini Jain">
 </div>
 
-While participating in hackathons and also for various events like the MLH pre-fellowship, I have used discord effectively and always felt it would have been better to have a discord bot as a developer tool, helping developers while they collaborate on discord. This inspired me to work on creating a discord bot, which I know would be useful for many developers, including myself.
+While participating in hackathons and also for various events like the MLH Pre-Fellowship, I have used Discord effectively and always felt it would have been better to have a Discord Bot as a developer tool, helping developers while they collaborate on Discord. This inspired me to work on creating a Discord Bot, which I know would be useful for many developers, including myself.
 
-Throughout ths project, I got to play around with various new technologies like Discord.js, Lighthouse and Wappalyzer. As we were a small team, we worked closely to brainstorm features, thinking what might be useful for developers. Our extensive use of Github to collaborate and work effectively strengthened my Git skills to a great extent.The constant reviewing of our code by our team mates and mentor helped us learn the best practices when it came to clean, efficient and reusable code. Despite our timezones and other commitments, our team managed to dedicatedly work on this project, helping each other out with any issues and learning new technologies on the way.
+Throughout this project, I got to play around with various new technologies like Discord.js, Lighthouse and Wappalyzer. As we were a small team, we worked closely to brainstorm features, thinking what might be useful for developers. Our extensive use of Github to collaborate and work effectively strengthened my Git skills to a great extent.
 
-The main features that I worked on consist of implementing the lighthouse feature for the bot, and showing the tech stacks used by a site from discord itself (using the Wappalyzer API). I worked on adding the dynamic help command and refactored the code to make it more modular. I also worked on developing and styling the website for our bot, which is integrated with discord to be able to download the bot into a server.
+The constant reviewing of our code by our teammates and mentor helped us learn the best practices when it came to clean, efficient and reusable code. Despite our timezones and other commitments, our team managed to dedicatedly work on this project, helping each other out with any issues and learning new technologies on the way.
 
+The main features that I worked on consist of implementing the Lighthouse analysis for the bot, and showing the tech stacks used by a site from Discord itself (using the Wappalyzer API). I worked on adding the dynamic help command and refactored the code to make it more modular. I also worked on developing and styling the website for our bot, which is integrated with Discord to be able to download the bot into a server.
 
 ## Damir Temir - [@dtemir](https://github.com/dtemir)
 
@@ -241,7 +227,7 @@ We used a range of technologies in order to create GitCord Bot. Some were from o
 
 # ⚖ License
 
-*See License.md*
+We are using the MIT License for this project which allows commercial use, modification, distributation and private use. See our [License](https://github.com/MLH-Fellowship/gitcord-bot/blob/main/LICENSE.md) for more information about the specific terms.
 
 # 🙋 Contributing
 
@@ -249,7 +235,7 @@ We welcome contributors to our GitCord Bot project. Feel free to take on any ope
 
 ## Contribution Guide
 
-1. Open a new issue for working on any new features
+1. Open a new [issue](https://github.com/MLH-Fellowship/gitcord-bot/issues/new) for working on any new features
 
 - Our GitHub action will automatically add it to our GitHub Project but please add the v2 milestone and appropriate label: documentation, enhancement, question, bug or help wanted.
 
@@ -265,7 +251,7 @@ We welcome contributors to our GitCord Bot project. Feel free to take on any ope
 
 4. Save any new node modules to the `package.json` using `npm install` or `npm install --save-dev` for developer-only node modules
 
-5. Create a PR from your fork to the base branch: staging
+5. Create a [PR](https://github.com/MLH-Fellowship/gitcord-bot/compare) from your fork to the base branch: staging
 
 - Follow the template to ensure your PR is descriptive enough to allow us to easily review it. As with issues, add an appropriate label and the v2 milestone. Finally, add one of the team as a reviewer so we can review your PR and hopefully approve it.
 
