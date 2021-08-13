@@ -139,7 +139,7 @@ We welcome contributors to our GitCord Bot project. Feel free to take on any ope
 
 4. Create a PR from your fork to the base branch: staging
 
-- Follow the template to ensure 
+- Follow the template to ensure
 
 Similar to Installation - Developer but details on how to submit PRs, branching methodologies and any coding conventions - style/variable names etc.
 
