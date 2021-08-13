@@ -1,27 +1,44 @@
-require('dotenv').config();
-const Discord = require('discord.js');
+require("dotenv").config();
+
+const fs = require("fs");
+const Discord = require("discord.js");
+let prefix='-';
 const client = new Discord.Client();
-const prefix = '-';
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-// checking if bot is ready
-client.once('ready', () =>{
-    console.log('Encourage Bot is online');
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
+
+client.once("ready", () => {
+    console.log("GitCord Bot is online");
 });
-
 // taking in the commands
-client.on('message', message => {
+client.on("message", (message) => {
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = message.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
 
-    if (command === 'ping'){
-	message.channel.send('pong!');
-    } else if (command === 'works') {
-	message.channel.send('kinda');
+    // Message and Command logging
+    console.log("Message is:" + message.content);
+    console.log("Command is:" + command);
+
+    if (!client.commands.has(command)) {
+        console.log("Command does not exist in github.js");
+        return;
     }
-	
+
+	try {
+		client.commands.get(command).execute(command, message, args);
+	} catch (error) {
+		console.error(error);
+		message.reply('there was an error trying to execute that command!');
+	}
 });
 
-// bot token (test mode - going to regenerate a new token and use an env variable instead)
+// bot token
 client.login(process.env.DISCORD_TOKEN);
