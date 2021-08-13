@@ -9,12 +9,10 @@
 
 - [👁 Overview](#-overview)
 - [⚡ Installation](#-installation)
-  - Discord Server
-  - Development
+  - [Discord Server](#-discord-server)
+  - [Development](#-development)
 - [⚙ Usage](#-usage)
 - [👀 Demo](#-demo)
-  - Interactive GIF
-  - Screenshots
 - [💡Why We Built GitCord Bot](#-why-we-built-gitcord-bot)
 - [🎯 GitCord Bot Features](#-gitcord-bot-features)
 - [👥 The Team](#-the-team)
