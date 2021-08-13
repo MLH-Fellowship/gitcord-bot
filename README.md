@@ -84,10 +84,30 @@ Encounter any issues? Feel free to open an issue with a detailed description of 
 # ⚙ Usage
 
 Here's how to use our awesome Discord Bot. Insert commands, command format and functionality
+# Commands
+- `-lighthouse`
+   Command used to get lighthouse stats for a site.
+   Example:  `-lighthouse <url of the site to get its lighthouse stats>`
+  
+  
+  ![image](https://user-images.githubusercontent.com/66139520/129378103-1e40f495-3ddb-434e-981f-e18c91804a5b.png)
 
-## Help Docs
+  
+- `-tech-stack`
+   Command to return tech stack used by a website.
+   Example: `-tech-stack <url of the site to get the technologies used by it>`
+  
+   ![image](https://user-images.githubusercontent.com/66139520/129379334-f359cc47-e9c8-43ad-bf06-c25eaf6c32c5.png)
 
-For a more detailed in-depth guide, visit our website where our full help documentation resides.
+  
+- `-help`
+    Gives description and usage for each of the commands.
+    Example : `-help` will give you a list of all commands, and `-help <command-name>` will give you details about a command.
+  
+  ![image](https://user-images.githubusercontent.com/66139520/129380643-e35562b6-5bda-4584-b088-e65a171e3365.png)
+
+    
+
 
 # 👀 Demo
 
