@@ -281,6 +281,10 @@ We used a range of technologies in order to create GitCord Bot. Some were from o
 
 ## Server Technologies
 
+**Server Dashboard Overview**
+
+![PM2 Dashboard](https://user-images.githubusercontent.com/26024131/129396586-72be2874-1129-42ec-8224-ca2c8459cb35.png)
+
 - **Server Hosting** - [Linode](https://www.linode.com)
 - **Website Hosting** - [Netlify](https://www.netlify.com)
 - **Server Management** - [PM2](https://pm2.keymetrics.io)
