@@ -46,12 +46,26 @@ Looking to locally host GitCord Bot yourself or installing it to contribute to o
 2. Install needed NPM packages with `npm install`
 3. Install development NPM packages with `npm install --dev`
 4. Create an `.env` file with information for the following variables:
-   1. GITHUB_TOKEN
-   2. DISCORD_TOKEN
-   3. COCKROACH_DB_PASSWORD
-   4. COCKROACH_DB_HOST
-   5. COCKROACH_DB_DATABASE
+   1. DISCORD_TOKEN
+   2. COCKROACH_DB_PASSWORD
+   3. COCKROACH_DB_HOST
+   4. COCKROACH_DB_DATABASE
 5. Run the bot with ``npm start``
+
+```bash
+git clone https://github.com/MLH-Fellowship/gitcord-bot
+cd gitcord
+npm install
+npm install --dev
+nano .env
+```
+
+```bash
+DISCORD_TOKEN=<Discord Token>
+COCKROACH_DB_PASSWORD=<CockroachDB Password>
+COCKROACH_DB_HOST=<CockroachDB Host>
+COCKROACH_DB_DATABASE=<CockroachDB Database>
+```
 
 Encounter any issues? Feel free to open an issue with a detailed description of any error messages that occur and describe the specific problem and we'd be happy to help.
 
@@ -97,11 +111,30 @@ Add our inspiration - see Discord channel - behind our original Bot idea, why we
 
 *The developers behind GitCord Bot. Mention MLH Pre-Fellowship and create a list of developers + images, why we were inspired, what we enjoyed about the project/what we did and socials. Also, how we worked as a team, how we used GitHub, branches, Projects etc.*
 
+<div align="center">
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/louisefindlay23"><img src="https://avatars.githubusercontent.com/u/26024131?v=4" width="100px;" alt="" style="border-radius:50%"/><br /><sub><b>Louise Findlay
+</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/inoxia25"><img src="https://avatars.githubusercontent.com/u/66139520?v=4" width="100px;" alt="" style="border-radius:50%"/><br /><sub><b>Nandini Jain</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/dtemir"><img src="https://avatars.githubusercontent.com/u/62047062?v=4" width="100px;" alt="" style="border-radius:50%"/><br /><sub><b>Damir Tamir</b></sub></a><br /></td>
+  </tr>
+</table>
+</div>
+
 ## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
 
 *Insert Bio Image*
 
-*Why I was inspired to create Discord Bot, what I contributed/enjoyed about the project*
+what I contributed/enjoyed about the project*
+
+I was inspired to create Discord Bot by my experiences in the first week of the MLH Pre-Fellowship collaborating with a team of 13 fellow pod members. Having a GitHub feed in one of our Discord channels was great for keeping up to date with GitHub activity but some members it was overwhelming.
+
+Communicating in Discord was great for immediate quick communication with team members with direct mentions but then I'd have to crosspost information to the relevant GitHub issues and PRs to keep them up to date to store our project history. 
+
+This was time-consuming so I wondered if there was a reverse integration where we could post messages on Discord mentioning a specific issue or PR and store the repo we wanted to use and then it would comment on GitHub for us while being able to use Discord mentions to notify teammates.
+
+From my research, there wasn't so I decided that it would be a great idea to create one. I'd never create a Discord Bot or used the GitHub API before so it seems an exciting and new project to tackle. Thus GitCord Bot was born.
 
 ## Nandini Jain - @Inoxia25
 
