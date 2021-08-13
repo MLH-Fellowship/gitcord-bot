@@ -102,6 +102,12 @@ See the instructions below on how to use our awesome Discord Bot. Think of a gre
   
   ![Help Screenshot](https://user-images.githubusercontent.com/66139520/129380643-e35562b6-5bda-4584-b088-e65a171e3365.png)
 
+- `-github-projects create-project`
+    Creates a new GitHub project in a repo.
+    **Example:** `-github-projects`
+  
+  ![GitHub Projects Screenshot](https://user-images.githubusercontent.com/66139520/129380643-e35562b6-5bda-4584-b088-e65a171e3365.png)
+
 # 👀 Demo
 
 *Record some animated GIFs to showcase Bot functionality + possibly website*
@@ -273,7 +279,7 @@ To create a new bot command, just copy an existing file and rename it to the com
 
 1. [Building a Node.js App with CockroachDB and Sequelize](https://www.cockroachlabs.com/docs/stable/build-a-nodejs-app-with-cockroachdb-sequelize.html)
 2. [Sequelize Documentation](https://sequelize.org/master/)
-3. [Creating Github Personal Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+3. [Creating Github Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 4. [Server Dashboard](https://app.pm2.io/bucket/61156f4ba8456f045317b129/backend/overview/servers) - **Authorised Access Only**
 
 *Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.*
