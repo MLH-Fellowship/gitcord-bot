@@ -206,24 +206,27 @@ We used a range of technologies in order to create GitCord Bot. Some were from o
 
 ## Functional Technologies
 
-- Discord API - Discord.js
-- GitHub API - Octokit.js
-- Lighthouse
-- Chrome Launcher
-- Wappalyzer
+- Discord API - [Discord.js](https://discord.js.org)
+- GitHub API - [Octokit.js](https://github.com/octokit/octokit.js)
+- Database - [CockroachDB](https://www.cockroachlabs.com/product/)
+- ORM - [Sequelize](https://sequelize.org)
+- Lighthouse - [Chrome Launcher](https://github.com/GoogleChrome/chrome-launcher)
+- Tech Stack API - Wappalyzer
 
 ## Server Technologies
 
-- Linode
-- Netlify
-- PM2
+- Server Hosting - Linode
+- Website Hosting - Netlify
+- Server Management - PM2
 
 ## Developer Technologies
 
-- ESLint
-- StyleLint
-- Prettier
-- Autoprefixer
+- JavaScript Linter - ESLint
+- CSS Linter - StyleLint
+- Code Formatter - Prettier
+- CSS Plugin - PostCSS
+- Vendor Prefixer - Autoprefixer
+- Secrets - Dotenv
 
 # ⚖ License
 
@@ -274,4 +277,6 @@ To create a new bot command, just copy an existing file and rename it to the com
 1. [Building a Node.js App with CockroachDB and Sequelize](https://www.cockroachlabs.com/docs/stable/build-a-nodejs-app-with-cockroachdb-sequelize.html)
 2. [Sequelize Documentation](https://sequelize.org/master/)
 3. [Creating Github Personal Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+4. [Server Dashboard](https://app.pm2.io/bucket/61156f4ba8456f045317b129/backend/overview/servers) - **Authorised Access Only**
+
 *Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.*
