@@ -84,8 +84,6 @@ Encounter any issues? Feel free to open an [issue](https://github.com/MLH-Fellow
 
 See the instructions below on how to use our awesome Discord Bot. Think of a great command that could be added? Create an [issue](https://github.com/MLH-Fellowship/gitcord-bot/issues/new) and we can review your idea.
 
-## Commands
-
 - `-lighthouse`
    Command used to get Lighthouse stats for a site.
    **Example:** `-lighthouse <url of the site to get its lighthouse stats>`
