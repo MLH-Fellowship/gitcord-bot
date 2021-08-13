@@ -30,7 +30,7 @@
 
 # 👁 Overview
 
-Looking for a bot which will make your development process from Discord easier? GitCord is the ultimate Discord Bot that provides you with a number of developer tools and helps you manage your Github repos from Discord. 
+Looking for a bot which will make your development process from Discord easier? GitCord is the ultimate Discord Bot that provides you with a number of developer tools and helps you manage your Github repos from Discord.
 
 GitCord lets you posts comments on your issues or pull requests and create a Github Project from Discord itself, making it easier to collaborate. It even lets you check out the Lighthouse stats or tech stacks used by any of your favorite websites. 🚀
 
@@ -47,7 +47,6 @@ Love our bot and want to install it in your Discord server? 😍
 - Select the server you want to download GitCord in, and you are good to go 💯
 
 ![Server Installation Page](https://user-images.githubusercontent.com/26024131/129351156-3ae42304-5a60-49f4-858e-13a40e118e1e.png)
-
 
 To discover what commands you can can use, read the [usage instructions](#usage-instrucutions)
 
@@ -108,7 +107,7 @@ Communicating in Discord was great for immediate quick communication with team m
 
 This was time-consuming so we wondered if there was a reverse integration where we could post messages on Discord mentioning a specific issue or PR and store the repo we wanted to use and then it would comment on GitHub for us while being able to use Discord mentions to notify teammates.
 
-From our research, there wasn't so we decided that it would be a great idea to create one. Thus GitCord Bot was born
+From our research, there wasn't so we decided that it would be a great idea to create one. Thus GitCord Bot was born.
 
 *Add more inspiration here from Nandini about Lighthouse Bot and Tech Stack Scanning Features - see GitCord Bot Features for inspiration*
 
@@ -144,12 +143,14 @@ From our research, there wasn't so we decided that it would be a great idea to c
 </div>
 
 ## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
+
 <br>
 <div align="center">
 <img width="200px" src="https://avatars.githubusercontent.com/u/26024131?v=4" alt="Louise Findlay">
 </div>
 <br>
-I'd never created a Discord Bot or used the GitHub API before so it seems like an exciting new project to tackle.
+
+I wanted to work on the project because I've hadn't created a Discord Bot or used the GitHub API before so it seemed like an exciting new project to tackle and the features we were developing would solve real pain points us and fellow developers had so the project would bring great benefits to the developer community.
 
 I really enjoyed working on the project because since the dev team was small, we worked closely as a tight-knit team, helping each other out with pair programming sessions when we faced any issues or blockers despite the distributed nature of our team. We all learned about new technologies and aspects of coding languages that we can use in the future.
 
@@ -157,11 +158,17 @@ We used GitHub to great effect with main, staging and feature branches and I set
 
 The main features I implemented were surrounding the GitHub API. I integrated the GitHub API with our bot and created all the GitHub bot commands. I also helped refactor the code based on feedback from our code reviews, setup linting, formatting and autoprefixer and host our bot on Linode (with PM2 to manage and daemonize our Node app) and website on Netlify.
 
-## Nandini Jain - @Inoxia25
+## Nandini Jain - [@Inoxia25](https://github.com/inoxia25)
 
 *Insert as above*
 
-## Damir Temir - @dtemir
+## Damir Temir - [@dtemir](https://github.com/dtemir)
+
+<br>
+<div align="center">
+<img width="200px" src="https://avatars.githubusercontent.com/u/62047062?v=4" alt="Damir Temir">
+</div>
+<br>
 
 I wanted to build something for two major DevOps platforms like Discord and GitHub. I also wanted to work in a new programming language for me, using the technologies I wouldn't have otherwise used.
 
@@ -171,17 +178,34 @@ My contributions include setting up a **CockroachDB** instance with Sequelize OR
 
 # 💻 Technologies
 
+We used a range of technologies in order to create GitCord Bot. Some were from our sponsors who sponsored the MLH Pre-Fellowship which we built our bot during (which we've highlighted below), some were vital to developing functionality (such as the GitHub API and Discord API) and others provided nice additions to our developer environment such as the linters and formatters we used.
+
 ## Sponsor Technologies
 
 - CockroachDB (Distributed Database with Standard SQL)
-- .tech domain (Build the Future on .tech)
 - Linode (Cloud Computing & Linux Servers)
+- .tech domain (Build the Future on .tech)
 
-## Other Technologies
+## Functional Technologies
 
-- GitHub API
-- Discord API
+- Discord API - Discord.js
+- GitHub API - Octokit.js
+- Lighthouse
+- Chrome Launcher
+- Wappalyzer
+
+## Server Technologies
+
+- Linode
 - Netlify
+- PM2
+
+## Developer Technologies
+
+- ESLint
+- StyleLint
+- Prettier
+- Autoprefixer
 
 # ⚖ License
 
