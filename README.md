@@ -51,7 +51,7 @@ To discover what commands you can can use, read the [usage instructions](#-usage
 
 ## Development
 
-Looking to locally host GitCord Bot yourself or installing it to contribute to our codebase? Here's a step by step guide on how to install and run our bot in a localhost environment. See our Contributing section for details of how to contribute to our project.
+Looking to locally host GitCord Bot yourself or installing it to contribute to our codebase? Here's a step by step guide on how to install and run our bot in a localhost environment. See our [Contributing](#-contributing) section for details of how to contribute to our project.
 
 1. Clone the repository using `git clone https://github.com/MLH-Fellowship/gitcord-bot` or use your forked repo URL if you've forked our project
 2. Install needed NPM packages with `npm install`
