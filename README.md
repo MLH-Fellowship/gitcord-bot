@@ -137,9 +137,9 @@ Add our inspiration - see Discord channel - behind our original Bot idea, why we
 
 ## Louise Findlay - [@louisefindlay23](https://github.com/louisefindlay23)
 
-*Insert Bio Image*
-
-what I contributed/enjoyed about the project*
+<div align="center" style="margin: 2.5% 0">
+<img width="200px" style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/26024131?v=4" alt="Louise Findlay">
+</div>
 
 I was inspired to create Discord Bot by my experiences in the first week of the MLH Pre-Fellowship collaborating with a team of 13 fellow pod members. Having a GitHub feed in one of our Discord channels was great for keeping up to date with GitHub activity but some members it was overwhelming.
 
@@ -147,7 +147,13 @@ Communicating in Discord was great for immediate quick communication with team m
 
 This was time-consuming so I wondered if there was a reverse integration where we could post messages on Discord mentioning a specific issue or PR and store the repo we wanted to use and then it would comment on GitHub for us while being able to use Discord mentions to notify teammates.
 
-From my research, there wasn't so I decided that it would be a great idea to create one. I'd never create a Discord Bot or used the GitHub API before so it seems an exciting and new project to tackle. Thus GitCord Bot was born.
+From my research, there wasn't so I decided that it would be a great idea to create one. I'd never created a Discord Bot or used the GitHub API before so it seems like an exciting new project to tackle. Thus GitCord Bot was born.
+
+I really enjoyed working on the project because since the dev team was small, we worked closely as a tight-knit team, helping each other out with pair programming sessions when we faced any issues or blockers despite the distributed nature of our team. We all learned about new technologies and aspects of coding languages that we can use in the future.
+
+We used GitHub to great effect with main, staging and feature branches and I set up GitHub Projects for project management and assigned issues and PRs to team members, added labels and created and managed milestones which helped us to manage the project. Added a GitHub action to automatically adding new issues and PRs to our GitHub Project helped automate this workflow.
+
+The main features I implemented were surrounding the GitHub API. I integrated the GitHub API with our bot and created all the GitHub bot commands. I also helped refactor the code based on feedback from our code reviews, setup linting, formatting and autoprefixer and host our bot on Linode (with PM2 to manage and daemonize our Node app) and website on Netlify.
 
 ## Nandini Jain - @Inoxia25
 
