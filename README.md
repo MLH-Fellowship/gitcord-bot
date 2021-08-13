@@ -30,7 +30,9 @@
 
 # 👁 Overview
 
-Looking for a bot which will make your development process from Discord easier? GitCord is the ultimate Discord Bot that provides you with a number of developer tools and helps you manage your Github repos from Discord. GitCord lets you posts comments on your issues or pull requests and create a Github Project from Discord itself, making it easier to collaborate. It even lets you check out the lighthouse stats or tech stacks used by any of your favorite website 🚀
+Looking for a bot which will make your development process from Discord easier? GitCord is the ultimate Discord Bot that provides you with a number of developer tools and helps you manage your Github repos from Discord. 
+
+GitCord lets you posts comments on your issues or pull requests and create a Github Project from Discord itself, making it easier to collaborate. It even lets you check out the Lighthouse stats or tech stacks used by any of your favorite websites. 🚀
 
 # ⚡ Installation
 
@@ -40,9 +42,12 @@ Love our bot and want to install it in your Discord server? 😍
 
 - Head over to our [site](https://gitcordbot.tech/) and click on `Download Now`.
 
- ![image](https://user-images.githubusercontent.com/66139520/129349717-e30d0cee-646f-44c1-a051-2d65750ee382.png)
+![Website Homepage](https://user-images.githubusercontent.com/66139520/129349717-e30d0cee-646f-44c1-a051-2d65750ee382.png)
 
 - Select the server you want to download GitCord in, and you are good to go 💯
+
+![Server Installation Page](https://user-images.githubusercontent.com/26024131/129351156-3ae42304-5a60-49f4-858e-13a40e118e1e.png)
+
 
 To discover what commands you can can use, read the [usage instructions](#usage-instrucutions)
 
@@ -169,8 +174,6 @@ My contributions include setting up a **CockroachDB** instance with Sequelize OR
 - GitHub API
 - Discord API
 - Netlify
-- Wappalyzer API
-- Lighthouse 
 
 # ⚖ License
 
