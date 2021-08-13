@@ -37,10 +37,10 @@ Looking for a bot which will make your development process from Discord easier? 
 ## Discord Server
 
 Love our bot and want to install it in your Discord server? 😍
+
 - Head over to our [site](https://gitcordbot.tech/) and click on `Download Now`.
 
  ![image](https://user-images.githubusercontent.com/66139520/129349717-e30d0cee-646f-44c1-a051-2d65750ee382.png)
-
 
 - Select the server you want to download GitCord in, and you are good to go 💯
 
@@ -138,7 +138,7 @@ what I contributed/enjoyed about the project*
 
 I was inspired to create Discord Bot by my experiences in the first week of the MLH Pre-Fellowship collaborating with a team of 13 fellow pod members. Having a GitHub feed in one of our Discord channels was great for keeping up to date with GitHub activity but some members it was overwhelming.
 
-Communicating in Discord was great for immediate quick communication with team members with direct mentions but then I'd have to crosspost information to the relevant GitHub issues and PRs to keep them up to date to store our project history. 
+Communicating in Discord was great for immediate quick communication with team members with direct mentions but then I'd have to crosspost information to the relevant GitHub issues and PRs to keep them up to date to store our project history.
 
 This was time-consuming so I wondered if there was a reverse integration where we could post messages on Discord mentioning a specific issue or PR and store the repo we wanted to use and then it would comment on GitHub for us while being able to use Discord mentions to notify teammates.
 
