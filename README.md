@@ -267,5 +267,5 @@ To create a new bot command, just copy an existing file and rename it to the com
 
 1. [Building a Node.js App with CockroachDB and Sequelize](https://www.cockroachlabs.com/docs/stable/build-a-nodejs-app-with-cockroachdb-sequelize.html)
 2. [Sequelize Documentation](https://sequelize.org/master/)
-
+3. [Creating Github Personal Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 *Adding any further links not already mentioned - API info, MLH Pre-Fellowship Link, Website etc.*
