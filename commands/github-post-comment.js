@@ -1,40 +1,23 @@
-const fs = require("fs");
+const db = require("../database");
+const { Octokit } = require("@octokit/core");
+const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+const MyOctokit = Octokit.plugin(restEndpointMethods);
 
 module.exports = {
     name: "github-post-comment",
     description: "Post a comment on GitHub Issue or PR",
-    execute(command, message, args) {
+    usage: "-github-post-comment <organization-name> <repo-name> <issue-number> <your-comment>",
+    example: "-github-post-comment MLH-Fellowship gitcord-bot 32 your comment",
+    execute(command, message, args, octokit) {
         // -github-post-comment: Posts desired comment on previously specified issue/PR
         if (command === "github-post-comment") {
-            comment = args.slice(3);
+            let comment = args.slice(3);
             comment = comment.join(" ");
-            readToken();
-            postComment(comment, args);
-        }
-
-        function readToken() {
-            try {
-                const data = fs.readFileSync("./github-token.txt", "utf8");
-                return data;
-            } catch (err) {
-                console.error(err);
-                return message.reply(
-                    "Your GitHub Personal Access Token could not been read. Please set it again using -github-info."
-                );
-            }
+            postComment(comment, octokit);
         }
 
         // Post Comment function
-        async function postComment(comment) {
-            // GitHub Variables
-            let githubToken = readToken();
-
-            // Intialise GitHub API
-            const { Octokit } = require("@octokit/core");
-            const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
-            const MyOctokit = Octokit.plugin(restEndpointMethods);
-            let octokit = new MyOctokit({ auth: githubToken });
-
+        async function postComment(comment, octokit) {
             await octokit.rest.issues
                 .createComment({
                     owner: args[0],
@@ -42,18 +25,9 @@ module.exports = {
                     issue_number: args[2],
                     body: comment,
                 })
-                .then((result) => {
+                .then(() => {
                     return message.reply(
-                        "Your comment '" +
-                            comment +
-                            "' has been posted on " +
-                            args[0] +
-                            "'s repo, " +
-                            args[1] +
-                            " in issue/PR " +
-                            "#" +
-                            args[2] +
-                            "."
+                        `Your comment, "${comment}" has been posted on ${args[0]}'s repo, ${args[1]} in issue/PR #${args[2]}.`
                     );
                 })
                 .catch((error) => {

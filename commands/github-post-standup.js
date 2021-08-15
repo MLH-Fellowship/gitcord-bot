@@ -1,54 +1,44 @@
-const fs = require("fs");
+const db = require("../database");
+const { Octokit } = require("@octokit/core");
+const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+const MyOctokit = Octokit.plugin(restEndpointMethods);
 
 module.exports = {
     name: "github-post-standup",
     description: "Post a comment on a GitHub discussion",
-    execute(command, message, args) {
+    usage: "github-post-standup <organization-name> <team-name> <discussion-number> <your-comment>",
+    example: "\n -github-post-standup MLH-Fellowship pod-3-1-3 8 \n" +
+        "**What did you achieve in the last 24 hours?**:\n" +
+        " - \n" +
+        "\n" +
+        "**What are your priorities for the next 24 hours?**:\n" +
+        " - \n" +
+        "\n" +
+        "**Blockers**:\n" +
+        " -\n" +
+        "\n" +
+        "**Shoutouts**:\n" +
+        " - @username for x",
+    execute(command, message, args, octokit) {
         // -github-post-standup: Posts desired comment on a GitHub Discussion
         if (command === "github-post-standup") {
-            postComment(args);
-        }
-
-        function readToken() {
-            try {
-                const data = fs.readFileSync("./github-token.txt", "utf8");
-                return data;
-            } catch (err) {
-                console.error(err);
-                return message.reply(
-                    "Your GitHub Personal Access Token could not been read. Please set it again using -github-info."
-                );
-            }
+            let comment = args.slice(3);
+            comment = comment.join(" ");
+            postComment(comment, octokit);
         }
 
         // Post Comment function
-        async function postComment(args) {
-            // GitHub Variables
-            let githubToken = readToken();
-
-            // Intialise GitHub API
-            const { Octokit } = require("@octokit/core");
-            const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
-            const MyOctokit = Octokit.plugin(restEndpointMethods);
-            let octokit = new MyOctokit({ auth: githubToken });
-
-            // Post Discussion Comment
+        async function postComment(comment, octokit) {
             await octokit.rest.teams
                 .createDiscussionCommentInOrg({
                     org: args[0],
                     team_slug: args[1],
                     discussion_number: args[2],
-                    body: args[3],
+                    body: comment,
                 })
-                .then((result) => {
+                .then(() => {
                     return message.reply(
-                        "Your comment '" +
-                            args[3] +
-                            "' has been posted on " +
-                            args[1] +
-                            "'s discussion #" +
-                            args[2] +
-                            "."
+                        `Your comment ${comment} has been posted on ${args[1]}'s discussion #${args[2]}.`
                     );
                 })
                 .catch((error) => {

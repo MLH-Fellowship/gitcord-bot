@@ -4,7 +4,7 @@ Why did you submit this PR? What are its benefits? - Use Issue Description as in
 
 ### What This PR Adds
 
-- Bullet point list of features - should be descriptive. Mention code variables, file names and/or selectors.
+-   Bullet point list of features - should be descriptive. Mention code variables, file names and/or selectors.
 
 > Add a screenshot below of what your changes look like - especially if it changes the UI. Remove this line and the quotation marks on the line below and add the alt text and image link accordingly. You can also upload images to GitHub by dragging and dropping (or copying and pasting) the image.
 
@@ -14,7 +14,7 @@ Why did you submit this PR? What are its benefits? - Use Issue Description as in
 
 ### How This PR Could Be Improved
 
-- **Improvement Area** - Add details of what the improvement is, why it would be an improvement and if there are any blockers or issues preventing you from implementing it (lack of knowledge, isn't possible, haven't got to it yet or dependent on another issue (if so link to the issue using `#issue number`). This is the place to ask for help if needed. Looking for help from a fellow pod member with a specific skill set? Mention it here.
+-   **Improvement Area** - Add details of what the improvement is, why it would be an improvement and if there are any blockers or issues preventing you from implementing it (lack of knowledge, isn't possible, haven't got to it yet or dependent on another issue (if so link to the issue using `#issue number`). This is the place to ask for help if needed. Looking for help from a fellow pod member with a specific skill set? Mention it here.
 
 ### Issue This PR Closes
 
