@@ -2,10 +2,14 @@
   "name": "pod-3.1.3-team-4",
   "version": "1.0.0",
   "description": "Testing out building a discord bot with discord.js",
+  "nodemonConfig": {
+    "ext": "js"
+  },
   "main": "main.js",
   "scripts": {
-    "start": "npm run build & node main.js",
-    "build": "postcss site/*.css -d site/ --no-map"
+    "start": "npm run build & npm run watch",
+    "build": "postcss site/*.css -d site/ --no-map",
+    "watch": "./node_modules/nodemon/bin/nodemon.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +41,7 @@
   "devDependencies": {
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
+    "nodemon": "^2.0.19",
     "prettier": "npm:@yuhr/prettier@^2.2.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0"
