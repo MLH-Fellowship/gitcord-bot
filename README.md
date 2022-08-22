@@ -38,7 +38,7 @@ GitCord lets you posts comments on your issues or pull requests and create a Git
 
 # 🎯 GitCord Bot Features
 
-- **Simple Installation** - Take advantage our easy installation process to install GitCord Bot to your Discord Server using our [website](https://gitcordbot.tech)
+- **Simple Installation** - Take advantage our easy installation process to install GitCord Bot to your Discord Server using our [website](https://mlh-fellowship.github.io/gitcord-bot)
 
 - **Lighthouse Integration** - Scan a website and receive scores from a Lighthouse audit via our bot. No need to open Chrome Dev Tools or go to a website anymore. Run Lighthouse through Discord to easily share results with your entire dev team.
 
@@ -56,7 +56,7 @@ GitCord lets you posts comments on your issues or pull requests and create a Git
 
 Love our bot and want to install it in your Discord server? 😍
 
-- Head over to our [site](https://gitcordbot.tech/) and click on `Download Now`.
+- Head over to our [site](https://mlh-fellowship.github.io/gitcord-bot) and click on `Download Now`.
 
 ![Website Homepage](https://user-images.githubusercontent.com/66139520/129349717-e30d0cee-646f-44c1-a051-2d65750ee382.png)
 
