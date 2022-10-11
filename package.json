@@ -9,7 +9,9 @@
   "scripts": {
     "start": "npm run build & npm run watch",
     "build": "postcss site/*.css -d site/ --no-map",
-    "watch": "./node_modules/nodemon/bin/nodemon.js"
+    "watch": "./node_modules/nodemon/bin/nodemon.js",
+    "update": "node deploy-commands",
+    "delete": "node delete-commands"
   },
   "repository": {
     "type": "git",
